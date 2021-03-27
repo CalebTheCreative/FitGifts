@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Signup from '../../pages/Signup';
 
 class SignUp extends Component {
 	constructor() {
@@ -24,14 +25,32 @@ class SignUp extends Component {
 		event.preventDefault();
 		// if (typeof isTrainer !== 'boolean') {
 		// }
-        axios.post()
+		axios
+			.post('/user/', {
+				username: this.state.username,
+				password: this.state.password,
+			})
+			.then((response) => {
+				console.log(response);
+				if (!response.data.err) {
+					console.log('successful signup');
+					this.setState({
+						//redirect to login page
+						redirectTo: '/login',
+					});
+				} else {
+					console.log('username already taken, please choose another name');
+				}
+			})
+			.catch((error) => {
+				console.log('signup error: ');
+				console.log(error);
+			});
 	}
 
-    render () {
-        return (
-            <div></div>
-        );
-    }
+	render() {
+		return <div>{/* <Signup /> */}</div>;
+	}
 }
 
 export default SignUp;
