@@ -6,8 +6,8 @@ function ClientList() {
 	return (
 		<div>
 			<div id="client-list">
-				<Container>
-					<Header />
+				<Header />
+				<Container className="text-center justify-content-center">
 					<Row>
 						<Col>
 							<Table striped bordered hover variant="dark">
