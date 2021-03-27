@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import AddClient from "./pages/AddClient";
+import TClientSessions from "./pages/TClientSessions";
+import TClientRewards from "./pages/TClientRewards";
+import AddTrainer from "./pages/AddTrainer";
+import ClientHome from "./pages/ClientHome";
+import ClientRewards from "./pages/ClientRewards";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <AddClient /> */}
+      {/* <TClientSessions /> */}
+      {/* <TClientRewards /> */}
+      {/* <AddTrainer /> */}
+      {/* <ClientHome /> */}
+      {/* <ClientRewards /> */}
+
     </div>
   );
 }
