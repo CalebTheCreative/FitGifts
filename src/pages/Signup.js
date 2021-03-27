@@ -1,23 +1,58 @@
 import React from "react";
+import Header from "../components/Header";
+import { Button, Container, Form, Row } from "react-bootstrap";
 
 
 function Signup() {
     return (
-        <div class="login-page">
-        <div class="form"/>
-            <h4>FitGifts</h4>
-            <form class="login">
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email-input" placeholder="EMAIL"/>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="password-input" placeholder="PASSWORD"/>
-                </div>
-                <button class="submit">lOGIN</button>
-                <a href="/create">CREATE AN ACCOUNT</a>
-            </form>
+        <div>
+            <Header />
+            <Container className = "text-center justify-content-center">
+                <Row className = "text-center justify-content-center">
+                    <h1 style={{textAlign: "center"}}>FITGIFTS</h1>
+                </Row>
+                <Row className = "text-center justify-content-center">
+                    <h3>SIGN UP</h3>
+                </Row>
+                <Row className = "text-center justify-content-center">
+                    <a href="mailto: sample@mail.com">
+                    </a>
+                </Row>
+                <Row className = "text-center justify-content-center">
+                    <Form>
+                    <button type="button" class="btn btn-primary btn-lg">Client</button>
+                    <button type="button" class="btn btn-secondary btn-lg">Trainer</button>
+                    </Form>
+                </Row>
+
+                <Row className = "text-center justify-content-center">
+                    <Form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">NAME</label>
+                        <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">EMAIL ADDRESS</label>
+                        <input type="email" class="form-control" id="exampleInputPassword1"/>
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">PHONE</label>
+                        <input type="phone" class="form-control" id="exampleInputPassword1"/>
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1"/>
+                        </div>
+                    </Form>
+                </Row>
+                <Row className = "text-center justify-content-center mt-2">
+                    <Button variant="secondary" href="/trainerhome">
+                        SIGNUP UP HERE
+                    </Button>
+                </Row>
+
+            </Container>
         </div>
-    );
-  }
-  
+    )
+}
   export default Signup;
