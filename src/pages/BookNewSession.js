@@ -3,6 +3,12 @@ import { Container, Row, Table, Col, Button} from "react-bootstrap";
 import Header from "../components/Header";
 
 function BookNewSession () {
+    
+    // Need event listener for time slot buttons to popup confirmation to book session
+    function handleSessionClick() {
+        alert("You clicked a button");
+    }
+
     return(
         <div>
             <Header />
@@ -32,13 +38,13 @@ function BookNewSession () {
                 </Row>
                 <Row className = "text-center justify-content-center">
                     <Col xs={8}>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 12:15 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 1:45 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 5:15 pm
                             </Button>
                     </Col>
@@ -51,13 +57,13 @@ function BookNewSession () {
                 </Row>
                 <Row className = "text-center justify-content-center">
                     <Col xs={8}>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 12:15 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 1:45 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 5:15 pm
                             </Button>
                     </Col>
@@ -70,13 +76,13 @@ function BookNewSession () {
                 </Row>
                 <Row className = "text-center justify-content-center">
                     <Col xs={8}>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 12:15 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 1:45 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block">
+                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
                                 5:15 pm
                             </Button>
                     </Col>
@@ -84,7 +90,7 @@ function BookNewSession () {
 
                 <Row className = "text-center justify-content-center mt-2">
                     <Col xs={8}>
-                        <Button variant="success" className="btn-lg btn-block mt-0" href="/BookNewSession">Book a new session</Button>
+                        <Button variant="success" className="btn-lg btn-block mt-0" href="/Home">Done</Button>
                     </Col>
                 </Row>
 

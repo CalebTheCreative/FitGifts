@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Form, Row } from "react-bootstrap";
+import { Button, Container, Form, InputGroup, Row } from "react-bootstrap";
 import Header from "../components/Header";
 
 function AddClient() {
@@ -23,7 +23,7 @@ function AddClient() {
                 </Row>
                 <Row className = "text-center justify-content-center">
                     <Form>
-                        <div className="input-group">
+                        <InputGroup>
                             <select className="custom-select" id="inlineFormCustomSelect">
                                 <option selected>Pts</option>
                                 <option value="5">5</option>
@@ -32,7 +32,7 @@ function AddClient() {
                             </select>
                             <input type="text" className="form-control" aria-label="Text input with 2 dropdown buttons" placeholder="Reward Item" />
                             <Button type="submit" variant="secondary" className="ml-1"><i className="fas fa-plus"></i></Button>
-                        </div>
+                        </InputGroup>
                     </Form>
                 </Row>
 
