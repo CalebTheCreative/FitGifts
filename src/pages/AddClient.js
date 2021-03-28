@@ -120,7 +120,7 @@ function AddClient() {
                                 </Form.Control>
                             </Col>
                             <Col xs="auto" className="my-1">
-                                <Form.Control type="text" placeholder="Reward Criteria" />
+                                <Form.Control type="text" placeholder="Reward Criteria" id="formInputCrit" />
                             </Col>
                             <Col xs="auto" className="my-1">
                                 <Button type="submit" variant="secondary"><i className="fas fa-plus"></i></Button>
