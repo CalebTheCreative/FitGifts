@@ -4,10 +4,17 @@ import Header from "../components/Header";
 
 function BookNewSession () {
     
-    // Need event listener for time slot buttons to popup confirmation to book session
-    function handleSessionClick() {
-        alert("You clicked a button");
-    }
+    // ===========================================================================
+    // Needs
+    // ===========================================================================
+    //  - Route for 'Done' button to go to client home page
+    //  - Function to handle booking sessions by clicking on individual session buttons
+    //      - Should popup confirmation asking client if they'd like to book that session
+    //  - Function to handle Day titles
+    //      - Should be sorted by "Today", "Tomorrow", "Day 3", "Day 4", etc
+    //  - Props for:
+    //      - Trainer's name                    (Used in table)
+    //      - Trainer's available sessions      (Used in displayed session buttons)
 
     return(
         <div>
@@ -38,13 +45,13 @@ function BookNewSession () {
                 </Row>
                 <Row className = "text-center justify-content-center">
                     <Col xs={8}>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 12:15 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 1:45 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 5:15 pm
                             </Button>
                     </Col>
@@ -57,13 +64,13 @@ function BookNewSession () {
                 </Row>
                 <Row className = "text-center justify-content-center">
                     <Col xs={8}>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 12:15 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 1:45 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 5:15 pm
                             </Button>
                     </Col>
@@ -76,13 +83,13 @@ function BookNewSession () {
                 </Row>
                 <Row className = "text-center justify-content-center">
                     <Col xs={8}>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 12:15 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 1:45 pm
                             </Button>
-                            <Button variant="outline-success" className="btn-lg btn-block" onClick={handleSessionClick}>
+                            <Button variant="outline-success" className="btn-lg btn-block">
                                 5:15 pm
                             </Button>
                     </Col>
