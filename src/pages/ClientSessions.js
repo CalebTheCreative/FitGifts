@@ -3,6 +3,18 @@ import { Container, Row, Table, Col, Button } from "react-bootstrap";
 import Header from "../components/Header";
 
 function ClientSessions () {
+    
+    // ===========================================================================
+    // Needs
+    // ===========================================================================
+    //  - Routes for 'Book New Session' button to 'BookNewSession' pg
+    //  - Function to handle grabbing session details and appending to proper list
+    //      - Use js-booking-calendar
+    //  - Props for:
+    //      - Trainer's name                    (Used in table)
+    //      - Client's rewards points           (Used in table)
+    //      - Client's sessions                 (Used in table)
+    
     return(
         <div>
             <Header />
@@ -11,7 +23,7 @@ function ClientSessions () {
                     <h1 style={{textAlign: "center"}}>Sessions</h1>
                 </Row>
                 <Row flex className = "text-center justify-content-center">
-                    <Col xs={4}>
+                    <Col xs={6}>
                         <Table bordered>
                             <tbody>
                                 <tr>
@@ -32,7 +44,7 @@ function ClientSessions () {
                     </Col>
                 </Row>
                 <Row className = "text-center justify-content-center">
-                    <Col xs={8}>
+                    <Col xs={6}>
                         <Table bordered striped hover>
                             <tbody>
                                 <tr>
@@ -58,7 +70,7 @@ function ClientSessions () {
                     </Col>
                 </Row>
                 <Row className = "text-center justify-content-center">
-                    <Col xs={8}>
+                    <Col xs={6}>
                         <Table bordered striped hover>
                             <tbody>
                                 <tr>
@@ -84,7 +96,7 @@ function ClientSessions () {
                     </Col>
                 </Row>
                 <Row className = "text-center justify-content-center">
-                    <Col xs={8}>
+                    <Col xs={6}>
                         <Table bordered striped hover>
                             <tbody>
                                 <tr>
