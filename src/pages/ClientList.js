@@ -43,7 +43,7 @@ function ClientList() {
 				<Row className="text-center justify-content-center">
 					<Col xs={6}>
 						<Button striped bordered hover variant="dark" className="btn-block mt-2">
-							<h6>Add New Client </h6>
+							Add New Client
 						</Button>
 					</Col>
 				</Row>

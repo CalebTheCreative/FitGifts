@@ -41,19 +41,19 @@ function TClientSessions() {
 
                 <Row className="text-center justify-content-center">
                     <Col xs={6}>
-                        <h3>Last Week</h3>
+                        <h3>Today</h3>
                     </Col>
                 </Row>
                 <Row className="text-center justify-content-center">
                     <Col xs={6}>
                         <Button block hover variant="outline-secondary">
-                            Monday <span>at </span><span>12:15 pm</span>
+                            12:15pm<span>with </span><span>12:15 pm</span>
                         </Button>
                         <Button block hover variant="outline-secondary">
-                            Wednesday <span>at </span><span>1:45 pm</span>
+                            1:45 pm <span>with </span><span>1:45 pm</span>
                         </Button>
                         <Button block hover variant="outline-secondary">
-                            Friday <span>at </span><span>12:15 pm</span>
+                            3:15 <span>with </span><span>12:15 pm</span>
                         </Button>
                     </Col>
                 </Row>
@@ -98,7 +98,7 @@ function TClientSessions() {
                     </Col>
                 </Row>
                 <br />
-                
+
                 <Row className="text-center justify-content-center">
                     <Col xs={6}>
                         <Button block hover size="lg" variant="success">Done</Button>
