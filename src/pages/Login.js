@@ -44,7 +44,7 @@ function Login() {
                 <br />
 
                 <Row className="text-center justify-content-center">
-                    <p>Already have an account? </p><span><a href="/signup">&nbsp;Sign up here</a></span>
+                    <p>Don't have an account? </p><span><a href="/login">&nbsp;Sign up here</a></span>
                 </Row>
 
             </Container>
