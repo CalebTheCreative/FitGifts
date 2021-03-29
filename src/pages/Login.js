@@ -1,47 +1,50 @@
 import React from "react";
-import Header from "../components/header";
-import { Button, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
 
 function Login() {
+
+    // ===========================================================================
+    // Needs
+    // ===========================================================================
+    //  - Function to handle login authentication using Passport.js
+    //      - Once authenticated, directs to either 'TrainerHome' or 'ClientHome' pg
+    //  - Route to 'Signup' pg when clicking the 'Sign up here' link
+
     return (
         <div>
-            <Header />
-            <Container className = "text-center justify-content-center">
-                <Row className = "text-center justify-content-center">
-                    <h1 style={{textAlign: "center"}}>FITGIFTS</h1>
+
+            <Container className="text-center justify-content-center">
+                <Row className="text-center justify-content-center">
+                    <h1 style={{ textAlign: "center" }}>FITGIFTS</h1>
                 </Row>
-                <Row className = "text-center justify-content-center">
-                    <h3>SIGN UP</h3>
+                <br />
+                <Row className="text-center justify-content-center">
+                    <h3>Log In</h3>
                 </Row>
-                <Row className = "text-center justify-content-center">
-                    <a href="mailto: sample@mail.com">
-                    </a>
+
+                <Row className="text-center justify-content-center">
+                    <Col xs={6}>
+                        <Form>
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" />
+                            </Form.Group>
+
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" />
+                            </Form.Group>
+                            <Button variant="secondary" size="lg" block type="submit">
+                                Submit
+                            </Button>
+                        </Form>
+                    </Col>
                 </Row>
-                <Row className = "text-center justify-content-center">
-                    <Form>
-                    <button type="button" class="btn btn-primary btn-lg">Client</button>
-                    <button type="button" class="btn btn-secondary btn-lg">Trainer</button>
-                    </Form>
-                </Row>
-                <Row className = "text-center justify-content-center">
-                    <Form>
-                        <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">EMAIL ADDRESS</label>
-                        <input type="email" class="form-control" id="exampleInputPassword1"/>
-                        </div>
-                        <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"/>
-                        </div>
-                        <button type="button" class="btn btn-secondary btn-lg">SUBMIT</button>
-                        <p>OR</p>
-                    </Form>
-                </Row>
-                <Row className = "text-center justify-content-center mt-2">
-                    <Button variant="secondary" href="/trainerhome">
-                        SIGNUP UP HERE
-                    </Button>
+                <br />
+
+                <Row className="text-center justify-content-center">
+                    <p>Already have an account? </p><span><a href="/signup">&nbsp;Sign up here</a></span>
                 </Row>
 
             </Container>
