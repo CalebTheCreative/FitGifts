@@ -3,6 +3,15 @@ import { Button, Container, Form, Row } from "react-bootstrap";
 import Header from "../components/Header";
 
 function AddTrainer() {
+
+    // ===========================================================================
+    // Needs
+    // ===========================================================================
+    //  - Function to handle submit form
+    //      - Ties client to trainer using specific code
+    //      - Authentication (If code doesn't match any on file, alert to try again)
+    //      - If authenticated upon submission, route client to their 'ClientHome' pg
+
     return (
         <div>
             <Header />

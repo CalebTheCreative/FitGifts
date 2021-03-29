@@ -3,6 +3,19 @@ import { Container, Row, Table, Col, Button} from "react-bootstrap";
 import Header from "../components/Header";
 
 function BookNewSession () {
+    
+    // ===========================================================================
+    // Needs
+    // ===========================================================================
+    //  - Route for 'Done' button to go to client home page
+    //  - Function to handle booking sessions by clicking on individual session buttons
+    //      - Should popup confirmation asking client if they'd like to book that session
+    //  - Function to handle Day titles
+    //      - Should be sorted by "Today", "Tomorrow", "Day 3", "Day 4", etc
+    //  - Props for:
+    //      - Trainer's name                    (Used in table)
+    //      - Trainer's available sessions      (Used in displayed session buttons)
+
     return(
         <div>
             <Header />
@@ -84,7 +97,7 @@ function BookNewSession () {
 
                 <Row className = "text-center justify-content-center mt-2">
                     <Col xs={8}>
-                        <Button variant="success" className="btn-lg btn-block mt-0" href="/BookNewSession">Book a new session</Button>
+                        <Button variant="success" className="btn-lg btn-block mt-0" href="/Home">Done</Button>
                     </Col>
                 </Row>
 

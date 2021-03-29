@@ -1,39 +1,53 @@
 import React from 'react';
-import { Button, Col, Container, Row, Table } from 'react-bootstrap';
+import { Button, Col, Container, Row, ListGroup } from 'react-bootstrap';
 import Header from '../components/Header';
 
 function ClientList() {
+
+	// ===========================================================================
+    // Needs
+    // ===========================================================================
+    //  - Map out list of clients as buttons in the list group
+	// 	- Function to handle clicking a client's name
+	// 		- Should route to that client's profile page
+	// 	- Route to send trainer to 'AddClient' pg when they click 'Add New Client' button
+    //  - Prop for:
+    //      - Client's name             		(Used in list group buttons)
+
+
 	return (
 		<div>
-			<div id="client-list">
-				<Header />
-				<Container className="text-center justify-content-center">
-					<Row>
-						<Col>
-							<Table striped bordered hover variant="dark">
-								<tr>
-									<td>
-										<h1>Clients:</h1>
-									</td>
-								</tr>
-								{/* Here is where we will map out the client list with a component */}
-								<tr>
-									<td>
-										<h4>Client List</h4>
-									</td>
-								</tr>
-							</Table>
-						</Col>
-					</Row>
-					<Row>
-						<Col>
-							<Button striped bordered hover variant="dark">
-								<h6>Add New Client </h6>
-							</Button>
-						</Col>
-					</Row>
-				</Container>
-			</div>
+			<Header />
+			<Container className="text-center justify-content-center">
+				<Row className = "text-center justify-content-center">
+					<Col xs={6}>
+						<h1>Clients</h1>
+					</Col>
+				</Row>
+
+				<Row className="text-center justify-content-center">
+                    <Col xs={6}>
+                        <ListGroup>
+							{/* Trainer's client list mapped out here */}
+							{/* Remove 'disabled' from Button element */}
+                            <ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block disabled>Alex</Button></ListGroup.Item>
+							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block disabled>Bobby</Button></ListGroup.Item>
+							{/* Clickable Sample */}
+							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block href="/ClientProfile">Daniel</Button></ListGroup.Item>
+							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block disabled>Frank</Button></ListGroup.Item>
+							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block disabled>Luke</Button></ListGroup.Item>
+                        </ListGroup>
+                    </Col>
+                </Row>
+
+				<Row className="text-center justify-content-center">
+					<Col xs={6}>
+						<Button striped bordered hover variant="dark" className="btn-block mt-2">
+							Add New Client
+						</Button>
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 }

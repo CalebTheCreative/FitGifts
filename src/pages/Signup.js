@@ -1,58 +1,87 @@
 import React from "react";
-import Header from "../components/Header";
-import { Button, Container, Form, Row } from "react-bootstrap";
+import { Button, Container, Form, Row, Col, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 
 
 function Signup() {
+    
+    // ===========================================================================
+    // Needs
+    // ===========================================================================
+    //  - Function to handle signup authentication using Passport.js
+    //      - Once authenticated, directs to either 'TrainerHome' or 'AddTrainer' pg
+    //  - Route to 'Login' pg when clicking the 'Log in here' link
+    
     return (
         <div>
-            <Header />
-            <Container className = "text-center justify-content-center">
-                <Row className = "text-center justify-content-center">
-                    <h1 style={{textAlign: "center"}}>FITGIFTS</h1>
+            <Container className="text-center justify-content-center">
+                <Row className="text-center justify-content-center">
+                    <h1 style={{ textAlign: "center" }}>FITGIFTS</h1>
                 </Row>
-                <Row className = "text-center justify-content-center">
+                <Row className="text-center justify-content-center">
                     <h3>SIGN UP</h3>
                 </Row>
-                <Row className = "text-center justify-content-center">
-                    <a href="mailto: sample@mail.com">
-                    </a>
-                </Row>
-                <Row className = "text-center justify-content-center">
-                    <Form>
-                    <button type="button" class="btn btn-primary btn-lg">Client</button>
-                    <button type="button" class="btn btn-secondary btn-lg">Trainer</button>
-                    </Form>
+                <br />
+
+                <Row className="text-center justify-content-center">
+                    <Col xs={8} className="text-center justify-content-center">
+                        <h6>Account type:&nbsp;</h6>
+                        <span>
+                            <ToggleButtonGroup type="radio" name="options" defaultValue={1} className="mb-2">
+                                <ToggleButton value={1}>Client</ToggleButton>
+                                <ToggleButton value={2}>Trainer</ToggleButton>
+                            </ToggleButtonGroup>
+                        </span>
+                    </Col>
                 </Row>
 
-                <Row className = "text-center justify-content-center">
-                    <Form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">NAME</label>
-                        <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                        </div>
-                        <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">EMAIL ADDRESS</label>
-                        <input type="email" class="form-control" id="exampleInputPassword1"/>
-                        </div>
-                        <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">PHONE</label>
-                        <input type="phone" class="form-control" id="exampleInputPassword1"/>
-                        </div>
-                        <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"/>
-                        </div>
-                    </Form>
-                </Row>
-                <Row className = "text-center justify-content-center mt-2">
-                    <Button variant="secondary" href="/trainerhome">
-                        SIGNUP UP HERE
-                    </Button>
+                <Row className="text-center justify-content-center">
+                    <Col xs={6}>
+                        <Form>
+                            <Form.Group as={Row} controlId="formHorizontalFirst" className="text-center justify-content-center">
+                                <Col xs={12}>
+                                    <Form.Control type="input" placeholder="First Name" />
+                                </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row} controlId="formHorizontalLast" className="text-center justify-content-center">
+                                <Col xs={12}>
+                                    <Form.Control type="input" placeholder="Last Name" />
+                                </Col>
+                            </Form.Group>
+                            
+                            <Form.Group as={Row} controlId="formHorizontalEmail" className="text-center justify-content-center">
+                                <Col xs={12}>
+                                    <Form.Control type="email" placeholder="Email" />
+                                </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row} controlId="formHorizontalPhone" className="text-center justify-content-center">
+                                <Col xs={12}>
+                                    <Form.Control type="tel" placeholder="Phone Number" />
+                                </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row} controlId="formHorizontalPassword" className="text-center justify-content-center">
+                                <Col xs={12}>
+                                    <Form.Control type="password" placeholder="Password" />
+                                </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row} className="text-center justify-content-center">
+                                <Col xs={12}>
+                                    <Button type="submit" block>Sign Up</Button>
+                                </Col>
+                            </Form.Group>
+                        </Form>
+                    </Col>
+
                 </Row>
 
+                <Row className="text-center justify-content-center">
+                    <p>Already have an account? </p><span><a href="/login">&nbsp;Log in here</a></span>
+                </Row>
             </Container>
         </div>
     )
 }
-  export default Signup;
+export default Signup;
