@@ -35,7 +35,7 @@ function Login() {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" />
                             </Form.Group>
-                            <Button variant="secondary" size="lg" block type="submit">
+                            <Button variant="secondary" size="lg" block type="submit" href="/home-client">
                                 Submit
                             </Button>
                         </Form>
@@ -44,7 +44,7 @@ function Login() {
                 <br />
 
                 <Row className="text-center justify-content-center">
-                    <p>Don't have an account? </p><span><a href="/login">&nbsp;Sign up here</a></span>
+                    <p>Don't have an account? </p><span><a href="/signup">&nbsp;Sign up here</a></span>
                 </Row>
 
             </Container>

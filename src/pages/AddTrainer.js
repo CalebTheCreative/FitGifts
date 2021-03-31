@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Container, Form, Row } from "react-bootstrap";
-import Header from "../components/Header";
 
 function AddTrainer() {
 
@@ -14,7 +13,6 @@ function AddTrainer() {
 
     return (
         <div>
-            <Header />
             <Container className="text-center justify-content-center">
                 <Row className="text-center justify-content-center">
                     <h1 style={{ textAlign: "center" }}>Add Trainer</h1>
@@ -37,8 +35,6 @@ function AddTrainer() {
                         </Form>
                     </Row>
                 </Container>
-
-
             </Container>
         </div>
     )

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
-import Header from '../components/Header';
 
 function TrainerSessions() {
 
@@ -23,7 +22,6 @@ function TrainerSessions() {
 	return (
 		<div>
 			<div id="trainer-sessions">
-				<Header />
 				<Container className="text-center justify-content-center">
 					<br></br>
 					{/* Will give the sessions of the current day and two days coming after */}
@@ -41,7 +39,7 @@ function TrainerSessions() {
 							<Button block hover variant="outline-secondary">
 								1:45 pm<span>&nbsp;with&nbsp;</span><span id="sessionName">Bobby</span>
 							</Button>
-							<Button block hover variant="outline-secondary">
+							<Button block hover variant="outline-secondary" href="/client-profile">
 								3:15 pm<span>&nbsp;with&nbsp;</span><span id="sessionName">Daniel</span>
 							</Button>
 						</Col>
@@ -75,8 +73,8 @@ function TrainerSessions() {
 							<Button block hover variant="outline-secondary">
 								9:15 am<span>&nbsp;with&nbsp;</span><span id="sessionName">Bobby</span>
 							</Button>
-							<Button block hover variant="outline-secondary">
-								1:45 pm<span>&nbsp;with&nbsp;</span><span id="sessionName">Frank</span>
+							<Button block hover variant="outline-secondary" href="/client-profile">
+								1:45 pm<span>&nbsp;with&nbsp;</span><span id="sessionName">Daniel</span>
 							</Button>
 						</Col>
 					</Row>

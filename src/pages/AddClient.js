@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Container, Form, Row, Col, ListGroup } from "react-bootstrap";
-import Header from "../components/Header";
 
 // ===========================================================================
 // Needs
@@ -26,7 +25,6 @@ import Header from "../components/Header";
 function AddClient() {
     return (
         <div>
-            <Header />
             <Container className="text-center justify-content-center">
                 <Row className="text-center justify-content-center">
                     <h1 style={{ textAlign: "center" }}>Add Client</h1>
@@ -137,7 +135,7 @@ function AddClient() {
                     </Col>
                 </Row>
                 <Row className="text-center justify-content-center mt-2">
-                    <Button variant="secondary" href="/trainerhome">
+                    <Button variant="secondary" href="/home/trainer">
                         Done
                     </Button>
                 </Row>

@@ -1,7 +1,5 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import Header from "../components/Header";
-
 
 function TrainerHome () {
 
@@ -19,7 +17,6 @@ function TrainerHome () {
 
     return(
         <div>
-            <Header />
             <br />
             <br />
             <Container className = "text-center justify-content-center">
@@ -35,8 +32,8 @@ function TrainerHome () {
                 
                 <Row className = "text-center justify-content-center mt-2">
                     <Col xs={6} className="text-center justify-content-center">
-                        <Button className="my-2 btn-block btn-lg" variant="secondary" href="/TClientSessions">Sessions</Button>
-                        <Button className="my-2 btn-block btn-lg" variant="secondary" href="/ClientList">Clients</Button>
+                        <Button className="my-2 btn-block btn-lg" variant="secondary" href="/t-client-sessions">Sessions</Button>
+                        <Button className="my-2 btn-block btn-lg" variant="secondary" href="/client-list">Clients</Button>
                         <Button className="my-2 btn-block btn-lg" variant="outline-secondary">Logout</Button>
                     </Col>
                 </Row>

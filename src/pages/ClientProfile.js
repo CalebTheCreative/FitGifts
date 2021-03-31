@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Table, Col, Row, Button } from 'react-bootstrap';
-import Header from '../components/Header';
 
 function ClientProfile() {
 
@@ -19,7 +18,6 @@ function ClientProfile() {
 	
 	return (
 		<div>
-			<Header />
 			<Container className="text-center justify-content-center">
 				<Row flex className="text-center justify-content-center">
 					<Col xs={6}>
@@ -62,8 +60,8 @@ function ClientProfile() {
 						<Col md={{ span: 6, offset: 3 }} className="text-center justify-content-center">
 							<Button className="my-1 btn-block btn-lg" variant="secondary">Add Reward Point</Button>
 							<Button className="my-1 btn-block btn-lg" variant="secondary">Contact Client</Button>
-							<Button className="my-1 btn-block btn-lg" variant="secondary" href="/ClientRewards">View Rewards</Button>
-							<Button className="my-1 btn-block btn-lg" variant="secondary" href="/ClientSessions">Sessions</Button>
+							<Button className="my-1 btn-block btn-lg" variant="secondary" href="/t-client-rewards">View Rewards</Button>
+							<Button className="my-1 btn-block btn-lg" variant="secondary" href="/t-client-sessions">Sessions</Button>
 							<Button className="my-1 btn-block btn-lg" variant="danger">Remove Client</Button>
 						</Col>
 					</Container>

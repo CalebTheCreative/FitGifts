@@ -69,7 +69,7 @@ function Signup() {
 
                             <Form.Group as={Row} className="text-center justify-content-center">
                                 <Col xs={12}>
-                                    <Button type="submit" block>Sign Up</Button>
+                                    <Button type="submit" block href="/home-trainer">Sign Up</Button>
                                 </Col>
                             </Form.Group>
                         </Form>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Table, Col, Button } from "react-bootstrap";
-import Header from "../components/Header";
 
 function ClientRewards () {
 
@@ -21,7 +20,6 @@ function ClientRewards () {
 
     return(
         <div>
-            <Header />
             <Container className = "text-center justify-content-center">
                 <Row className = "text-center justify-content-center">
                     <h1 style={{textAlign: "center"}}>Rewards</h1>
