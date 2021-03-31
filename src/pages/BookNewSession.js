@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Table, Col, Button} from "react-bootstrap";
-import Header from "../components/Header";
 
 function BookNewSession () {
     
@@ -18,7 +17,6 @@ function BookNewSession () {
 
     return(
         <div>
-            <Header />
             <Container className = "text-center justify-content-center">
                 <Row className = "text-center justify-content-center">
                     <h1 style={{textAlign: "center"}}>Book New Session</h1>

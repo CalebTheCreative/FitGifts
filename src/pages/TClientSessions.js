@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Table, Col, Button } from "react-bootstrap";
-import Header from "../components/Header";
 
 function TClientSessions() {
 
@@ -21,7 +20,6 @@ function TClientSessions() {
 
     return (
         <div>
-            <Header />
             <Container className="text-center justify-content-center">
                 <Row className="text-center justify-content-center">
                     <h1 style={{ textAlign: "center" }}>Sessions</h1>
@@ -101,7 +99,7 @@ function TClientSessions() {
 
                 <Row className="text-center justify-content-center">
                     <Col xs={6}>
-                        <Button block hover size="lg" variant="success">Done</Button>
+                        <Button block hover size="lg" variant="success" href="/home-trainer">Done</Button>
                     </Col>
                 </Row>
             </Container>

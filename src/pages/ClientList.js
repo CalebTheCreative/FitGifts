@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Col, Container, Row, ListGroup } from 'react-bootstrap';
-import Header from '../components/Header';
 
 function ClientList() {
 
@@ -14,10 +13,8 @@ function ClientList() {
     //  - Prop for:
     //      - Client's name             		(Used in list group buttons)
 
-
 	return (
 		<div>
-			<Header />
 			<Container className="text-center justify-content-center">
 				<Row className = "text-center justify-content-center">
 					<Col xs={6}>
@@ -33,7 +30,7 @@ function ClientList() {
                             <ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block disabled>Alex</Button></ListGroup.Item>
 							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block disabled>Bobby</Button></ListGroup.Item>
 							{/* Clickable Sample */}
-							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block href="/ClientProfile">Daniel</Button></ListGroup.Item>
+							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block href="/client-profile">Daniel</Button></ListGroup.Item>
 							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block disabled>Frank</Button></ListGroup.Item>
 							<ListGroup.Item> {/* Sample */} <Button variant="secondary" size="lg" block disabled>Luke</Button></ListGroup.Item>
                         </ListGroup>
@@ -42,7 +39,7 @@ function ClientList() {
 
 				<Row className="text-center justify-content-center">
 					<Col xs={6}>
-						<Button striped bordered hover variant="dark" className="btn-block mt-2">
+						<Button striped bordered hover variant="dark" className="btn-block mt-2" href="/add-client">
 							Add New Client
 						</Button>
 					</Col>

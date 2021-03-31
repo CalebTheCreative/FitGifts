@@ -1,8 +1,5 @@
 import React from "react";
 import { Container, Row, Table, Col, Button } from "react-bootstrap";
-import Header from "../components/Header";
-
-
 
 function ClientHome () {
 
@@ -19,10 +16,8 @@ function ClientHome () {
     //      - Client's Rewards                  (Used for progress bar)
     //      - Trainer's phone number            (Used in 'Contact Trainer' button)
 
-    
     return(
         <div>
-            <Header />
             <Container className = "text-center justify-content-center">
                 <Row className = "text-center justify-content-center">
                     <h1 style={{textAlign: "center"}}>Welcome</h1><span><h1>&nbsp;Daniel</h1></span>
@@ -70,8 +65,8 @@ function ClientHome () {
                 <Row className = "text-center justify-content-center mt-2">
                     <Container className="text-center justify-content-center">
                         <Col md={{ span: 6, offset: 3 }} className="text-center justify-content-center">
-                            <Button className="my-1 btn-block btn-lg" variant="secondary" href="/ClientRewards">Rewards</Button>
-                            <Button className="my-1 btn-block btn-lg" variant="secondary" href="/ClientSessions">Sessions</Button>
+                            <Button className="my-1 btn-block btn-lg" variant="secondary" href="/client-rewards">Rewards</Button>
+                            <Button className="my-1 btn-block btn-lg" variant="secondary" href="/client-sessions">Sessions</Button>
                             <Button className="my-1 btn-block btn-lg" variant="secondary">Contact Trainer</Button>
                             <Button className="my-1 btn-block btn-lg" variant="secondary">Logout</Button>
                         </Col>
