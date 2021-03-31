@@ -7,13 +7,13 @@ router.post('/', (req, res) => {
 	console.log('user signup');
 
 	const { username, password } = req.body;
-	// Validation
+	// ADD VALIDATION
 	User.findOne({ username: username }, (err, user) => {
 		if (err) {
-			console.log('error: ', err);
+			console.log('User.js post error: ', err);
 		} else if (user) {
 			res.json({
-				error: `Username already exists: ${username}`,
+				error: `Sorry, already a user with the username: ${username}`,
 			});
 		} else {
 			const newUser = new User({
