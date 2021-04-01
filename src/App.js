@@ -24,7 +24,7 @@ function App() {
 			<div>
 				<Header />	
 				<Switch>
-					{/* <Route exact path="/add-client">
+					<Route exact path="/add-client">
 						<AddClient />
 					</Route>
 					<Route exact path="/add-trainer">
@@ -47,14 +47,14 @@ function App() {
 					</Route>
 					<Route exact path="/client-sessions">
 						<ClientSessions />
-					</Route> */}
+					</Route>
 					<Route exact path={["/", "/login"]}>
 						<Login />	
 					</Route>
 					<Route exact path="/signup">
 						<Signup />
 					</Route>
-					{/* <Route exact path="/t-client-rewards">
+					<Route exact path="/t-client-rewards">
 						<TClientRewards />
 					</Route>
 					<Route exact path="/t-client-sessions">
@@ -65,7 +65,7 @@ function App() {
 					</Route>
 					<Route exact path="/trainer-sessions">
 						<TrainerSessions />
-					</Route> */}
+					</Route>
 				</Switch>
 			</div>
 		</Router>
