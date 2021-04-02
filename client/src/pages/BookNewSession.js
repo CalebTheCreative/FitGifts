@@ -21,7 +21,7 @@ function BookNewSession () {
                 <Row className = "text-center justify-content-center">
                     <h1 style={{textAlign: "center"}}>Book New Session</h1>
                 </Row>
-                <Row flex className = "text-center justify-content-center">
+                <Row className = "text-center justify-content-center">
                     <Col xs={4}>
                         <Table bordered>
                             <tbody>
