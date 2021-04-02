@@ -30,7 +30,7 @@ function ClientSessions () {
                                 </tr>
                             </tbody>
                         </Table>
-                        <Button variant="success" className="btn-lg btn-block mt-0" href="/BookNewSession">Book a new session</Button>
+                        <Button variant="success" className="btn-lg btn-block mt-0" href="/book-new-session">Book a new session</Button>
                     </Col>
                 </Row>
 

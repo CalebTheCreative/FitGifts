@@ -23,7 +23,7 @@ function ClientHome () {
                 <Row className = "text-center justify-content-center">
                     <h1 style={{textAlign: "center"}}>Welcome</h1><span><h1>&nbsp;Daniel</h1></span>
                 </Row>
-                <Row flex className = "text-center justify-content-center">
+                <Row className = "text-center justify-content-center">
                     <Col xs={4}>
                         <Table bordered>
                             <tbody>
@@ -44,7 +44,7 @@ function ClientHome () {
                     </Col>
                 </Row>
 
-                <Row flex className = "text-center justify-content-center">
+                <Row className = "text-center justify-content-center">
                     <h2 className="text-center">Progress to Next Reward:</h2>
                 </Row>
                 

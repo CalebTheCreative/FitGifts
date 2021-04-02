@@ -25,7 +25,7 @@ function ClientRewards () {
                     <h1 style={{textAlign: "center"}}>Rewards</h1>
                 </Row>
 
-                <Row flex className = "text-center justify-content-center">
+                <Row className = "text-center justify-content-center">
                     <Col xs={6}>
                         <Table bordered>
                             <tbody>
@@ -43,7 +43,7 @@ function ClientRewards () {
                 </Row>
                 <br />
 
-                <Row flex className = "text-center justify-content-center">
+                <Row className = "text-center justify-content-center">
                     <h2 className="text-center">Progress to Next Reward:</h2>
                 </Row>
                 
@@ -62,7 +62,7 @@ function ClientRewards () {
                 </Row>
                 <br />
                 
-                <Row flex className = "justify-content-center">
+                <Row className = "justify-content-center">
                     <h4 className="text-left">5 points<span> (Achieved) </span></h4><br />
                 </Row>
                 <Row className = "text-center justify-content-center">
@@ -71,7 +71,7 @@ function ClientRewards () {
                     </Col>
                 </Row>
 
-                <Row flex className = "justify-content-center">
+                <Row className = "justify-content-center">
                     <h4 className="text-left">10 points<span></span></h4><br />
                 </Row>
                 <Row className = "text-center justify-content-center">
@@ -80,7 +80,7 @@ function ClientRewards () {
                     </Col>
                 </Row>
 
-                <Row flex className = "justify-content-center">
+                <Row className = "justify-content-center">
                     <h4 className="text-left">25 points<span></span></h4><br />
                 </Row>
                 <Row className = "text-center justify-content-center">

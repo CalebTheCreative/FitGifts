@@ -21,10 +21,10 @@ function TrainerHome () {
                 <Row className = "text-center justify-content-center">
                     <h1 style={{textAlign: "center"}}>Welcome <span>Xavier</span></h1>
                 </Row>
-                <Row flex className = "text-center justify-content-center">
+                <Row className = "text-center justify-content-center">
                     <h2 className="text-center">You have <b><span className="text-danger">4</span></b> sessions booked for today!</h2>
                 </Row>
-                <Row flex className = "text-center justify-content-center">
+                <Row className = "text-center justify-content-center">
                     <h2 className="text-center d-none">You don't have any sessions booked for today</h2>
                 </Row>
                 

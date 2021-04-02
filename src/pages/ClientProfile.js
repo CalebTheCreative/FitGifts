@@ -20,7 +20,7 @@ function ClientProfile() {
 	return (
 		<div>
 			<Container className="text-center justify-content-center">
-				<Row flex className="text-center justify-content-center">
+				<Row className="text-center justify-content-center">
 					<Col xs={6}>
 						<Table bordered>
 							<tbody>
@@ -37,7 +37,7 @@ function ClientProfile() {
 					</Col>
 				</Row>
 
-				<Row flex className="text-center justify-content-center">
+				<Row className="text-center justify-content-center">
 					<h2 className="text-center">Progress to Next Reward:</h2>
 				</Row>
 
