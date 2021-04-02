@@ -24,7 +24,7 @@ function TClientSessions() {
                 <Row className="text-center justify-content-center">
                     <h1 style={{ textAlign: "center" }}>Sessions</h1>
                 </Row>
-                <Row flex className="text-center justify-content-center">
+                <Row className="text-center justify-content-center">
                     <Col xs={6}>
                         <Table bordered striped hover>
                             <tbody>
