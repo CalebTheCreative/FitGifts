@@ -1,9 +1,9 @@
 const router = require('express').Router();
-// const workoutRoutes = require("./workoutapi");
+// const rewardRoutes = require("./rewardapi");
 const userRoutes = require('./userapi');
 
 // routes
-// router.use('/workouts', workouts);
+// router.use('/rewards', rewardRoutes);
 router.use('/user', userRoutes);
 
 module.exports = router;

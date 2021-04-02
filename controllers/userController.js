@@ -49,4 +49,6 @@ module.exports = {
 			id: req.user.id,
 		});
 	},
+
+	// Need to define rewards controller
 };
