@@ -1,28 +1,27 @@
 import './App.css';
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import AddClient from "./pages/AddClient";
-import AddTrainer from "./pages/AddTrainer";
-import BookNewSession from "./pages/BookNewSession";
-import ClientHome from "./pages/ClientHome";
-import ClientList from "./pages/ClientList";
-import ClientProfile from "./pages/ClientProfile";
-import ClientRewards from "./pages/ClientRewards";
-import ClientSessions from "./pages/ClientSessions";
-import Header from "./components/Header";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import TClientRewards from "./pages/TClientRewards";
-import TClientSessions from "./pages/TClientSessions";
-import TrainerHome from "./pages/TrainerHome";
-import TrainerSessions from "./pages/TrainerSessions";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AddClient from './pages/AddClient';
+import AddTrainer from './pages/AddTrainer';
+import BookNewSession from './pages/BookNewSession';
+import ClientHome from './pages/ClientHome';
+import ClientList from './pages/ClientList';
+import ClientProfile from './pages/ClientProfile';
+import ClientRewards from './pages/ClientRewards';
+import ClientSessions from './pages/ClientSessions';
+import Header from './components/Header';
+import Login from './pages/Login';
+import Signup from './components/SignUp/signup';
+import TClientRewards from './pages/TClientRewards';
+import TClientSessions from './pages/TClientSessions';
+import TrainerHome from './pages/TrainerHome';
+import TrainerSessions from './pages/TrainerSessions';
 
 function App() {
 	return (
-		
 		<Router>
 			<div>
-				<Header />	
+				<Header />
 				<Switch>
 					<Route exact path="/add-client">
 						<AddClient />
@@ -37,7 +36,7 @@ function App() {
 						<ClientHome />
 					</Route>
 					<Route exact path="/client-list">
-						<ClientList />	
+						<ClientList />
 					</Route>
 					<Route exact path="/client-profile">
 						<ClientProfile />
@@ -48,8 +47,8 @@ function App() {
 					<Route exact path="/client-sessions">
 						<ClientSessions />
 					</Route>
-					<Route exact path={["/", "/login"]}>
-						<Login />	
+					<Route exact path={['/', '/login']}>
+						<Login />
 					</Route>
 					<Route exact path="/signup">
 						<Signup />
