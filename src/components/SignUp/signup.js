@@ -1,17 +1,32 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Col, Container, Form, Row, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
-import { Button } from 'bootstrap';
+import API from '../../utils/API';
+import { Col, Container, Form, Row, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 
 function SignUp() {
 	const [username, setUsername] = useState();
 	const [password, setPassword] = useState();
 
-	const handleSubmit = (e) => {
+	function handleSubmit(e) {
 		e.preventDefault();
+		console.log('signup-up-form, username: ');
 		console.log('username is ' + username);
 		console.log('password is ' + password);
-	};
+
+		API.signup({
+			username: username,
+			password: password,
+		})
+			.then((response) => {
+				if (response.data) {
+					alert('Sign Up Successful');
+					window.location.href = '/';
+				}
+			})
+			.catch((error) => {
+				console.log('Error: ', error);
+			});
+	}
 
 	return (
 		<div>
@@ -38,7 +53,7 @@ function SignUp() {
 
 				<Row className="text-center justify-content-center">
 					<Col xs={6}>
-						<Form onSubmit={handleSubmit}>
+						<Form>
 							<Form.Group
 								as={Row}
 								controlId="formHorizontalFirst"
@@ -101,7 +116,7 @@ function SignUp() {
 
 							<Form.Group as={Row} className="text-center justify-content-center">
 								<Col xs={12}>
-									<Button type="submit" block href="/home-trainer">
+									<Button type="submit" onSubmit={handleSubmit} block href="/home-trainer">
 										Sign Up
 									</Button>
 								</Col>
