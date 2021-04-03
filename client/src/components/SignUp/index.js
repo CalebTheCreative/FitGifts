@@ -81,9 +81,9 @@ function SignUp() {
 							>
 								<Col xs={12}>
 									<Form.Control
-										type="username"
+										type="email"
 										placeholder="Email"
-										name="username"
+										name="email"
 										onChange={(e) => setEmail(e.target.value)}
 									/>
 								</Col>
@@ -116,7 +116,7 @@ function SignUp() {
 
 							<Form.Group as={Row} className="text-center justify-content-center">
 								<Col xs={12}>
-									<Button type="submit" onSubmit={handleSubmit} block href="/home-trainer">
+									<Button type="submit" onSubmit={handleSubmit} block href="/Login">
 										Sign Up
 									</Button>
 								</Col>

@@ -4,23 +4,48 @@ const bcrypt = require('bcryptjs');
 
 //User Schema
 const UserSchema = new Schema({
+	_id: {
+		type: Schema.Types.ObjectId,
+	},
+	firstName: {
+		type: String,
+		required: 'Please enter your first name.',
+	},
+	lastName: {
+		type: String,
+		required: 'Please enter your last name.',
+	},
+	phoneNumber: {
+		type: Number,
+		required: 'please enter a phone number.',
+	},
 	email: {
 		type: String,
-		required: true,
+		required: 'Please enter a valid email.',
 		unique: true,
 	},
 	password: {
 		type: String,
-		required: true,
+		required: 'Please enter a secure password.',
 	},
+	is_Trainer: {
+		type: Boolean,
+		default: null,
+	},
+	rewardsPts: {
+		type: Number,
+		required: 'Please enter a value for rewards.',
+	},
+	rewards: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'Reward',
+		},
+	],
 	register_date: {
 		type: Date,
 		default: Date.now,
 	},
-	// is_Trainer: {
-	// 	type: Boolean,
-	// 	default: null,
-	// },
 });
 
 UserSchema.pre('save', function (next) {

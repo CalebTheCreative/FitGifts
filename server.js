@@ -1,23 +1,23 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const session = require('express-session');
 const dbConnection = require('./database');
+const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 // Route requires
 const user = require('./routes/user');
 
 // MIDDLEWARE
 app.use(morgan('dev'));
-app.use(
-	bodyParser.urlencoded({
-		extended: false,
-	})
-);
-app.use(bodyParser.json());
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static('public'));
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/fitgifts', { useNewUrlParser: true });
 
 // Sessions
 app.use(
