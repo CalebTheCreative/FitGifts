@@ -4,17 +4,17 @@ import API from '../../utils/API';
 import { Col, Container, Form, Row, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 
 function SignUp() {
-	const [username, setUsername] = useState();
-	const [password, setPassword] = useState();
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		console.log('signup-up-form, username: ');
-		console.log('username is ' + username);
+		console.log('signup-up-form, email: ');
+		console.log('email is ' + email);
 		console.log('password is ' + password);
 
 		API.signup({
-			username: username,
+			email: email,
 			password: password,
 		})
 			.then((response) => {
@@ -84,7 +84,7 @@ function SignUp() {
 										type="username"
 										placeholder="Email"
 										name="username"
-										onChange={(e) => setUsername(e.target.value)}
+										onChange={(e) => setEmail(e.target.value)}
 									/>
 								</Col>
 							</Form.Group>
