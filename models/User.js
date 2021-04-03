@@ -17,16 +17,28 @@ const UserSchema = new Schema({
 	},
 	phoneNumber: {
 		type: Number,
-		required: 'please enter a phone number.',
+		// validate: {
+		// 	validator: function (v) {
+		// 		return /\d{3}-\d{3}-\d{4}/.test(v);
+		// 	},
+		// 	message: (props) => `${props.value} is not a valid phone number!`,
+		// },
+		required: [true, 'Please enter a phone number.'],
 	},
 	email: {
 		type: String,
 		required: 'Please enter a valid email.',
 		unique: true,
+		validate: {
+			isEmail: true,
+		},
 	},
 	password: {
 		type: String,
 		required: 'Please enter a secure password.',
+		validate: {
+			min: [8, 'Password must be at least 8 characters.'],
+		},
 	},
 	is_Trainer: {
 		type: Boolean,
