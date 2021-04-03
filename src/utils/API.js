@@ -22,4 +22,13 @@ export default {
 	signup: function (userData) {
 		return axios.post('/api/user/signup', userData);
 	},
+	getReward: function () {
+		return axios.get('./api/rewards');
+	},
+
+	getRewards: function (id) {
+		return axios.get('./api/rewards/'+ id);
+	},
+
+
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Table, Col, Button } from "react-bootstrap";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 function ClientRewards () {
 
@@ -48,17 +49,9 @@ function ClientRewards () {
                 </Row>
                 
                 <Row className = "text-center justify-content-center">
-                    <Col xs={4}>
-                        <Container className="border">
-                            <Col xs={6}>
-                                <Container className="bg-success mx-0 my-2 text-success">.</Container>
-                            </Col>
-                            <Col></Col>
-                        </Container>
-                    </Col>
-                    <Col xs={2}>
-                        <h4>50%</h4>
-                    </Col>
+                    <Col xs={5}>
+						<ProgressBar completed={50} bgcolor="#ff5000" height="25px" />
+					</Col>
                 </Row>
                 <br />
                 
