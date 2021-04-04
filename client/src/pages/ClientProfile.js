@@ -16,7 +16,8 @@ function ClientProfile() {
     //      - Client's rewards points           (Used in table and progress bar)
     //      - Client's Rewards                  (Used for progress bar)
     //      - Client's phone number            (Used in 'Contact Client' button)
-	
+
+
 	return (
 		<div>
 			<Container className="text-center justify-content-center">

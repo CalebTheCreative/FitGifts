@@ -1,9 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
-const session = require('express-session');
-const dbConnection = require('./database');
+// const session = require('express-session');
+// const dbConnection = require('./database');
 const mongoose = require('mongoose');
-const MongoStore = require('connect-mongo')(session);
+// const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,14 +20,14 @@ app.use(express.static('public'));
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/fitgifts', { useNewUrlParser: true });
 
 // Sessions
-app.use(
-	session({
-		secret: 'count-down-city', //pick a random string to make the hash that is generated secure
-		store: new MongoStore({ mongooseConnection: dbConnection }),
-		resave: false, //required
-		saveUninitialized: false, //required
-	})
-);
+// app.use(
+// 	session({
+// 		secret: 'count-down-city', //pick a random string to make the hash that is generated secure
+// 		store: new MongoStore({ mongooseConnection: dbConnection }),
+// 		resave: false, //required
+// 		saveUninitialized: false, //required
+// 	})
+// );
 
 // Passport
 app.use(passport.initialize());

@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddClient from './pages/AddClient';
+import AddReward from './pages/AddReward';
 import AddTrainer from './pages/AddTrainer';
 import BookNewSession from './pages/BookNewSession';
 import ClientHome from './pages/ClientHome';
@@ -16,6 +17,7 @@ import TClientRewards from './pages/TClientRewards';
 import TClientSessions from './pages/TClientSessions';
 import TrainerHome from './pages/TrainerHome';
 import TrainerSessions from './pages/TrainerSessions';
+import TRewards from "./pages/TRewards";
 
 function App() {
 	return (
@@ -25,6 +27,9 @@ function App() {
 				<Switch>
 					<Route exact path="/add-client">
 						<AddClient />
+					</Route>
+					<Route exact path="/add-reward">
+						<AddReward />
 					</Route>
 					<Route exact path="/add-trainer">
 						<AddTrainer />
@@ -64,6 +69,9 @@ function App() {
 					</Route>
 					<Route exact path="/trainer-sessions">
 						<TrainerSessions />
+					</Route>
+					<Route exact path="/trewards">
+						<TRewards />
 					</Route>
 				</Switch>
 			</div>

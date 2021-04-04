@@ -32,6 +32,7 @@ function TrainerHome () {
                     <Col xs={6} className="text-center justify-content-center">
                         <Button className="my-2 btn-block btn-lg" variant="secondary" href="/trainer-sessions">Sessions</Button>
                         <Button className="my-2 btn-block btn-lg" variant="secondary" href="/client-list">Clients</Button>
+                        <Button className="my-2 btn-block btn-lg" variant="secondary" href="/trewards">Rewards</Button>
                         <Button className="my-2 btn-block btn-lg" variant="outline-secondary">Logout</Button>
                     </Col>
                 </Row>
