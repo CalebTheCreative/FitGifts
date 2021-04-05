@@ -10,6 +10,13 @@ function TRewards() {
 
                 <br />
 
+
+                <Row className="text-center justify-content-center">
+                    <Col xs={6}>
+                        <Button block href="/add-reward" className="btn-lg"><b>Add</b></Button>
+                    </Col>
+                </Row>
+                <br />
                 <Row className="text-center justify-content-center">
                     <Col xs={6}>
                         <Button variant="outline-secondary" className="btn-block btn-lg">10% off next session</Button>
@@ -31,13 +38,6 @@ function TRewards() {
                 <Row className="text-center justify-content-center">
                     <Col xs={6}>
                         <Button variant="outline-secondary" className="btn-block btn-lg">50% off next session</Button>
-                    </Col>
-                </Row>
-                <br />
-
-                <Row className="text-center justify-content-center">
-                    <Col xs={6}>
-                        <Button block href="/add-reward">Add Reward</Button>
                     </Col>
                 </Row>
                 <br />
