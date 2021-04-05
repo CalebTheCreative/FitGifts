@@ -17,7 +17,7 @@ import TClientRewards from './pages/TClientRewards';
 import TClientSessions from './pages/TClientSessions';
 import TrainerHome from './pages/TrainerHome';
 import TrainerSessions from './pages/TrainerSessions';
-import TRewards from "./pages/TRewards";
+import TRewards from './pages/TRewards';
 
 function App() {
 	return (
