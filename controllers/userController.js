@@ -2,7 +2,7 @@ const db = require('../models');
 
 // Defining methods for the userController
 module.exports = {
-	findOne: function (req, res) {
+	findAll: function (req, res) {
 		db.User.find(req.query)
 			.sort({ date: -1 })
 			.then((dbModel) => res.json(dbModel))
@@ -31,12 +31,12 @@ module.exports = {
 	},
 
 	signup: (req, res) => {
-		const { username, email, password, register_date } = req.body;
+		const { email, password, firstName, lastName } = req.body;
 		db.User.create({
-			username: username,
 			email: email,
 			password: password,
-			register_date: register_date,
+			firstName: firstName,
+			lastName: lastName,
 		}).then((result) => {
 			console.log(result);
 			return res.json(result);
