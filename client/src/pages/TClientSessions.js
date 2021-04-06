@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Table, Col, Button } from "react-bootstrap";
+import Sessions from "../components/Sessions";
 
 function TClientSessions() {
 
@@ -37,12 +38,9 @@ function TClientSessions() {
                     </Col>
                 </Row>
 
-                <Row className="text-center justify-content-center">
-                    <Col xs={6}>
-                        <h3>Today</h3>
-                    </Col>
-                </Row>
-                <Row className="text-center justify-content-center">
+                <Sessions />
+
+                {/* <Row className="text-center justify-content-center">
                     <Col xs={6}>
                         <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                             12:15 pm <span>with </span><span>12:15 pm</span>
@@ -73,48 +71,9 @@ function TClientSessions() {
                             3:15 pm <span>with </span><span>12:15 pm</span>
                         </Button>
                     </Col>
-                </Row>
+                </Row> */}
                 <br />
 
-                <Row className="text-center justify-content-center">
-                    <Col xs={6}>
-                        <h3>This Week</h3>
-                    </Col>
-                </Row>
-                <Row className="text-center justify-content-center">
-                    <Col xs={6}>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                            Monday <span>at </span><span>12:15 pm</span>
-                        </Button>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                            Wednesday <span>at </span><span>1:45 pm</span>
-                        </Button>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                            Friday <span>at </span><span>12:15 pm</span>
-                        </Button>
-                    </Col>
-                </Row>
-                <br />
-
-                <Row className="text-center justify-content-center">
-                    <Col xs={6}>
-                        <h3>Next Week</h3>
-                    </Col>
-                </Row>
-                <Row className="text-center justify-content-center">
-                    <Col xs={6}>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                            Monday <span>at </span><span>12:15 pm</span>
-                        </Button>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                            Wednesday <span>at </span><span>1:45 pm</span>
-                        </Button>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                            Friday <span>at </span><span>12:15 pm</span>
-                        </Button>
-                    </Col>
-                </Row>
-                <br />
 
                 <Row className="text-center justify-content-center">
                     <Col xs={6}>

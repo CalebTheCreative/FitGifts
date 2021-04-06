@@ -1,0 +1,31 @@
+#t-home-banner1 {
+    background-color: white;
+}
+
+.session-bg {
+    position:relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.secCont {
+    position: absolute;
+    color: white;
+    left: 50%;
+    transform: translate(-50%);  
+}
+
+.sec-text-block {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+#secLogo {
+    width: 20%;
+    height: auto;
+}

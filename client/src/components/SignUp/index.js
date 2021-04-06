@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import API from '../../utils/API';
-import { Col, Container, Form, Row, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Col, Image, Container, Form, Row, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import "./style.css";
 
 function SignUp() {
 	const [email, setEmail] = useState('');
@@ -39,123 +40,128 @@ function SignUp() {
 
 	return (
 		<div>
-			<Container className="text-center justify-content-center">
-				<Row className="text-center justify-content-center">
-					<h1 style={{ textAlign: 'center' }}>FITGIFTS</h1>
-				</Row>
-				<Row className="text-center justify-content-center">
-					<h3>SIGN UP</h3>
-				</Row>
-				<br />
+			<Image src="/images/background/lift-1.jpg" className="loginBG" />
+			<Container className="text-center justify-content-center cred-text-block">
+				<Container className="credCont">
+					<Row className="text-center justify-content-center">
+						<Image src="/images/logos/fg-logo-scd-w.png" id="credLogo" />
+					</Row>
+					<br />
 
-				<Row className="text-center justify-content-center">
-					<Col xs={8} className="text-center justify-content-center">
-						<h6>Account type:&nbsp;</h6>
+					<Row className="text-center justify-content-center">
+						<Col xs={8} className="text-center justify-content-center">
+							<h6>Account type:&nbsp;</h6>
+							<span>
+								<ToggleButtonGroup type="radio" name="options" defaultValue={1} className="mb-2">
+									{/* need to add isTrainer validation */}
+									<ToggleButton value={1}>Client</ToggleButton>
+									<ToggleButton value={2}>Trainer</ToggleButton>
+								</ToggleButtonGroup>
+							</span>
+						</Col>
+					</Row>
+
+					<Row className="text-center justify-content-center">
+						<Col xs={6}>
+							<Form>
+								<Form.Group
+									as={Row}
+									controlId="formHorizontalFirst"
+									className="text-center justify-content-center"
+								>
+									<Col xs={12}>
+										<Form.Control
+											type="input"
+											placeholder="First Name"
+											name="firstName"
+											onChange={(e) => setFirstName(e.target.value)}
+											className="bg-transparent text-white form-rounded"
+										/>
+									</Col>
+								</Form.Group>
+
+								<Form.Group
+									as={Row}
+									controlId="formHorizontalLast"
+									className="text-center justify-content-center"
+								>
+									<Col xs={12}>
+										<Form.Control
+											type="input"
+											placeholder="Last Name"
+											name="lastName"
+											onChange={(e) => setLastName(e.target.value)}
+											className="bg-transparent text-white form-rounded"
+										/>
+									</Col>
+								</Form.Group>
+
+								<Form.Group
+									as={Row}
+									controlId="formHorizontalEmail"
+									className="text-center justify-content-center"
+								>
+									<Col xs={12}>
+										<Form.Control
+											type="email"
+											placeholder="Email"
+											name="email"
+											onChange={(e) => setEmail(e.target.value)}
+											className="bg-transparent text-white form-rounded"
+										/>
+									</Col>
+								</Form.Group>
+
+								<Form.Group
+									as={Row}
+									controlId="formHorizontalPhone"
+									className="text-center justify-content-center"
+								>
+									<Col xs={12}>
+										<Form.Control
+											type="tel"
+											placeholder="Phone Number"
+											name="phoneNumber"
+											onChange={(e) => setPhoneNumber(e.target.value)}
+											className="bg-transparent text-white form-rounded"
+										/>
+									</Col>
+								</Form.Group>
+
+								<Form.Group
+									as={Row}
+									controlId="formHorizontalPassword"
+									className="text-center justify-content-center"
+								>
+									<Col xs={12}>
+										<Form.Control
+											type="password"
+											placeholder="Password"
+											name="password"
+											onChange={(e) => setPassword(e.target.value)}
+											className="bg-transparent text-white form-rounded"
+										/>
+									</Col>
+								</Form.Group>
+
+								<Form.Group as={Row} className="text-center justify-content-center">
+									<Col xs={12}>
+										<Button type="submit" variant="danger" className="form-rounded" onSubmit={handleSubmit} block href="/Login">
+											<b>Sign Up</b>
+										</Button>
+									</Col>
+								</Form.Group>
+							</Form>
+						</Col>
+					</Row>
+
+					<Row className="text-center justify-content-center">
+						<p>Already have an account? </p>
 						<span>
-							<ToggleButtonGroup type="radio" name="options" defaultValue={1} className="mb-2">
-								{/* need to add isTrainer validation */}
-								<ToggleButton value={1}>Client</ToggleButton>
-								<ToggleButton value={2}>Trainer</ToggleButton>
-							</ToggleButtonGroup>
+							<a href="/login" className="text-white">&nbsp;<b>Log in here</b></a>
 						</span>
-					</Col>
-				</Row>
-
-				<Row className="text-center justify-content-center">
-					<Col xs={6}>
-						<Form>
-							<Form.Group
-								as={Row}
-								controlId="formHorizontalFirst"
-								className="text-center justify-content-center"
-							>
-								<Col xs={12}>
-									<Form.Control
-										type="input"
-										placeholder="First Name"
-										name="firstName"
-										onChange={(e) => setFirstName(e.target.value)}
-									/>
-								</Col>
-							</Form.Group>
-
-							<Form.Group
-								as={Row}
-								controlId="formHorizontalLast"
-								className="text-center justify-content-center"
-							>
-								<Col xs={12}>
-									<Form.Control
-										type="input"
-										placeholder="Last Name"
-										name="lastName"
-										onChange={(e) => setLastName(e.target.value)}
-									/>
-								</Col>
-							</Form.Group>
-
-							<Form.Group
-								as={Row}
-								controlId="formHorizontalEmail"
-								className="text-center justify-content-center"
-							>
-								<Col xs={12}>
-									<Form.Control
-										type="email"
-										placeholder="Email"
-										name="email"
-										onChange={(e) => setEmail(e.target.value)}
-									/>
-								</Col>
-							</Form.Group>
-
-							<Form.Group
-								as={Row}
-								controlId="formHorizontalPhone"
-								className="text-center justify-content-center"
-							>
-								<Col xs={12}>
-									<Form.Control
-										type="tel"
-										placeholder="Phone Number"
-										name="phoneNumber"
-										onChange={(e) => setPhoneNumber(e.target.value)}
-									/>
-								</Col>
-							</Form.Group>
-
-							<Form.Group
-								as={Row}
-								controlId="formHorizontalPassword"
-								className="text-center justify-content-center"
-							>
-								<Col xs={12}>
-									<Form.Control
-										type="password"
-										placeholder="Password"
-										name="password"
-										onChange={(e) => setPassword(e.target.value)}
-									/>
-								</Col>
-							</Form.Group>
-
-							<Form.Group as={Row} className="text-center justify-content-center">
-								<Col xs={12}>
-									<Button type="submit" onSubmit={handleSubmit} block href="/Login">
-										Sign Up
-									</Button>
-								</Col>
-							</Form.Group>
-						</Form>
-					</Col>
-				</Row>
-
-				<Row className="text-center justify-content-center">
-					<p>Already have an account? </p>
-					<span>
-						<a href="/login">&nbsp;Log in here</a>
-					</span>
-				</Row>
+					</Row>
+				</Container>
 			</Container>
 		</div>
 	);

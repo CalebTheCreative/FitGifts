@@ -28,7 +28,6 @@ function AddTrainer() {
                             <Form.Group controlId="trainerCode">
                                 <Form.Control type="text" placeholder="Enter Code Here" />
                             </Form.Group>
-
                             <Button variant="secondary" type="submit">
                                 Submit
                             </Button>
