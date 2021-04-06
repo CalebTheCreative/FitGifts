@@ -3,6 +3,14 @@ import axios from 'axios';
 export default {
 	//     USER ROUTES
 
+	findUser: function (email) {
+		return axios.get('/api/use/find', {
+			params: {
+				email: email.email,
+			},
+		});
+	},
+
 	getUsers: function () {
 		return axios.get('/api/user');
 	},
@@ -15,11 +23,17 @@ export default {
 		return axios.delete('/api/user/' + id);
 	},
 	// Log the user in
-	login: function (email) {
-		return axios.post('/api/user/login', { email: email });
+	login: function (email, password) {
+		return axios.post('/api/user/login', { email: email, password: password });
 	},
 	// New user registration
 	signup: function (userData) {
+		console.log('API singup', userData);
 		return axios.post('/api/user/signup', userData);
+	},
+
+	// Logout user
+	logout: function () {
+		return axios.post('/api/use/logout');
 	},
 };

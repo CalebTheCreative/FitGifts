@@ -2,22 +2,21 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import API from '../../utils/API';
 import { Col, Image, Container, Form, Row, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
-import "./style.css";
+import './style.css';
 
 function SignUp() {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [firstName, setFirstName] = useState('');
-	const [lastName, setLastName] = useState('');
-	const [phoneNumber, setPhoneNumber] = useState('');
+	const [email, setEmail] = useState([]);
+	const [password, setPassword] = useState([]);
+	const [firstName, setFirstName] = useState([]);
+	const [lastName, setLastName] = useState([]);
+	const [phoneNumber, setPhoneNumber] = useState([]);
 	// const [isTrainer, setIsTrainer] = useState();
 
 	function handleSubmit(e) {
 		e.preventDefault();
 		console.log('signup-up-form, email: ');
 		console.log('email is ' + email);
-		console.log('password is ' + password);
-		console.log('Name: ' + firstName + lastName);
+		console.log('Name: ' + firstName + ' ' + lastName);
 		console.log('Phone Number: ' + phoneNumber);
 
 		API.signup({
@@ -28,6 +27,7 @@ function SignUp() {
 			phoneNumber: phoneNumber,
 		})
 			.then((response) => {
+				console.log(response);
 				if (response.data) {
 					alert('Sign Up Successful');
 					window.location.href = '/';
@@ -146,7 +146,14 @@ function SignUp() {
 
 								<Form.Group as={Row} className="text-center justify-content-center">
 									<Col xs={12}>
-										<Button type="submit" variant="danger" className="form-rounded" onSubmit={handleSubmit} block href="/Login">
+										<Button
+											type="submit"
+											variant="danger"
+											className="form-rounded"
+											onClick={handleSubmit}
+											block
+											href="/Login"
+										>
 											<b>Sign Up</b>
 										</Button>
 									</Col>
@@ -158,7 +165,9 @@ function SignUp() {
 					<Row className="text-center justify-content-center">
 						<p>Already have an account? </p>
 						<span>
-							<a href="/login" className="text-white">&nbsp;<b>Log in here</b></a>
+							<a href="/login" className="text-white">
+								&nbsp;<b>Log in here</b>
+							</a>
 						</span>
 					</Row>
 				</Container>
