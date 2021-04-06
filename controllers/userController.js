@@ -13,6 +13,12 @@ module.exports = {
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.status(422).json(err));
 	},
+	findOne: function (req, res) {
+		console.log('REQUEST: ******************\n', req.query);
+		db.User.findOne({ email: req.query.email })
+			.then((dbModel) => res.json(dbModel.username))
+			.catch((err) => res.status(422) / json(err));
+	},
 	create: function (req, res) {
 		db.User.create(req.body)
 			.then((dbModel) => res.json(dbModel))
@@ -31,14 +37,16 @@ module.exports = {
 	},
 
 	signup: (req, res) => {
-		const { email, password, firstName, lastName } = req.body;
+		const { email, password, firstName, lastName, phoneNumber } = req.body;
+		console.log('signup', req.body);
 		db.User.create({
 			email: email,
 			password: password,
 			firstName: firstName,
 			lastName: lastName,
+			phoneNumber: phoneNumber,
 		}).then((result) => {
-			console.log(result);
+			console.log('signup', result);
 			return res.json(result);
 		});
 	},
@@ -48,6 +56,10 @@ module.exports = {
 			email: req.user.email,
 			id: req.user.id,
 		});
+	},
+
+	logout: (req, res) => {
+		req.logout();
 	},
 
 	// Need to define rewards controller
