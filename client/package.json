@@ -2,7 +2,7 @@
   "name": "fitgifts",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@ramonak/react-progress-bar": "^2.1.8",
     "@testing-library/jest-dom": "^5.11.10",

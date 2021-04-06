@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
-const passport = require('./passport');
+const passport = require('./config/passport');
 const app = express();
 const PORT = process.env.PORT || 3000;
 // Route requires
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/public'));
 }
 
-Sessions;
+// Sessions
 app.use(
 	session({
 		secret: 'count-down-city', //pick a random string to make the hash that is generated secure

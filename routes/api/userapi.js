@@ -3,7 +3,7 @@ const user = require('../../controllers/userController');
 const passport = require('../../config/passport');
 
 // Matches with "/api/user"
-router.route('/').get(user.findOne).post(user.create);
+router.route('/find').get(user.findAll).post(user.create);
 
 // Matches with "/api/user/:id"
 router.route('/:id').get(user.findById).put(user.update).delete(user.remove);

@@ -17,12 +17,12 @@ const UserSchema = new Schema({
 	},
 	phoneNumber: {
 		type: Number,
-		// validate: {
-		// 	validator: function (v) {
-		// 		return /\d{3}-\d{3}-\d{4}/.test(v);
-		// 	},
-		// 	message: (props) => `${props.value} is not a valid phone number!`,
-		// },
+		validate: {
+			validator: function (v) {
+				return /\d{3}-\d{3}-\d{4}/.test(v);
+			},
+			message: (props) => `${props.value} is not a valid phone number!`,
+		},
 		required: [true, 'Please enter a phone number.'],
 	},
 	email: {
@@ -30,19 +30,22 @@ const UserSchema = new Schema({
 		required: 'Please enter a valid email.',
 		unique: true,
 		validate: {
-			isEmail: true,
+			validator: function (v) {
+				const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+				return emailRegex.test(v.text);
+			},
 		},
 	},
 	password: {
 		type: String,
 		required: 'Please enter a secure password.',
-		validate: {
-			min: [8, 'Password must be at least 8 characters.'],
-		},
+		// validate: {
+		// 	min: [8, 'Password must be at least 8 characters.'],
+		// },
 	},
 	is_Trainer: {
 		type: Boolean,
-		default: null,
+		default: false,
 	},
 	rewardsPts: {
 		type: Number,
@@ -54,10 +57,6 @@ const UserSchema = new Schema({
 			ref: 'Reward',
 		},
 	],
-	register_date: {
-		type: Date,
-		default: Date.now,
-	},
 });
 
 UserSchema.pre('save', function (next) {
