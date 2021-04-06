@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
+import Sessions from "../components/Sessions";
 
 function TrainerSessions() {
 
@@ -26,7 +27,10 @@ function TrainerSessions() {
 					<br></br>
 					{/* Will give the sessions of the current day and two days coming after */}
 					{/* Checks to see what time they are scheduled */}
-					<Row className="text-center justify-content-center">
+					
+					<Sessions />
+
+					{/* <Row className="text-center justify-content-center">
 						<Col xs={6}>
 							<h3>Today</h3>
 						</Col>
@@ -62,41 +66,9 @@ function TrainerSessions() {
                             </div>
                         </div>
 						</Col>
-					</Row>
+					</Row> */}
 					<br />
 
-					<Row className="text-center justify-content-center">
-						<Col xs={6}>
-							<h3>Tomorrow</h3>
-						</Col>
-					</Row>
-					<Row className="text-center justify-content-center">
-						<Col xs={6}>
-							<Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-								8:15 am<span>&nbsp;with&nbsp;</span><span id="sessionName">Frank</span>
-							</Button>
-							<Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-								11:45 pm<span>&nbsp;with&nbsp;</span><span id="sessionName">Luke</span>
-							</Button>
-						</Col>
-					</Row>
-					<br />
-
-					<Row className="text-center justify-content-center">
-						<Col xs={6}>
-							<h3>Today</h3>
-						</Col>
-					</Row>
-					<Row className="text-center justify-content-center">
-						<Col xs={6}>
-							<Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-								9:15 am<span>&nbsp;with&nbsp;</span><span id="sessionName">Bobby</span>
-							</Button>
-							<Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"  href="/client-profile">
-								1:45 pm<span>&nbsp;with&nbsp;</span><span id="sessionName">Daniel</span>
-							</Button>
-						</Col>
-					</Row>
 					<br />
 				</Container>
 			</div>

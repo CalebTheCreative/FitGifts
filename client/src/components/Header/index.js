@@ -12,7 +12,7 @@ function Header() {
 
     return (
 
-        <Container className = "text-center justify-content-center">
+        <Container className = "text-center justify-content-center fixed-top bg-transparent">
             <Row className="text-center justify-content-center">
                 <Col xs={2}>
                 <Button href="/client-list" className="mt-2">
