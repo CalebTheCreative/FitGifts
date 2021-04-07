@@ -37,7 +37,7 @@ module.exports = {
 	},
 
 	signup: (req, res) => {
-		const { email, password, firstName, lastName, phoneNumber } = req.body;
+		const { email, password, firstName, lastName, phoneNumber, isTrainer } = req.body;
 		console.log('signup', req.body);
 		db.User.create({
 			email: email,
@@ -45,6 +45,7 @@ module.exports = {
 			firstName: firstName,
 			lastName: lastName,
 			phoneNumber: phoneNumber,
+			isTrainer: isTrainer,
 		}).then((result) => {
 			console.log('signup', result);
 			return res.json(result);

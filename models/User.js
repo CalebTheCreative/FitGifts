@@ -43,7 +43,7 @@ const UserSchema = new Schema({
 		// 	min: [8, 'Password must be at least 8 characters.'],
 		// },
 	},
-	is_Trainer: {
+	isTrainer: {
 		type: Boolean,
 		default: false,
 	},
