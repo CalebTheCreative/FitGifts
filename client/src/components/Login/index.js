@@ -77,7 +77,7 @@ function Login() {
 									block
 									type="submit"
 									className="form-rounded"
-									onSubmit={handleLogin}
+									onClick={handleLogin}
 								>
 									<b>Log In</b>
 								</Button>
