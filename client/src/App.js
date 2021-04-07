@@ -12,6 +12,7 @@ import ClientRewards from './pages/ClientRewards';
 import ClientSessions from './pages/ClientSessions';
 import Header from './components/Header';
 import Login from './components/Login';
+import Rewards from "./pages/Rewards";
 import Signup from './components/SignUp';
 import TClientRewards from './pages/TClientRewards';
 import TClientSessions from './pages/TClientSessions';
@@ -57,6 +58,9 @@ function App() {
 					</Route>
 					<Route exact path="/signup">
 						<Signup />
+					</Route>
+					<Route exact path="/rewards">
+						<Rewards />
 					</Route>
 					<Route exact path="/t-client-rewards">
 						<TClientRewards />

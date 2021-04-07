@@ -27,13 +27,13 @@ class THome extends Component {
                             <hr />
                             <Row>
                                 <Col sm={4}>
-                                    <Button className="my-1" block href="/trainer-sessions"><i className="fas fa-calendar-check"></i> Sessions</Button>
+                                    <Button className="my-1" block href="/trainer-sessions"><i className="fas fa-calendar-check"></i><b> Sessions</b></Button>
                                 </Col>
                                 <Col sm={4}>
-                                    <Button className="my-1" block href="/client-list"><i className="fas fa-users"></i> Clients</Button>
+                                    <Button className="my-1" block href="/client-list"><i className="fas fa-users"></i><b> Clients</b></Button>
                                 </Col>
                                 <Col sm={4}>
-                                    <Button className="my-1" block href="/trewards"><i className="fas fa-gift"></i> Rewards</Button>
+                                    <Button className="my-1" block href="/trewards"><i className="fas fa-gift"></i><b> Rewards</b></Button>
                                 </Col>
                             </Row>
                         </Container>

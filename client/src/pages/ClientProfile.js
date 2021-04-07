@@ -88,16 +88,16 @@ class ClientProfile extends Component {
 
 
 								<Button className="my-1 btn-block btn-lg" variant="secondary" onClick={this.addPoint}>Add Reward Point</Button>
-                                <div class="accordion" id="accordionExample">
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingOne">
+                                <div className="accordion" id="accordionExample">
+									<div className="accordion-item">
+										<h2 className="accordion-header" id="headingOne">
 										<Button className="my-1 btn-block btn-lg accordion-button" variant="secondary" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Contact Client</Button>
 										</h2>
-										<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-											<div class="accordion-body">
+										<div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+											<div className="accordion-body">
 											<Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="tel:123-456-7890"><i className="fas fa-phone"></i>&nbsp;Call</Button>
-											<Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="sms:123-456-7890"><i class="fas fa-comment-dots"></i>&nbsp;Text</Button>
-											<Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="mailto:sample@mail.com"><i class="fas fa-envelope"></i>&nbsp;Email</Button>
+											<Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="sms:123-456-7890"><i className="fas fa-comment-dots"></i>&nbsp;Text</Button>
+											<Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="mailto:sample@mail.com"><i className="fas fa-envelope"></i>&nbsp;Email</Button>
 											</div>
 										</div>
 									</div>

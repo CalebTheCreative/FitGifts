@@ -1,0 +1,73 @@
+#c-home-banner1 {
+    margin-top: 50px;
+    background-color: white;
+}
+
+.c-session-bg {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.cbox {
+    position: relative;
+}
+
+.cbox .cbox-text {
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial,sans-serif;
+    color: #fff;
+    width: 95%; /* Set the width of the positioned div */
+}
+
+/* .c-secCont {
+    position: relative;
+    color: white;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+.c-sec-text-block {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+} */
+
+#secLogo {
+    width: 20%;
+    height: auto;
+}
+
+#rwdPtBanner {
+    font-size: 5rem;
+}
+
+.btn-outline-danger {
+    color: red !important;
+    border-color: red !important;
+}
+
+.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.active, .open>.dropdown-toggle.btn-outline-danger {
+    background-color: red !important;
+    color: white !important;
+    border-color: none !important;
+}
+
+.btn-danger {
+    background-color: red !important;
+    border-color: red !important;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+    background-color: rgb(221, 0, 0) !important;
+    color: white !important;
+    border-color: none !important;
+}
