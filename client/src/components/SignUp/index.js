@@ -3,6 +3,7 @@ import axios from 'axios';
 import API from '../../utils/API';
 import { Col, Image, Container, Form, Row, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import './style.css';
+import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 
 function SignUp() {
 	const [email, setEmail] = useState([]);
@@ -10,7 +11,7 @@ function SignUp() {
 	const [firstName, setFirstName] = useState([]);
 	const [lastName, setLastName] = useState([]);
 	const [phoneNumber, setPhoneNumber] = useState([]);
-	// const [isTrainer, setIsTrainer] = useState();
+	const [isTrainer, setIsTrainer] = useState();
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -18,6 +19,7 @@ function SignUp() {
 		console.log('email is ' + email);
 		console.log('Name: ' + firstName + ' ' + lastName);
 		console.log('Phone Number: ' + phoneNumber);
+		console.log('Trainer ' + isTrainer);
 
 		API.signup({
 			email: email,
@@ -25,6 +27,7 @@ function SignUp() {
 			lastName: lastName,
 			password: password,
 			phoneNumber: phoneNumber,
+			isTrainer: isTrainer,
 		})
 			.then((response) => {
 				console.log(response);
@@ -52,11 +55,21 @@ function SignUp() {
 						<Col xs={8} className="text-center justify-content-center">
 							<h6>Account type:&nbsp;</h6>
 							<span>
-								<ToggleButtonGroup type="radio" name="options" defaultValue={1} className="mb-2">
-									{/* need to add isTrainer validation */}
+								{/* <ToggleButtonGroup type="radio" name="options" defaultValue={1} className="mb-2">
 									<ToggleButton value={1}>Client</ToggleButton>
 									<ToggleButton value={2}>Trainer</ToggleButton>
-								</ToggleButtonGroup>
+								</ToggleButtonGroup> */}
+
+								<BootstrapSwitchButton
+									checked={false}
+									onlabel="Trainer"
+									onstyle="outline-primary"
+									offlabel="Client"
+									offstyle="outline-secondary"
+									onChange={(checked) => {
+										setIsTrainer(checked);
+									}}
+								/>
 							</span>
 						</Col>
 					</Row>
