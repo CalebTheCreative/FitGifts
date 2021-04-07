@@ -16,7 +16,7 @@ class TrainerHome extends Component {
 
     render(){
         return(
-            <Container>
+            <Container className="mt-4">
                 <THome />
             </Container>
         )

@@ -26,14 +26,14 @@ class THome extends Component {
                             </Row>
                             <hr />
                             <Row>
-                                <Col>
-                                    <Button block href="/trainer-sessions"><i class="fas fa-calendar-check"></i> Sessions</Button>
+                                <Col sm={4}>
+                                    <Button className="my-1" block href="/trainer-sessions"><i className="fas fa-calendar-check"></i> Sessions</Button>
                                 </Col>
-                                <Col>
-                                    <Button block href="/client-list"><i class="fas fa-users"></i> Clients</Button>
+                                <Col sm={4}>
+                                    <Button className="my-1" block href="/client-list"><i className="fas fa-users"></i> Clients</Button>
                                 </Col>
-                                <Col>
-                                    <Button block href="/trewards"><i class="fas fa-gift"></i> Rewards</Button>
+                                <Col sm={4}>
+                                    <Button className="my-1" block href="/trewards"><i className="fas fa-gift"></i> Rewards</Button>
                                 </Col>
                             </Row>
                         </Container>
@@ -43,7 +43,6 @@ class THome extends Component {
                         <Image src="/images/background/bell-1.png" className="session-bg" />
                         <Container className="sec-text-block">
                             <Container className="secCont">
-                                <br /><br />
                                 <h1>You have {this.state.numSessions} sessions</h1>
                                 <h1>booked for today</h1>
                                 <Button href="/trainer-sessions" variant="outline-light"><b>View Sessions</b></Button>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Table, Col, Button } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Sessions from "../components/Sessions";
 
 function BookNewSession() {
