@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Sessions from "../components/Sessions";
 
 function TrainerSessions() {

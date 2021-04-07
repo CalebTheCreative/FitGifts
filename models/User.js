@@ -4,9 +4,9 @@ const bcrypt = require('bcryptjs');
 
 //User Schema
 const UserSchema = new Schema({
-	_id: {
-		type: Schema.Types.ObjectId,
-	},
+	// _id: {
+	// 	type: Schema.Types.ObjectId,
+	// },
 	firstName: {
 		type: String,
 		required: 'Please enter your first name.',
@@ -16,25 +16,24 @@ const UserSchema = new Schema({
 		required: 'Please enter your last name.',
 	},
 	phoneNumber: {
-		type: Number,
-		validate: {
-			validator: function (v) {
-				return /\d{3}-\d{3}-\d{4}/.test(v);
-			},
-			message: (props) => `${props.value} is not a valid phone number!`,
-		},
+		type: String,
+		// validate: {
+		// 	validator: function (v) {
+		// 		return /\d{3}-\d{3}-\d{4}/.test(v);
+		// 	},
+		// 	message: (props) => `${props.value} is not a valid phone number!`,
+		// },
 		required: [true, 'Please enter a phone number.'],
 	},
 	email: {
 		type: String,
 		required: 'Please enter a valid email.',
-		unique: true,
-		validate: {
-			validator: function (v) {
-				const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-				return emailRegex.test(v.text);
-			},
-		},
+		// validate: {
+		// 	validator: function (v) {
+		// 		const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		// 		return emailRegex.test(v.text);
+		// 	},
+		// },
 		unique: true,
 	},
 	password: {
@@ -50,7 +49,7 @@ const UserSchema = new Schema({
 	},
 	rewardsPts: {
 		type: Number,
-		required: 'Please enter a value for rewards.',
+		default: 0
 	},
 	rewards: [
 		{
