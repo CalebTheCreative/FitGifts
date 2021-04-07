@@ -42,32 +42,32 @@ function TClientSessions() {
 
                 {/* <Row className="text-center justify-content-center">
                     <Col xs={6}>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                        <Button block hover variant="outline-secondary" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                             12:15 pm <span>with </span><span>12:15 pm</span>
                         </Button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div className="modal-body">
                                     <p>What would you like to do?</p>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                         <a href="mailto: sample@mail.com" button type="button" class="btn btn-primary">Email Client</a>
-                                         <a href="tel:123-456-7890" button type="button" class="btn btn-primary">Call Client</a>
-                                        <button type="button" class="btn btn-primary">Delete Session</button>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                         <a href="mailto: sample@mail.com" button type="button" className="btn btn-primary">Email Client</a>
+                                         <a href="tel:123-456-7890" button type="button" className="btn btn-primary">Call Client</a>
+                                        <button type="button" className="btn btn-primary">Delete Session</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                        <Button block hover variant="outline-secondary" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                             1:45 pm <span>with </span><span>1:45 pm</span>
                         </Button>
-                        <Button block hover variant="outline-secondary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                        <Button block hover variant="outline-secondary" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                             3:15 pm <span>with </span><span>12:15 pm</span>
                         </Button>
                     </Col>
