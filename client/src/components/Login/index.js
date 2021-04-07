@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import API from '../../utils/API';
-import "./style.css";
+import './style.css';
 
 function Login() {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState([]);
+	const [password, setPassword] = useState([]);
+	const [isTrainer, setTrainer] = useState();
 
 	function handleLogin(e) {
 		e.preventDefault();
@@ -17,11 +18,11 @@ function Login() {
 			.then((response) => {
 				if (response.status === 200) {
 					console.log(response.data);
-					// if (!isTrainer) {
-					// 	window.location.href = '/home-client';
-					// } else {
-					// 	window.location.href = '/home-trainer';
-					// }
+					if (!isTrainer) {
+						window.location.href = '/home-client';
+					} else {
+						window.location.href = '/home-trainer';
+					}
 				}
 			})
 			.catch((e) => {
@@ -39,12 +40,13 @@ function Login() {
 					</Row>
 					<br />
 
-
 					<Row className="text-center justify-content-center">
 						<Col xs={8}>
 							<Form>
 								<Form.Group as={Row} controlId="formBasicEmail">
-									<Form.Label column sm="2" ><i className="fas fa-user"></i></Form.Label>
+									<Form.Label column sm="2">
+										<i className="fas fa-user"></i>
+									</Form.Label>
 									<Col sm="10">
 										<Form.Control
 											type="email"
@@ -57,7 +59,9 @@ function Login() {
 								</Form.Group>
 
 								<Form.Group as={Row} controlId="formBasicPassword">
-									<Form.Label column sm="2"><i className="fas fa-lock"></i></Form.Label>
+									<Form.Label column sm="2">
+										<i className="fas fa-lock"></i>
+									</Form.Label>
 									<Col sm="10">
 										<Form.Control
 											type="password"
@@ -68,7 +72,13 @@ function Login() {
 										/>
 									</Col>
 								</Form.Group>
-								<Button variant="danger" block type="submit" className="form-rounded" onSubmit={handleLogin}>
+								<Button
+									variant="danger"
+									block
+									type="submit"
+									className="form-rounded"
+									onSubmit={handleLogin}
+								>
 									<b>Log In</b>
 								</Button>
 							</Form>
@@ -79,7 +89,9 @@ function Login() {
 					<Row className="text-center justify-content-center">
 						<p>Don't have an account? </p>
 						<span>
-							<a href="/signup" className="text-white">&nbsp;<b>Sign up here</b></a>
+							<a href="/signup" className="text-white">
+								&nbsp;<b>Sign up here</b>
+							</a>
 						</span>
 					</Row>
 				</Container>
