@@ -14,4 +14,7 @@ router.post('/signup', user.signup);
 // /api/user/login
 router.post('/login', passport.authenticate('local'), user.authenticate);
 
+//logout  /api/user/logout
+router.post('/logout', user.logout);
+
 module.exports = router;
