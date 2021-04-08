@@ -6,11 +6,11 @@ import './style.css';
 function Login() {
 	const [email, setEmail] = useState([]);
 	const [password, setPassword] = useState([]);
-	const [isTrainer, setTrainer] = useState();
+	// const [isTrainer, setTrainer] = useState();
 
 	function handleLogin(e) {
 		e.preventDefault();
-		console.log('login-up-form, email: ');
+		console.log('login-form, email: ');
 		console.log('email is ' + email);
 		console.log('password is ' + password);
 
@@ -18,11 +18,12 @@ function Login() {
 			.then((response) => {
 				if (response.status === 200) {
 					console.log(response.data);
-					if (!isTrainer) {
-						window.location.href = '/home-client';
-					} else {
-						window.location.href = '/home-trainer';
-					}
+					console.log(response.locals.user);
+					// if (!isTrainer) {
+					// 	window.location.href = '/home-client';
+					// } else {
+					// 	window.location.href = '/home-trainer';
+					// }
 				}
 			})
 			.catch((e) => {

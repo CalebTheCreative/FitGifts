@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 // Rewards Schema
 const RewardSchema = new Schema({
 	Rewards: {
-		RwdName: {
+		rwdName: {
 			type: String,
 		},
-		RwdVal: {
+		rwdVal: {
 			type: Number,
 		},
 		isRedeemed: {
@@ -16,11 +16,13 @@ const RewardSchema = new Schema({
 		},
 	},
 	Criteria: {
-		CritName: {
+		critName: {
 			type: String,
 		},
-		CritVal: {
+		critVal: {
 			type: Number,
 		},
 	},
 });
+
+module.exports = Reward = mongoose.model('Reward', RewardSchema);

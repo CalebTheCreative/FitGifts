@@ -53,9 +53,9 @@ module.exports = {
 	},
 
 	authenticate: (req, res) => {
+		console.log(res);
 		res.json({
 			email: req.user.email,
-			id: req.user.id,
 		});
 	},
 
