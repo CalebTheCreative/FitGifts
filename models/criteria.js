@@ -2,13 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const criteriaSchema = new Schema({
-	Criteria: {
-		critName: {
-			type: String,
-		},
-		critVal: {
-			type: Number,
-		},
+	critName: {
+		type: String,
+	},
+	critVal: {
+		type: Number,
 	},
 });
 
