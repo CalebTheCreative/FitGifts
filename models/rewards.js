@@ -15,14 +15,6 @@ const RewardSchema = new Schema({
 			default: false,
 		},
 	},
-	Criteria: {
-		critName: {
-			type: String,
-		},
-		critVal: {
-			type: Number,
-		},
-	},
 });
 
-module.exports = Reward = mongoose.model('Reward', RewardSchema);
+module.exports = Rewards = mongoose.model('Rewards', RewardSchema);

@@ -1,19 +1,27 @@
 import axios from 'axios';
 
 export default {
+	/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
+	
 	//REWARD ROUTES
 
-	findReward: function (rwdName) {
-		return axios.get('/api/reward/find', {
-			params: {
-				rwdName: rwdName.rwdName,
-			},
-		});
+	getRewards: function () {
+		return axios.get('/api/rewards');
+	},
+	// Gets the post with the given id
+	getReward: function (id) {
+		return axios.get('/api/rewards/' + id);
+	},
+	// Deletes the post with the given id
+	deleteReward: function (id) {
+		return axios.delete('/api/rewards/' + id);
+	},
+	// adds a post to the database
+	createPost: function (rewardData) {
+		return axios.post('/api/rewards', rewardData);
 	},
 
 	//     USER ROUTES
-
-	/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 
 	findUser: function (email) {
 		return axios.get('/api/user/find', {
