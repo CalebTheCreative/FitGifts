@@ -36,4 +36,21 @@ export default {
 	logout: function () {
 		return axios.post('/api/use/logout');
 	},
+// Gets all rewards
+getRewards: function() {
+    return axios.get("/api/reward");
+  },
+  // Gets the reward with the given id
+  getReward: function(id) {
+    return axios.get("/api/reward/" + id);
+  },
+  // Deletes the book with the given id
+  deleteReward: function(id) {
+    return axios.delete("/api/reward/" + id);
+  },
+  // Saves a book to the database
+  saveReward: function(rewardData) {
+    return axios.post("/api/reward", rewardData);
+  }
+
 };

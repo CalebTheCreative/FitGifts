@@ -3,7 +3,7 @@ const router = require('express').Router();
 const userRoutes = require('./userapi');
 
 // routes
-// router.use('/rewards', rewardRoutes);
+router.use('/reward', rewardRoutes);
 router.use('/user', userRoutes);
 
 module.exports = router;

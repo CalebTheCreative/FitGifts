@@ -24,3 +24,4 @@ const RewardSchema = new Schema({
 		},
 	},
 });
+module.exports = Rewards = mongoose.model('Rewards', RewardSchema);
