@@ -3,55 +3,111 @@ import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import "./style.css";
 
 class THome extends Component {
-    state={
+    state = {
         name: "Caleb",
         actNum: 12345,
         numSessions: 3
     }
 
-    render(){
-        return(
-            <div>
-                <br />
-                <br />
-                <Container className = "text-center justify-content-center">
-                    <Row>
-                        <Container id="t-home-banner1" className="px-4 py-4">
-                            <Row>
-                                <Col>
+    render() {
+        return (
+
+            <Container className="text-center justify-content-center" id="thCont">
+                <Row className="mb-3">
+                    <Container id="t-home-banner1" className="px-4 py-4">
+
+                        <Row>
+                            <Col>
                                 <h1>Hello, {this.state.name}!</h1>
                                 <p>Account Number: {this.state.actNum}</p>
                                 <Button size="small" variant="outline-secondary">Logout</Button>
-                                </Col>
-                            </Row>
-                            <hr />
-                            <Row>
-                                <Col sm={4}>
-                                    <Button className="my-1" block href="/trainer-sessions"><i className="fas fa-calendar-check"></i><b> Sessions</b></Button>
-                                </Col>
-                                <Col sm={4}>
-                                    <Button className="my-1" block href="/client-list"><i className="fas fa-users"></i><b> Clients</b></Button>
-                                </Col>
-                                <Col sm={4}>
-                                    <Button className="my-1" block href="/trewards"><i className="fas fa-gift"></i><b> Rewards</b></Button>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </Row>
-                    <br />
-                    <Row>
-                        <Image src="/images/background/bell-1.png" className="session-bg" />
-                        <Container className="sec-text-block">
-                            <Container className="secCont">
-                                <h1>You have {this.state.numSessions} sessions</h1>
-                                <h1>booked for today</h1>
-                                <Button href="/trainer-sessions" variant="outline-light"><b>View Sessions</b></Button>
-                            </Container>
-                        </Container>
-                    </Row>
+                            </Col>
+                        </Row>
 
-                </Container>
-            </div>
+                        <hr />
+
+                        <Row>
+                            <Col sm={4}>
+                                <Button className="my-1" block href="/client-list"><i className="fas fa-users"></i><b> Clients</b></Button>
+                            </Col>
+                            <Col sm={4}>
+                                <Button className="my-1" block href="/trewards"><i className="fas fa-gift"></i><b> Rewards</b></Button>
+                            </Col>
+                            <Col sm={4}>
+                                <Button className="my-1" block href="/trainer-sessions"><i className="fas fa-calendar-check"></i><b> Sessions</b></Button>
+                            </Col>
+                        </Row>
+
+                    </Container>
+                </Row>
+
+                <Row className="my-3">
+                    <Container className="justify-content-center">
+                        <Row className="text-center justify-content-center text-white">
+
+                            <Col sm={4}>
+
+                                <Row className="text-center justify-content-center text-white">
+                                    <h5>You have {this.state.numSessions} sessions booked for today</h5>
+                                </Row>
+                                <Row className="text-center justify-content-center text-white">
+                                    <Button className="mx-1" size="sm" variant="outline-light" href="/client-sessions">View Sessions <i className="fas fa-chevron-right"></i></Button>
+                                    <Button className="mx-1" size="sm" variant="outline-light" href="/book-new-session">Book a Session <i className="fas fa-chevron-right"></i></Button>
+                                </Row>
+
+                            </Col>
+
+                        </Row>
+                    </Container>
+                </Row>
+
+                <Row className="justify-content-center my-3">
+                    <Container className="justify-content-center align-items-center bg-success px-4">
+                        <Row className="justify-content-center align-items-center text-white m-2">
+                            <Col xs={3} id="rwdTitleBox" className="align-items-center justify-content-center">
+                                <Row className="text-white align-items-center">
+                                    <Col className="align-items-center">
+                                        <h1>
+                                            Your Clients
+                                        </h1>
+                                        <Button className="mx-1" size="sm" variant="outline-light"><b>Add clients</b> <i className="fas fa-chevron-right"></i></Button>
+                                    </Col>
+                                </Row>
+                            </Col>
+                            <Col xs={9} className="text-center justify-content-center align-items-center text-white">
+
+                                <Row className="text-center align-items-center justify-content-center text-white my-2 p-3 border">
+                                    <Col sm={4} className="text-center justify-content-center text-white">
+                                        <Row className="text-center justify-content-center text-white">
+                                            <h2>Caleb</h2>
+                                        </Row>
+                                    </Col>
+                                    <Col sm={2} className="text-center justify-content-center text-white">
+                                        <Row className="text-center justify-content-center text-white">
+                                            <h2 className="text-center">5 pts</h2>
+                                        </Row>
+                                    </Col>
+                                    <Col sm={6} className="text-white text-center justify-content-center">
+                                        <Row className="text-white text-center justify-content-center">
+                                            <Button className="mx-1" variant="danger"><i class="fas fa-plus"></i><b> Add Pt</b></Button>
+                                            <Button className="mx-1" variant="danger"><i class="fas fa-comment"></i><b> Contact</b></Button>
+                                            <Button className="mx-1" variant="danger"><i class="fas fa-minus-circle"></i><b> Remove</b></Button>
+                                        </Row>
+                                    </Col>
+                                </Row>
+
+                            </Col>
+                        </Row>
+                    </Container>
+                </Row>
+
+                <Row className="justify-content-center my-3">
+                    <Container className="justify-content-center align-items-center bg-success px-4">
+                        <h2>Sessions</h2>
+                    </Container>
+                </Row>
+
+            </Container>
         )
     }
 }

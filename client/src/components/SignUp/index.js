@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import API from '../../utils/API';
-import { Col, Image, Container, Form, Row, Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Col, Image, Container, Form, Row, Button } from 'react-bootstrap';
 import './style.css';
 import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 
@@ -55,10 +55,6 @@ function SignUp() {
 						<Col xs={8} className="text-center justify-content-center">
 							<h6>Account type:&nbsp;</h6>
 							<span>
-								{/* <ToggleButtonGroup type="radio" name="options" defaultValue={1} className="mb-2">
-									<ToggleButton value={1}>Client</ToggleButton>
-									<ToggleButton value={2}>Trainer</ToggleButton>
-								</ToggleButtonGroup> */}
 
 								<BootstrapSwitchButton
 									checked={false}
