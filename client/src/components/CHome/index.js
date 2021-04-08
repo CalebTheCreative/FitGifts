@@ -103,20 +103,42 @@ class CHome extends Component {
                 <br />
                 <Row className="justify-content-center">
                     <Container className="justify-content-center align-items-center bg-success p-2">
-                        <Row className="justify-content-center align-items-center text-white">
+                        <Row className="justify-content-center align-items-center mx-2">
                             <Col xs={4} id="rwdTitleBox" className="align-items-center justify-content-center">
-                                <Row className="text-white align-items-center">
+                                <Row className="align-items-center">
                                     <Col className="align-items-center">
-                                        <h1 id="rwdPtBanner">
+                                        <h1 id="rwdPtBanner" className="text-white">
                                             {this.state.rwdTotal}
                                         </h1>
-                                        <h5>Reward Points to Redeem</h5>
+                                        <h5 className="text-white">Reward Points to Redeem</h5>
+                                        <button type="button" className="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                                            How to Earn <i className="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div className="modal-dialog modal-dialog-centered" role="document">
+                                                <div className="modal-content">
+                                                    <div className="modal-header text-black">
+                                                        <h5 className="modal-title text-black" id="exampleModalLongTitle">How to Earn Points</h5>
+                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div className="modal-body">
+                                                        ...
+                                                    </div>
+                                                    <div className="modal-footer">
+                                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" className="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </Col>
                                 </Row>
                             </Col>
                             <Col xs={8} className="text-center justify-content-center text-white">
-                                <hr />
-                                <Row className="text-center justify-content-center text-white my-2">
+                                
+                                <Row className="text-center align-items-center justify-content-center text-white my-2 border py-2">
                                     <Col xs={8} className="text-center justify-content-center text-white">
                                         <Row className="text-center justify-content-center text-white">
                                             <h4>5 pts: &nbsp;</h4>
@@ -139,8 +161,7 @@ class CHome extends Component {
                                         </Row>
                                     </Col>
                                 </Row>
-                                <hr />
-                                <Row className="text-center justify-content-center text-white my-2">
+                                <Row className="text-center justify-content-center text-white my-2 border">
                                     <Col xs={8} className="text-center justify-content-center text-white">
                                         <Row className="text-center justify-content-center text-white">
                                             <h4>10 pts: &nbsp;</h4>
@@ -163,8 +184,7 @@ class CHome extends Component {
                                         </Row>
                                     </Col>
                                 </Row>
-                                <hr />
-                                <Row className="text-center justify-content-center text-white my-2">
+                                <Row className="text-center justify-content-center text-white my-2 border">
                                     <Col xs={8} className="text-center justify-content-center text-white">
                                         <Row className="text-center justify-content-center text-white">
                                             <h4>25 pts: &nbsp;</h4>
@@ -187,7 +207,6 @@ class CHome extends Component {
                                         </Row>
                                     </Col>
                                 </Row>
-                                <hr />
                             </Col>
                         </Row>
                     </Container>
