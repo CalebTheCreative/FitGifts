@@ -3,25 +3,15 @@ const Schema = mongoose.Schema;
 
 // Rewards Schema
 const RewardSchema = new Schema({
-	Rewards: {
-		rwdName: {
-			type: String,
-		},
-		rwdVal: {
-			type: Number,
-		},
-		isRedeemed: {
-			type: Boolean,
-			default: false,
-		},
+	rwdName: {
+		type: String,
 	},
-	Criteria: {
-		critName: {
-			type: String,
-		},
-		critVal: {
-			type: Number,
-		},
+	rwdVal: {
+		type: Number,
+	},
+	isRedeemed: {
+		type: Boolean,
+		default: false,
 	},
 });
 
