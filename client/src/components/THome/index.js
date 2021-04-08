@@ -6,8 +6,33 @@ class THome extends Component {
     state = {
         name: "Caleb",
         actNum: 12345,
-        numSessions: 3
+        numSessions: 3,
+        rwdName1: "10% off cost of next session",
+        rwdGoal1: 5,
+        clientName1: "Test1",
+        clientTot1: 0,
+        rwdProg: 0
     }
+
+    componentDidMount() {
+		this.calcProg();
+	}
+
+	addPoint = () => {
+		this.setState({ clientTot1: this.state.clientTot1 + 1 })
+		this.calcProg();
+	}
+
+	calcProg = () => {
+		let calc = ((this.state.clientTot1 / this.state.rwdGoal1 ) * 100);
+
+		if (calc === 0) {
+			this.setState({ rwdProg: 0 });
+		}
+		else {
+			this.setState({ rwdProg: calc })
+		}
+	}
 
     render() {
         return (
@@ -79,17 +104,17 @@ class THome extends Component {
                                 <Row className="text-center align-items-center justify-content-center text-white my-2 p-3 border">
                                     <Col sm={4} className="text-center justify-content-center text-white">
                                         <Row className="text-center justify-content-center text-white">
-                                            <h2>Caleb</h2>
+                                            <h2>{this.state.clientName1}</h2>
                                         </Row>
                                     </Col>
                                     <Col sm={2} className="text-center justify-content-center text-white">
                                         <Row className="text-center justify-content-center text-white">
-                                            <h2 className="text-center">5 pts</h2>
+                                            <h2 className="text-center">{this.state.clientTot1}</h2>
                                         </Row>
                                     </Col>
                                     <Col sm={6} className="text-white text-center justify-content-center">
                                         <Row className="text-white text-center justify-content-center">
-                                            <Button className="mx-1" variant="danger"><i class="fas fa-plus"></i><b> Add Pt</b></Button>
+                                            <Button className="mx-1" variant="danger" onClick={this.addPoint}><i class="fas fa-plus"></i><b> Add Pt</b></Button>
                                             <Button className="mx-1" variant="danger"><i class="fas fa-comment"></i><b> Contact</b></Button>
                                             <Button className="mx-1" variant="danger"><i class="fas fa-minus-circle"></i><b> Remove</b></Button>
                                         </Row>
