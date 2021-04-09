@@ -17,8 +17,8 @@ function Login() {
 		API.login(email, password)
 			.then((response) => {
 				if (response.status === 200) {
-					console.log(response.data);
-					console.log(response.locals.user);
+					console.log('Login API', response.data);
+					// console.log(response.locals.user);
 					// if (!isTrainer) {
 					// 	window.location.href = '/home-client';
 					// } else {
