@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Container } from "react-bootstrap";
 import CHome from "../components/CHome";
 
 class ClientHome extends Component {
@@ -15,9 +16,9 @@ class ClientHome extends Component {
 
     render(){
         return(
-            <div>
+            <Container>
                 <CHome />
-            </div>
+            </Container>
         )
     }       
 }
