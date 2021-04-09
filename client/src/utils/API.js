@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default {
 	/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
-	
+
 	//REWARD ROUTES
 
 	getRewards: function () {
@@ -17,7 +17,7 @@ export default {
 		return axios.delete('/api/rewards/' + id);
 	},
 	// adds a post to the database
-	createPost: function (rewardData) {
+	createReward: function (rewardData) {
 		return axios.post('/api/rewards', rewardData);
 	},
 
