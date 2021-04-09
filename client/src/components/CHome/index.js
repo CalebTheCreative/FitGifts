@@ -8,7 +8,7 @@ class CHome extends Component {
         name: "firstName",
         trainerName: "Xavier",
         numSessions: 0,
-        rwdTotal: 1,
+        rwdTotal: 20,
         rwdProg1: 0,
         rwdProg2: 0,
         rwdProg3: 0,
@@ -25,6 +25,18 @@ class CHome extends Component {
     componentDidMount() {
         this.calcProg();
         this.rwdAchieved();
+    }
+
+    addPoint1 = () => {
+        this.setState({ rwdTotal: this.state.rwdTotal - this.state.rwdg1 })
+    }
+
+    addPoint2 = () => {
+        this.setState({ rwdTotal: this.state.rwdTotal - this.state.rwdg2 })
+    }
+
+    addPoint3 = () => {
+        this.setState({ rwdTotal: this.state.rwdTotal - this.state.rwdg3 })
     }
 
     calcProg = () => {
@@ -102,15 +114,15 @@ class CHome extends Component {
                 </Row>
                 <br />
                 <Row className="justify-content-center">
-                    <Container className="justify-content-center align-items-center bg-success p-2">
+                    <Container className="justify-content-center align-items-center bg-light p-2">
                         <Row className="justify-content-center align-items-center mx-2">
                             <Col xs={4} id="rwdTitleBox" className="align-items-center justify-content-center">
                                 <Row className="align-items-center">
                                     <Col className="align-items-center">
-                                        <h1 id="rwdPtBanner" className="text-white">
+                                        <h1 id="rwdPtBanner" className="text-black">
                                             {this.state.rwdTotal}
                                         </h1>
-                                        <h5 className="text-white">Reward Points to Redeem</h5>
+                                        <h5 className="text-black">Reward Points to Redeem</h5>
                                         <button type="button" className="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
                                             How to Earn <i className="fas fa-chevron-right"></i>
                                         </button>
@@ -124,7 +136,41 @@ class CHome extends Component {
                                                         </button>
                                                     </div>
                                                     <div className="modal-body">
-                                                        ...
+                                                        <Row className="text-center justify-content-center">
+                                                            <Col xs={6} className="text-center justify-content-center bg-secondary">
+
+                                                                <Row className="text-center justify-content-center">
+                                                                    <h3 className="text-center">Criteria:</h3>
+                                                                </Row>
+
+                                                                <Row className="text-center justify-content-center">
+                                                                    <Col>
+                                                                        <p>1 pt</p>
+                                                                    </Col>
+                                                                    <Col>
+                                                                        <p className="text-left">Every completed session</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row className="text-center justify-content-center">
+                                                                    <Col>
+                                                                        <p>2 pts</p>
+                                                                    </Col>
+                                                                    <Col>
+                                                                        <p className="text-left">Each goal met</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row className="text-center justify-content-center">
+                                                                    <Col>
+                                                                        <p>3 pt</p>
+                                                                    </Col>
+                                                                    <Col>
+                                                                        <p className="text-left">Every month w/ 4 completed sessions</p>
+                                                                    </Col>
+                                                                </Row >
+                                                            </Col>
+                                                        </Row>
                                                     </div>
                                                     <div className="modal-footer">
                                                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -136,15 +182,15 @@ class CHome extends Component {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col xs={8} className="text-center justify-content-center text-white">
-                                
-                                <Row className="text-center align-items-center justify-content-center text-white my-2 border py-2">
-                                    <Col xs={8} className="text-center justify-content-center text-white">
-                                        <Row className="text-center justify-content-center text-white">
+                            <Col xs={8} className="text-center justify-content-center">
+
+                                <Row className="text-center align-items-center justify-content-centermy-2 border py-2">
+                                    <Col xs={8} className="text-center justify-content-center">
+                                        <Row className="text-center justify-content-center">
                                             <h4>5 pts: &nbsp;</h4>
                                             <h4><b>{this.state.rwdgn1}</b></h4>
                                         </Row>
-                                        <Row className="text-center justify-content-center text-white">
+                                        <Row className="text-center justify-content-center">
                                             <Col xs={10}>
                                                 <ProgressBar
                                                     completed={this.state.rwdProg1}
@@ -155,19 +201,19 @@ class CHome extends Component {
                                             </Col>
                                         </Row>
                                     </Col>
-                                    <Col xs={4} className="text-center justify-content-center text-white">
-                                        <Row className="text-center justify-content-center text-white">
-                                            <Button size="lg" variant="danger">Redeem</Button>
+                                    <Col xs={4} className="text-center justify-content-center">
+                                        <Row className="text-center justify-content-center">
+                                            <Button size="lg" variant="danger" onClick={this.addPoint1}>Redeem</Button>
                                         </Row>
                                     </Col>
                                 </Row>
-                                <Row className="text-center justify-content-center text-white my-2 border">
-                                    <Col xs={8} className="text-center justify-content-center text-white">
-                                        <Row className="text-center justify-content-center text-white">
+                                <Row className="text-center align-items-center justify-content-center my-2 border py-2">
+                                    <Col xs={8} className="text-center justify-content-center">
+                                        <Row className="text-center justify-content-center">
                                             <h4>10 pts: &nbsp;</h4>
                                             <h4><b>{this.state.rwdgn2}</b></h4>
                                         </Row>
-                                        <Row className="text-center justify-content-center text-white">
+                                        <Row className="text-center justify-content-center">
                                             <Col xs={10}>
                                                 <ProgressBar
                                                     completed={this.state.rwdProg2}
@@ -178,19 +224,19 @@ class CHome extends Component {
                                             </Col>
                                         </Row>
                                     </Col>
-                                    <Col xs={4} className="text-center justify-content-center text-white">
-                                        <Row className="text-center justify-content-center text-white">
-                                            <Button size="lg" variant="danger">Redeem</Button>
+                                    <Col xs={4} className="text-center justify-content-center">
+                                        <Row className="text-center justify-content-center">
+                                            <Button size="lg" variant="danger" onClick={this.addPoint2}>Redeem</Button>
                                         </Row>
                                     </Col>
                                 </Row>
-                                <Row className="text-center justify-content-center text-white my-2 border">
-                                    <Col xs={8} className="text-center justify-content-center text-white">
-                                        <Row className="text-center justify-content-center text-white">
+                                <Row className="text-center align-items-center justify-content-center my-2 border py-2">
+                                    <Col xs={8} className="text-center justify-content-center">
+                                        <Row className="text-center justify-content-center">
                                             <h4>25 pts: &nbsp;</h4>
                                             <h4><b>{this.state.rwdgn3}</b></h4>
                                         </Row>
-                                        <Row className="text-center justify-content-center text-white">
+                                        <Row className="text-center justify-content-center">
                                             <Col xs={10}>
                                                 <ProgressBar
                                                     completed={this.state.rwdProg3}
@@ -201,9 +247,9 @@ class CHome extends Component {
                                             </Col>
                                         </Row>
                                     </Col>
-                                    <Col xs={4} className="text-center justify-content-center text-white">
-                                        <Row className="text-center justify-content-center text-white">
-                                            <Button size="lg" variant="danger">Redeem</Button>
+                                    <Col xs={4} className="text-center justify-content-center">
+                                        <Row className="text-center justify-content-center">
+                                            <Button size="lg" variant="danger" onClick={this.addPoint3}>Redeem</Button>
                                         </Row>
                                     </Col>
                                 </Row>
