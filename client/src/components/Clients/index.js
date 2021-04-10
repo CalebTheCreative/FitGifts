@@ -42,13 +42,13 @@ class Clients extends Component {
 								<ListGroup>
 									{/* Trainer's client list mapped out here */}
 									{/* Remove 'disabled' from Button element */}
-									{this.state.clients.map(({name}) => (
+									{/* {this.state.clients.map(({name}) => (
 										<ListGroup.Item>
 											<Button variant="secondary" size="lg" block href="/client-profile/:id">
 												{name}
 											</Button>
 										</ListGroup.Item>
-									))}
+									))} */}
 								</ListGroup>
 							</Col>
 						</Row>

@@ -5,9 +5,11 @@ const Schema = mongoose.Schema;
 const RewardSchema = new Schema({
 	rwdName: {
 		type: String,
+		required: true
 	},
 	rwdVal: {
 		type: Number,
+		required: true
 	},
 	isRedeemed: {
 		type: Boolean,

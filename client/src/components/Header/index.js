@@ -14,14 +14,14 @@ function Header() {
 
         <Container className = "text-center justify-content-center fixed-top bg-transparent mt-2 mb-4">
             <Row className="text-center justify-content-center">
-                <Col xs={2}>
+                <Col sm={3}>
                 </Col>
-                <Col xs={6}>
+                <Col sm={6}>
                     <a href="/home-trainer">
                         <img src="/images/logos/fg-logo-text-whitered.png" className="text-center mt-2" id="fgLogoScd" alt="FitGifts secondary logo" />
                     </a>
                 </Col>
-                <Col xs={2}></Col>
+                <Col xs={3}></Col>
             </Row>
         </Container>
     )

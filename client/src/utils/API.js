@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
 	/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 
-	//REWARD ROUTES
+	// REWARD ROUTES
 
 	getRewards: function () {
 		return axios.get('/api/rewards');

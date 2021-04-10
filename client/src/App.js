@@ -1,24 +1,15 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AddClient from './pages/AddClient';
-import AddReward from './pages/AddReward';
-import AddTrainer from './pages/AddTrainer';
-import BookNewSession from './pages/BookNewSession';
 import ClientHome from './pages/ClientHome';
 import ClientList from './pages/ClientList';
 import ClientProfile from './pages/ClientProfile';
-import ClientRewards from './pages/ClientRewards';
-import ClientSessions from './pages/ClientSessions';
 import Header from './components/Header';
 import Login from './components/Login';
-import Rewards from "./pages/Rewards";
 import Signup from './components/SignUp';
 import TClientRewards from './pages/TClientRewards';
-import TClientSessions from './pages/TClientSessions';
 import TrainerHome from './pages/TrainerHome';
-import TrainerSessions from './pages/TrainerSessions';
-import TRewards from './pages/TRewards';
+import TRewards from './components/TRewards';
 
 function App() {
 	return (
@@ -26,18 +17,6 @@ function App() {
 			<div>
 				<Header />
 				<Switch>
-					<Route exact path="/add-client">
-						<AddClient />
-					</Route>
-					<Route exact path="/add-reward">
-						<AddReward />
-					</Route>
-					<Route exact path="/add-trainer">
-						<AddTrainer />
-					</Route>
-					<Route exact path="/book-new-session">
-						<BookNewSession />
-					</Route>
 					<Route exact path="/home-client">
 						<ClientHome />
 					</Route>
@@ -47,32 +26,17 @@ function App() {
 					<Route exact path="/client-profile">
 						<ClientProfile />
 					</Route>
-					<Route exact path="/client-rewards">
-						<ClientRewards />
-					</Route>
-					<Route exact path="/client-sessions">
-						<ClientSessions />
-					</Route>
 					<Route exact path={['/', '/login']}>
 						<Login />
 					</Route>
 					<Route exact path="/signup">
 						<Signup />
 					</Route>
-					<Route exact path="/rewards">
-						<Rewards />
-					</Route>
 					<Route exact path="/t-client-rewards">
 						<TClientRewards />
 					</Route>
-					<Route exact path="/t-client-sessions">
-						<TClientSessions />
-					</Route>
 					<Route exact path="/home-trainer">
 						<TrainerHome />
-					</Route>
-					<Route exact path="/trainer-sessions">
-						<TrainerSessions />
 					</Route>
 					<Route exact path="/trewards">
 						<TRewards />

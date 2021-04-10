@@ -3,10 +3,14 @@ const user = require('../../controllers/userController');
 const passport = require('../../config/passport');
 
 // Matches with "/api/user"
-router.route('/find').get(user.findOne);
+router.route('/find')
+    .get(user.findOne);
 
 // Matches with "/api/user/:id"
-router.route('/:id').get(user.findById).put(user.update).delete(user.remove);
+router.route('/:id')
+    .get(user.findById)
+    .put(user.update)
+    .delete(user.remove);
 
 // /api/user/signup is the route to create a user
 router.post('/signup', user.signup);
