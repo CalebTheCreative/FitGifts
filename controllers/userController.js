@@ -16,7 +16,7 @@ module.exports = {
 	findOne: function (req, res) {
 		console.log('REQUEST: ******************\n', req.query);
 		db.User.findOne({ email: req.query.email })
-			.then((dbModel) => res.json(dbModel.username))
+			.then((dbModel) => res.json(dbModel.email))
 			.catch((err) => res.status(422) / json(err));
 	},
 	create: function (req, res) {
@@ -52,8 +52,8 @@ module.exports = {
 		});
 	},
 
-	authenticate: (req, res) => {
-		console.log(res);
+	login: (req, res) => {
+		console.log(req);
 		res.json({
 			email: req.user.email,
 		});
