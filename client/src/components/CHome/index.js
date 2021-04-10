@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Col, Row, Button, Modal } from "react-bootstrap";
-import ProgressBar from "@ramonak/react-progress-bar";
+// import ProgressBar from "@ramonak/react-progress-bar";
 import AddTrainer from "../AddTrainer";
 import API from "../../utils/API";
 import "./style.css";
@@ -252,8 +252,8 @@ function CHome() {
                                 </Col>
                             </Row>
                         </Col>
-                        {rwdName.length ? (
-                        <Col sm={8} className="text-center justify-content-center">
+                        {/* {rwdName.length ? ( */}
+                        {/* <Col sm={8} className="text-center justify-content-center"> */}
                                     {/* {rwdName.map(reward => (
                                         <Row className="text-center align-items-center justify-content-centermy-2 border py-2">
                                             <Col sm={8} className="text-center justify-content-center">
@@ -280,8 +280,8 @@ function CHome() {
                                             </Col>
                                         </Row>
                                     ))} */}
-                                </Col>
-                            ) : (
+                                {/* </Col> */}
+                            {/* ) : ( */}
                                 <Col sm={8} className="text-center justify-content-center">
                                     <Row className="text-center align-items-center justify-content-centermy-2 border py-2">
                                         <Col sm={12} className="text-center justify-content-center">

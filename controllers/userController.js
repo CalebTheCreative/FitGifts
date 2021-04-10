@@ -53,9 +53,16 @@ module.exports = {
 	},
 
 	login: (req, res) => {
+		console.log("Login res:");
 		console.log(req);
 		res.json({
+			// id: req.user._id,
 			email: req.user.email,
+			isTrainer: req.user.isTrainer,
+			firstName: req.user.firstName,
+			lastName: req.user.lastName,
+			rewardPts: req.user.rewardPts,
+			rewards: req.user.rewards
 		});
 	},
 

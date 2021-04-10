@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import API from '../../utils/API';
 import { Col, Image, Container, Form, Row, Button } from 'react-bootstrap';
 import './style.css';

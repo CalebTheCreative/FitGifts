@@ -1,7 +1,6 @@
 const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const passport = require('./config/passport');
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -11,12 +10,7 @@ const routes = require('./routes');
 const db = require('./models');
 
 // Middleware
-app.use(
-	bodyParser.urlencoded({
-		extended: false,
-	})
-);
-app.use(bodyParser.json());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

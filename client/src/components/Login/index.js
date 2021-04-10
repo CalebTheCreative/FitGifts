@@ -18,12 +18,11 @@ function Login() {
 			.then((response) => {
 				if (response.status === 200) {
 					console.log('Login API', response.data);
-					// console.log(response.locals.user);
-					// if (!isTrainer) {
-					// 	window.location.href = '/home-client';
-					// } else {
-					// 	window.location.href = '/home-trainer';
-					// }
+					if (!response.isTrainer) {
+						window.location.href = '/home-client';
+					} else {
+						window.location.href = '/home-trainer';
+					}
 				}
 			})
 			.catch((e) => {
