@@ -7,7 +7,6 @@ import ClientProfile from './pages/ClientProfile';
 import Header from './components/Header';
 import Login from './components/Login';
 import Signup from './components/SignUp';
-import TClientRewards from './pages/TClientRewards';
 import TrainerHome from './pages/TrainerHome';
 import TRewards from './components/TRewards';
 
@@ -31,9 +30,6 @@ function App() {
 					</Route>
 					<Route exact path="/signup">
 						<Signup />
-					</Route>
-					<Route exact path="/t-client-rewards">
-						<TClientRewards />
 					</Route>
 					<Route exact path="/home-trainer">
 						<TrainerHome />

@@ -1,15 +1,16 @@
 const router = require('express').Router();
-const rewards = require('../../controllers/rewardController');
+const reward = require('../../controllers/rewardController');
 
-// Matches with "/api/rewards"
-router.route('/find-rewards')
-    .get(rewards.findAll)
-    .post(rewards.create);
+// Matches with "/api/reward/"
+router.route('/find-rewards').get(reward.findAll);
 
-// Matches with "/api/rewards/:id"
-router.route('/:id')
-    .get(rewards.findById)
-    .put(rewards.update)
-    .delete(rewards.remove);
+// Matches with "/api/reward/:id"
+router.route('/:id').get(reward.findById).put(reward.update).delete(reward.remove);
+
+// Matches with "/api/reward/new-reward"
+router.post('/new-reward', reward.newReward);
+
+// Matches with "api/reward/trainer-reward"
+router.route('/trainer-reward', reward.findById);
 
 module.exports = router;
