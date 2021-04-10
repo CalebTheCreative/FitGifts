@@ -92,4 +92,4 @@ UserSchema.methods.validPassword = function (password, cb) {
 	});
 };
 
-module.exports = User = mongoose.model('User', UserSchema);
+module.exports = User = mongoose.model('User', UserSchema, 'users');

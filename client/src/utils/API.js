@@ -4,21 +4,28 @@ export default {
 	/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 
 	// REWARD ROUTES
+	findReward: function (rwdName) {
+		return axios.get('/api/user/find-reward', {
+			params: {
+				rwdName: rwdName.rwdName,
+			},
+		});
+	},
 
 	getRewards: function () {
-		return axios.get('/api/rewards');
+		return axios.get('/api/reward');
 	},
 	// Gets the post with the given id
 	getReward: function (id) {
-		return axios.get('/api/rewards/' + id);
+		return axios.get('/api/reward/' + id);
 	},
 	// Deletes the post with the given id
 	deleteReward: function (id) {
-		return axios.delete('/api/rewards/' + id);
+		return axios.delete('/api/reward/' + id);
 	},
 	// adds a post to the database
 	createReward: function (rewardData) {
-		return axios.post('/api/rewards', rewardData);
+		return axios.post('/api/reward', rewardData);
 	},
 
 	//     USER ROUTES
