@@ -17,31 +17,16 @@ const UserSchema = new Schema({
 	},
 	phoneNumber: {
 		type: String,
-		// validate: {
-		// 	validator: function (v) {
-		// 		return /\d{3}-\d{3}-\d{4}/.test(v);
-		// 	},
-		// 	message: (props) => `${props.value} is not a valid phone number!`,
-		// },
 		required: [true, 'Please enter a phone number.'],
 	},
 	email: {
 		type: String,
 		required: 'Please enter a valid email.',
-		// validate: {
-		// 	validator: function (v) {
-		// 		const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-		// 		return emailRegex.test(v.text);
-		// 	},
-		// },
 		unique: true,
 	},
 	password: {
 		type: String,
 		required: 'Please enter a secure password.',
-		// validate: {
-		// 	min: [8, 'Password must be at least 8 characters.'],
-		// },
 	},
 	isTrainer: {
 		type: Boolean,
@@ -84,12 +69,5 @@ UserSchema.pre('save', function (next) {
 		return next();
 	}
 });
-
-UserSchema.methods.validPassword = function (password, cb) {
-	bcrypt.compareSync(password, this.password, function (err, isMatch) {
-		if (err) return cb(err);
-		cb(null, isMatch);
-	});
-};
 
 module.exports = User = mongoose.model('User', UserSchema, 'users');
