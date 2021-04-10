@@ -41,9 +41,11 @@ module.exports = {
 		db.Reward.create({
 			rwdName: rwdName,
 			rwdVal: rwdVal,
-		}).then((result) => {
-			console.log('reward: ', result);
-			return res.json(result);
-		});
+		})
+			.then((result) => {
+				console.log('reward: ', result);
+				return res.json(result);
+			})
+			.catch((err) => res.status(422).json(err));
 	},
 };

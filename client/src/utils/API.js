@@ -15,9 +15,10 @@ export default {
 	getRewards: function () {
 		return axios.get('/api/reward');
 	},
-	// Gets the post with the given id
-	getReward: function (id) {
-		return axios.get('/api/reward/' + id);
+	// Gets the REWARD post with the given values
+	getReward: function (rwdName, rwdVal) {
+		console.log('API getReward: ', rwdName, rwdVal);
+		return axios.get('/api/reward/', { rwdName: rwdName, rwdVal: rwdVal });
 	},
 	// Deletes the post with the given id
 	deleteReward: function (id) {
@@ -25,7 +26,8 @@ export default {
 	},
 	// adds a post to the database
 	createReward: function (rewardData) {
-		return axios.post('/api/reward', rewardData);
+		console.log('API createReward: ', rewardData);
+		return axios.post('/api/reward/new-reward', rewardData);
 	},
 
 	//     USER ROUTES

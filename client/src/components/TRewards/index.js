@@ -14,20 +14,17 @@ function TRewards() {
 	}, []);
 
 	function loadRewards() {
-		console.log('Getting reward: ', { rwdName: rwdName });
+		console.log('Getting reward: ', { rwdName: rwdName, rwdVal: rwdVal });
 		API.getReward()
-			.then(
-				(res) => setRwdName(res.data),
-				(res) => setRwdVAl(res.data)
-			)
+			.then((res) => res.data)
 			.catch((err) => console.log(err));
 	}
 
-	function handleInputChange(e) {
-		const { rwdName, rwdVal, value } = e.target;
+	// function handleInputChange(e) {
+	// 	const { rwdName, rwdVal, value } = e.target;
 
-		setRewardObject({ ...rewardObject, [rwdName]: value, [rwdVal]: value });
-	}
+	// 	setRewardObject({ ...rewardObject, [rwdName]: value, [rwdVal]: value });
+	// }
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -35,12 +32,12 @@ function TRewards() {
 		console.log('reward name: ', rwdName);
 		console.log('reward value: ', rwdVal);
 
-		if (rewardObject.rwdName && rewardObject.rwdVal) {
+		if (rwdName && rwdVal) {
 			API.createReward({
-				rwdName: rewardObject.rwdName,
-				rwdVal: rewardObject.rwdVal,
+				rwdName: rwdName,
+				rwdVal: rwdVal,
 			})
-				.then((res) => loadRewards())
+				.then((res) => alert('Creation Successful!'), loadRewards())
 				.catch((err) => console.log(err));
 		}
 	}
@@ -69,7 +66,7 @@ function TRewards() {
 												className="form-input"
 												name="rwdName"
 												placeholder="Reward Description"
-												onChange={handleInputChange}
+												onChange={(e) => setRwdName(e.target.value)}
 											/>
 										</div>
 									</Col>
@@ -79,7 +76,7 @@ function TRewards() {
 												className="form-input"
 												name="rwdVal"
 												placeholder="Reward Value"
-												onChange={handleInputChange}
+												onChange={(e) => setRwdVAl(e.target.value)}
 											/>
 										</div>
 									</Col>
