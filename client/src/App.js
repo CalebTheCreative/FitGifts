@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ClientHome from './pages/ClientHome';
-import ClientList from './pages/ClientList';
+import ClientList from './components/ClientList';
 import ClientProfile from './pages/ClientProfile';
 import Header from './components/Header';
 import Login from './components/Login';
