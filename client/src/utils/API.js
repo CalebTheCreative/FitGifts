@@ -12,19 +12,30 @@ export default {
 	// 	});
 	// },
 
-	// Gets the REWARD post with the given values
-	findOne: function (rewardData) {
-		console.log('API getReward: ', rewardData);
-		return axios.get('/api/reward/new-reward', rewardData);
+	getRewards: function () {
+		return axios.get('/api/reward/');
 	},
-	// // Deletes the post with the given id
-	// deleteReward: function (id) {
-	// 	return axios.delete('/api/reward/' + id);
+
+	// Gets the REWARD post with the given values
+	// getReward: function (rwdName, rwdVal) {
+	// 	console.log('API getReward: ', rwdName, rwdVal);
+	// 	return axios.get('/api/reward/', { rwdName: rwdName, rwdVal: rwdVal });
 	// },
+
+	getReward: function (id) {
+		console.log('API getReward: ', id);
+		return axios.get('/api/reward/', id);
+	},
+
+	// Deletes the post with the given id
+	deleteReward: function (id) {
+		return axios.delete('/api/reward/' + id);
+	},
+
 	// adds a post to the database
 	create: function (rewardData) {
 		console.log('API createReward: ', rewardData);
-		return axios.post('/api/reward/new-reward', rewardData);
+		return axios.post('/api/reward', rewardData);
 	},
 
 	//     USER ROUTES

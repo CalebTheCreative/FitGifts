@@ -28,10 +28,10 @@ class ClientProfile extends Component {
 		this.calcProg();
 	}
 
-	addPoint = () => {
-		this.setState({ rwdTotal: this.state.rwdTotal + 1 })
-		this.calcProg();
-	}
+	// addPoint = () => {
+	// 	this.setState({ rwdTotal: this.state.rwdTotal + 1 })
+	// 	this.calcProg();
+	// }
 
 	calcProg = () => {
 		let calc = ((this.state.rwdTotal / this.state.rwdNext) * 100);
@@ -87,7 +87,7 @@ class ClientProfile extends Component {
 							<Col md={{ span: 6, offset: 3 }} className="text-center justify-content-center">
 
 
-								<Button className="my-1 btn-block btn-lg" variant="secondary" onClick={this.addPoint}>Add Reward Point</Button>
+								{/* <Button className="my-1 btn-block btn-lg" variant="secondary" onClick={this.addPoint}>Add Reward Point</Button> */}
                                 <div className="accordion" id="accordionExample">
 									<div className="accordion-item">
 										<h2 className="accordion-header" id="headingOne">

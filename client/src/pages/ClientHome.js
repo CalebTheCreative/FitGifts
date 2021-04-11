@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Container, Col, Row, Button, Modal } from "react-bootstrap";
-// import ProgressBar from "@ramonak/react-progress-bar";
+import ProgressBar from "@ramonak/react-progress-bar";
 import AddTrainer from "../components/AddTrainer";
 import API from "../utils/API";
 
 function ClientHome() {
 
     const [userName, setUserName] = useState([]);
-    // const [rwdName, setRwdName] = useState([]);
+    const [rewards, setRewards] = useState([]);
 
     // useEffect(() => {
     //     loadRewards()
     // }, [])
     useEffect(() => {
         loadUser()
+    }, [])
+
+    useEffect(() => {
+        loadRewards()
     }, [])
 
     // Modal Components
@@ -40,13 +44,13 @@ function ClientHome() {
             .catch(err => console.log(err));
     };
 
-    // function loadRewards() {
-    //     API.getRewards()
-    //         .then(res =>
-    //             setRwdName(res.data)
-    //         )
-    //         .catch(err => console.log(err));
-    // };
+    function loadRewards() {
+        API.getRewards()
+            .then(res =>
+                setRewards(res.data)
+            )
+            .catch(err => console.log(err));
+    };
     // function componentDidMount() {
     //     this.calcProg();
     //     this.rwdAchieved();
@@ -251,44 +255,45 @@ function ClientHome() {
                                 </Col>
                             </Row>
                         </Col>
-                        {/* {rwdName.length ? ( */}
-                        {/* <Col sm={8} className="text-center justify-content-center"> */}
-                        {/* {rwdName.map(reward => (
-                                        <Row className="text-center align-items-center justify-content-centermy-2 border py-2">
-                                            <Col sm={8} className="text-center justify-content-center">
-                                                <Row className="text-center justify-content-center">
-                                                    <h4>{reward.rwdVal}: &nbsp;</h4>
-                                                    <h4><b>{this.reward.rwdName}</b></h4>
-                                                </Row>
-                                                <Row className="text-center justify-content-center">
-                                                    <Col sm={10}>
-                                                        <ProgressBar
-                                                            completed={50}
-                                                            bgColor="#FF0000"
-                                                            height="25px"
-                                                            labelAlignment="outside"
-                                                            labelColor="#000000"
-                                                        />
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                            <Col sm={4} className="text-center justify-content-center">
-                                                <Row className="text-center justify-content-center">
-                                                    <Button className="my-1" size="lg" variant="danger" onClick={this.addPoint1}><b>Redeem</b></Button>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    ))} */}
-                        {/* </Col> */}
-                        {/* ) : ( */}
-                        <Col sm={8} className="text-center justify-content-center">
-                            <Row className="text-center align-items-center justify-content-centermy-2 border py-2">
-                                <Col sm={12} className="text-center justify-content-center">
-                                    <h2 className="text-center text-black">No rewards to choose from</h2>
-                                </Col>
-                            </Row>
-                        </Col>
-                        {/* )} */}
+                        {rewards.length ? (
+                            <Col sm={8} className="text-center justify-content-center">
+                                {rewards.map(reward => (
+                                    <Row className="text-center align-items-center justify-content-centermy-2 border py-2">
+                                        <Col sm={8} className="text-center justify-content-center">
+                                            <Row className="text-center justify-content-center">
+                                                <h4>{reward.rwdVal}: &nbsp;</h4>
+                                                <h4><b>{reward.rwdName}</b></h4>
+                                            </Row>
+                                            <Row className="text-center justify-content-center">
+                                                <Col sm={10}>
+                                                    <ProgressBar
+                                                    // Update 'completed'
+                                                        completed={50}
+                                                        bgColor="#FF0000"
+                                                        height="25px"
+                                                        labelAlignment="outside"
+                                                        labelColor="#000000"
+                                                    />
+                                                </Col>
+                                            </Row>
+                                        </Col>
+                                        <Col sm={4} className="text-center justify-content-center">
+                                            <Row className="text-center justify-content-center">
+                                                {/* <Button className="my-1" size="lg" variant="danger" onClick={this.addPoint1}><b>Redeem</b></Button> */}
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                ))}
+                            </Col>
+                        ) : (
+                            <Col sm={8} className="text-center justify-content-center">
+                                <Row className="text-center align-items-center justify-content-centermy-2 border py-2">
+                                    <Col sm={12} className="text-center justify-content-center">
+                                        <h2 className="text-center text-black">No rewards to choose from</h2>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        )}
                     </Row>
                 </Container>
             </Row>
