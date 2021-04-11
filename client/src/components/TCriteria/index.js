@@ -1,47 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Container, Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
-function TRewards() {
-	const [rewards, setRewards] = useState([]);
-	const [rwdName, setRwdName] = useState([]);
-	const [rwdVal, setRwdVal] = useState([]);
-	// const [rewardObject, setRewardObject] = useState({});
-	// const [isRedeemed, setIsRedeemed] = useState(false);
+function TCriteria() {
+	const [critList, setCritList] = useState([]);
+	const [critName, setCritName] = useState([]);
+	const [critVal, setCritVal] = useState([]);
+	// const [critObject, setCritObject] = useState({});
 
-	// Load all rewards and store them with setRewards
+	// Load all criteria and store them with setCrit
 	useEffect(() => {
-		loadRewards()
+		loadCritList()
 	}, [])
 
-	function loadRewards() {
+	function loadCritList() {
 
-		API.getRewards()
+		API.getCritList()
 			.then(res =>
-				setRewards(res.data)
+				setCritList(res.data)
 			)
 			.catch(err => console.log(err));
 	};
 
 	// function handleInputChange(e) {
-	// 	const { rwdName, rwdVal, value } = e.target;
+	// 	const { critName, critVal, value } = e.target;
 
-	// 	setRewardObject({ ...rewardObject, [rwdName]: value, [rwdVal]: value });
+	// 	setCritObject({ ...critObject, [critName]: value, [critVal]: value });
 	// }
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		console.log('Reward Desc. : ');
-		console.log('reward name: ', rwdName);
-		console.log('reward value: ', rwdVal);
+		console.log('Criteria Desc. : ');
+		console.log('Criteria name: ', critName);
+		console.log('Criteria value: ', critVal);
 
-		if (rwdName && rwdVal) {
-			API.createRewards({
-				rwdName: rwdName,
-				rwdVal: rwdVal
+		if (critName && critVal) {
+			API.createCrit({
+				critName: critName,
+				critVal: critVal
 			})
-				.then((res) => alert('Creation Successful!'), loadRewards())
+				.then((res) => alert('Creation Successful!'), loadCritList())
 				.catch((err) => console.log(err));
 		}
 	}
@@ -51,10 +50,10 @@ function TRewards() {
 			<Row className="mt-4">
 				<Container id="c-home-banner1" className="p-4 bg-danger">
 					<Row className="justify-contents-center align-items-center text-center">
-						<Col id="rwdTitleBox" className="align-items-center justify-content-center">
+						<Col id="critTitleBox" className="align-items-center justify-content-center">
 							<Row className="align-items-center text-center">
 								<Col className="align-items-center text-white">
-									<h1>Rewards List</h1>
+									<h1>Criteria List</h1>
 								</Col>
 							</Row>
 						</Col>
@@ -68,9 +67,9 @@ function TRewards() {
 										<div className="form-group">
 											<input
 												className="form-input"
-												name="rwdName"
-												placeholder="Reward Description"
-												onChange={(e) => setRwdName(e.target.value)}
+												name="critName"
+												placeholder="Criteria Description"
+												onChange={(e) => setCritName(e.target.value)}
 											/>
 										</div>
 									</Col>
@@ -78,15 +77,15 @@ function TRewards() {
 										<div className="form-group">
 											<input
 												className="form-input"
-												name="rwdVal"
-												placeholder="Reward Value"
-												onChange={(e) => setRwdVal(e.target.value)}
+												name="critVal"
+												placeholder="Criteria Value"
+												onChange={(e) => setCritVal(e.target.value)}
 											/>
 										</div>
 									</Col>
 									<Col sm={4}>
 										<button
-											disabled={!(rwdName && rwdVal)}
+											disabled={!(critName && critVal)}
 											className="btn btn-primary"
 											onClick={handleSubmit}
 											type="submit"
@@ -100,20 +99,20 @@ function TRewards() {
 					</Row>
 					<hr className="bg-light" />
 
-					{rewards.length ? (
+					{critList.length ? (
 						<ListGroup>
-							{rewards.map((reward) => (
-								<ListGroupItem key={reward._id}>
-									<Link to={'/reward/' + reward._id}>
+							{critList.map((crit) => (
+								<ListGroupItem key={crit._id}>
+									<Link to={'/criteria/' + crit._id}>
 										<b>
-											{reward.rwdName} worth {reward.rwdVal} points
+											{crit.critName} worth {crit.critVal} points
 										</b>
 									</Link>
 								</ListGroupItem>
 							))}
 						</ListGroup>
 					) : (
-						<h3>No Rewards to display</h3>
+						<h3>No Criteria to display</h3>
 					)}
 				</Container>
 			</Row>
@@ -122,4 +121,4 @@ function TRewards() {
 	);
 }
 
-export default TRewards;
+export default TCriteria;

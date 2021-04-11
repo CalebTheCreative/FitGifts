@@ -9,9 +9,10 @@ function ClientHome() {
     const [userName, setUserName] = useState([]);
     const [rewards, setRewards] = useState([]);
 
-    // useEffect(() => {
-    //     loadRewards()
-    // }, [])
+    useEffect(() => {
+        loadRewards()
+    }, [])
+    
     useEffect(() => {
         loadUser()
     }, [])

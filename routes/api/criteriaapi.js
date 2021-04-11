@@ -2,7 +2,7 @@ const router = require('express').Router();
 const criteria = require('../../controllers/criteriaController');
 
 // Matches with "/api/criteria"
-router.route('/find')
+router.route('/')
     .get(criteria.findAll)
     .post(criteria.create);
 

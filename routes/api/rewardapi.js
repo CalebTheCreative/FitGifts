@@ -7,7 +7,7 @@ router.route('/')
     .post(reward.create);
 
 // Matches with "/api/reward/new-reward"
-router.route('new-reward').get(reward.findOne);
+// router.route('new-reward').get(reward.findOne);
 
 // Matches with "/api/reward/:id"
 router.route('/:id')
@@ -15,8 +15,7 @@ router.route('/:id')
     .put(reward.update)
     .delete(reward.remove);
 
-
 // Matches with "api/reward/trainer-reward"
-router.route('/trainer-reward', reward.findById);
+// router.route('/trainer-reward', reward.findById);
 
 module.exports = router;
