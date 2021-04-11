@@ -1,5 +1,5 @@
 import React from 'react';
-import Clients from "../components/Clients";
+import Clients from "../Clients";
 import "./style.css";
 
 function ClientList() {
