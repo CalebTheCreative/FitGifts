@@ -15,7 +15,7 @@ function TRewards() {
 
 	function loadRewards() {
 		console.log('Getting reward: ', { rwdName: rwdName, rwdVal: rwdVal });
-		API.getReward()
+		API.findOne()
 			.then((res) => res.data)
 			.catch((err) => console.log(err));
 	}
@@ -33,7 +33,7 @@ function TRewards() {
 		console.log('reward value: ', rwdVal);
 
 		if (rwdName && rwdVal) {
-			API.createReward({
+			API.create({
 				rwdName: rwdName,
 				rwdVal: rwdVal,
 			})
