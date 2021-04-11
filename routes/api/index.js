@@ -5,7 +5,7 @@ const critRoutes = require('./criteriaapi');
 
 // routes
 router.use('./criteria', critRoutes);
-router.use('/rewards', rewardRoutes);
+router.use('/reward', rewardRoutes);
 router.use('/user', userRoutes);
 
 module.exports = router;

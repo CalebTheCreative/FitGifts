@@ -113,7 +113,7 @@ function TrainerHome(props) {
                                 </Col>
                                 <Col sm={6} className="text-center justify-content-center">
                                     <Row className="text-center justify-content-center">
-                                        <Button className="mx-1" variant="danger" onClick={this.addPoint}><i className="fas fa-plus"></i><b> Add Pt</b></Button>
+                                        {/* <Button className="mx-1" variant="danger" onClick={this.addPoint}><i className="fas fa-plus"></i><b> Add Pt</b></Button> */}
                                         <Button className="mx-1" variant="danger" data-toggle="modal" data-target="#exampleModalCenter"><i className="fas fa-comment"></i><b> Contact</b></Button>
 
                                         <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

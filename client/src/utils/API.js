@@ -4,30 +4,38 @@ export default {
 	/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 
 	// REWARD ROUTES
-	findReward: function (rwdName) {
-		return axios.get('/api/user/find-reward', {
-			params: {
-				rwdName: rwdName.rwdName,
-			},
-		});
-	},
+	// findReward: function (rwdName) {
+	// 	return axios.get('/api/user/find-reward', {
+	// 		params: {
+	// 			rwdName: rwdName.rwdName,
+	// 		},
+	// 	});
+	// },
 
 	getRewards: function () {
-		return axios.get('/api/reward');
+		return axios.get('/api/reward/');
 	},
+
 	// Gets the REWARD post with the given values
-	getReward: function (rwdName, rwdVal) {
-		console.log('API getReward: ', rwdName, rwdVal);
-		return axios.get('/api/reward/', { rwdName: rwdName, rwdVal: rwdVal });
+	// getReward: function (rwdName, rwdVal) {
+	// 	console.log('API getReward: ', rwdName, rwdVal);
+	// 	return axios.get('/api/reward/', { rwdName: rwdName, rwdVal: rwdVal });
+	// },
+
+	getReward: function (id) {
+		console.log('API getReward: ', id);
+		return axios.get('/api/reward/', id);
 	},
+
 	// Deletes the post with the given id
 	deleteReward: function (id) {
 		return axios.delete('/api/reward/' + id);
 	},
+
 	// adds a post to the database
 	createReward: function (rewardData) {
 		console.log('API createReward: ', rewardData);
-		return axios.post('/api/reward/new-reward', rewardData);
+		return axios.post('/api/reward', rewardData);
 	},
 
 	//     USER ROUTES

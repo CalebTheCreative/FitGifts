@@ -4,22 +4,32 @@ import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
 function TRewards() {
+	const [rewards, setRewards] = useState([]);
 	const [rwdName, setRwdName] = useState([]);
 	const [rwdVal, setRwdVAl] = useState([]);
-	const [rewardObject, setRewardObject] = useState({});
+	// const [rewardObject, setRewardObject] = useState({});
 	// const [isRedeemed, setIsRedeemed] = useState(false);
 
+	// Load all rewards and store them with setRewards
 	useEffect(() => {
-		loadRewards();
-	}, []);
+		loadRewards()
+	}, [])
+
+	// function loadRewards() {
+	// 	console.log('Getting reward: ', { rwdName: rwdName, rwdVal: rwdVal });
+	// 	API.getRewards()
+	// 		.then(res => 
+	// 			setRwdName(res.data)
+	// 		.catch(err => console.log(err));
+	// }
 
 	function loadRewards() {
-		console.log('Getting reward: ', { rwdName: rwdName, rwdVal: rwdVal });
-		API.getReward()
-			.then((res) => res.data)
-			.catch((err) => console.log(err));
-	}
-
+		API.getRewards()
+			.then(res =>
+				setRewards(res.data)
+			)
+			.catch(err => console.log(err));
+	};
 	// function handleInputChange(e) {
 	// 	const { rwdName, rwdVal, value } = e.target;
 
@@ -95,9 +105,10 @@ function TRewards() {
 						</Col>
 					</Row>
 					<hr className="bg-light" />
-					{/* {rwdName.length ? (
+
+					{rewards.length ? (
 						<ListGroup>
-							{rwdName.map((reward) => (
+							{rewards.map((reward) => (
 								<ListGroupItem key={reward._id}>
 									<Link to={'/reward/' + reward._id}>
 										<b>
@@ -109,84 +120,47 @@ function TRewards() {
 						</ListGroup>
 					) : (
 						<h3>No Rewards to display</h3>
-					)} */}
+					)}
 				</Container>
 			</Row>
-		</div>
-		// <Container className="text-center justify-content-center mt-4">
-		//     <Row className="text-center justify-content-center">
-		//         <h1 style={{ textAlign: "center" }}>Rewards</h1>
-		//     </Row>
+			<br />
 
-		//     <br />
+			<Row className="text-center justify-content-center">
+				<Col xs={6} className="text-center justify-content-center bg-secondary text-white">
 
-		//     <Row className="text-center justify-content-center">
-		//         <Col xs={6}>
-		//             <Button block href="/add-reward" className="btn-lg"><b>Add</b></Button>
-		//         </Col>
-		//     </Row>
-		//     <br />
-		//     <Row className="text-center justify-content-center">
-		//         <Col xs={6}>
-		//             <Button variant="outline-secondary" className="btn-block btn-lg">10% off next session</Button>
-		//         </Col>
-		//     </Row>
+					<Row className="text-center justify-content-center">
+						<h3 className="text-center">Criteria:</h3>
+					</Row>
 
-		//     <Row className="justify-content-center">
-		//         <h4 className="text-left">10 points<span></span></h4><br />
-		//     </Row>
-		//     <Row className="text-center justify-content-center">
-		//         <Col xs={6}>
-		//             <Button variant="outline-secondary" className="btn-block btn-lg">20% off next session</Button>
-		//         </Col>
-		//     </Row>
+					<Row className="text-center justify-content-center">
+						<Col>
+							<p>1 pt</p>
+						</Col>
+						<Col>
+							<p className="text-left">Every completed session</p>
+						</Col>
+					</Row>
 
-		//     <Row className="justify-content-center">
-		//         <h4 className="text-left">25 points<span></span></h4><br />
-		//     </Row>
-		//     <Row className="text-center justify-content-center">
-		//         <Col xs={6}>
-		//             <Button variant="outline-secondary" className="btn-block btn-lg">50% off next session</Button>
-		//         </Col>
-		//     </Row>
-		//     <br />
+					<Row className="text-center justify-content-center">
+						<Col>
+							<p>2 pts</p>
+						</Col>
+						<Col>
+							<p className="text-left">Each goal met</p>
+						</Col>
+					</Row>
 
-		//     <Row className="text-center justify-content-center">
-		//         <Col xs={6} className="text-center justify-content-center bg-secondary text-white">
-
-		//             <Row className="text-center justify-content-center">
-		//                 <h3 className="text-center">Criteria:</h3>
-		//             </Row>
-
-		//             <Row className="text-center justify-content-center">
-		//                 <Col>
-		//                     <p>1 pt</p>
-		//                 </Col>
-		//                 <Col>
-		//                     <p className="text-left">Every completed session</p>
-		//                 </Col>
-		//             </Row>
-
-		//             <Row className="text-center justify-content-center">
-		//                 <Col>
-		//                     <p>2 pts</p>
-		//                 </Col>
-		//                 <Col>
-		//                     <p className="text-left">Each goal met</p>
-		//                 </Col>
-		//             </Row>
-
-		//             <Row className="text-center justify-content-center">
-		//                 <Col>
-		//                     <p>3 pt</p>
-		//                 </Col>
-		//                 <Col>
-		//                     <p className="text-left">Every month w/ 4 completed sessions</p>
-		//                 </Col>
-		//             </Row >
-		//         </Col>
-		//     </Row>
-		// </Container>
+					<Row className="text-center justify-content-center">
+						<Col>
+							<p>3 pt</p>
+						</Col>
+						<Col>
+							<p className="text-left">Every month w/ 4 completed sessions</p>
+						</Col>
+					</Row >
+				</Col>
+			</Row>
+		</div >
 	);
 }
 
