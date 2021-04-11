@@ -33,32 +33,32 @@ export default {
 	},
 
 	// adds a post to the database
-	createReward: function (rewardData) {
+	create: function (rewardData) {
 		console.log('API createReward: ', rewardData);
 		return axios.post('/api/reward', rewardData);
 	},
 
 	//     USER ROUTES
 
-	findUser: function (email) {
-		return axios.get('/api/user/find', {
-			params: {
-				email: email.email,
-			},
-		});
-	},
+	// findUser: function (email) {
+	// 	return axios.get('/api/user/find', {
+	// 		params: {
+	// 			email: email.email,
+	// 		},
+	// 	});
+	// },
 
-	getUsers: function () {
-		return axios.get('/api/user');
-	},
-	// Gets the post with the given id
-	getUser: function (id) {
-		return axios.get('/api/user/' + id);
-	},
-	// Deletes the post with the given id
-	deleteUser: function (id) {
-		return axios.delete('/api/user/' + id);
-	},
+	// getUsers: function () {
+	// 	return axios.get('/api/user');
+	// },
+	// // Gets the post with the given id
+	// getUser: function (id) {
+	// 	return axios.get('/api/user/' + id);
+	// },
+	// // Deletes the post with the given id
+	// deleteUser: function (id) {
+	// 	return axios.delete('/api/user/' + id);
+	// },
 	// Log the user in
 	login: function (email, password) {
 		console.log('API login ', email, password);

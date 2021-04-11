@@ -24,12 +24,14 @@ function TRewards() {
 	// }
 
 	function loadRewards() {
+
 		API.getRewards()
 			.then(res =>
 				setRewards(res.data)
 			)
 			.catch(err => console.log(err));
 	};
+
 	// function handleInputChange(e) {
 	// 	const { rwdName, rwdVal, value } = e.target;
 
@@ -43,7 +45,7 @@ function TRewards() {
 		console.log('reward value: ', rwdVal);
 
 		if (rwdName && rwdVal) {
-			API.createReward({
+			API.create({
 				rwdName: rwdName,
 				rwdVal: rwdVal,
 			})
