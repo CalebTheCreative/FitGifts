@@ -3,11 +3,12 @@ import { Container } from "react-bootstrap";
 import THome from "../components/THome";
 
 class TrainerHome extends Component {
-    state = {
-        name: "Caleb",
-        actNum: 12345,
-        numSessions: 3
-    }
+    // state = {
+    //     name: "Caleb",
+    //     actNum: 12345,
+    //     numSessions: 3
+    // }
+    
     // ===========================================================================
     // Needs
     // ===========================================================================

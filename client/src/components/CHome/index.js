@@ -8,11 +8,11 @@ import "./style.css";
 function CHome() {
 
     const [userName, setUserName] = useState([]);
-    const [rwdName, setRwdName] = useState([]);
+    // const [rwdName, setRwdName] = useState([]);
 
-    useEffect(() => {
-        loadRewards()
-    }, [])
+    // useEffect(() => {
+    //     loadRewards()
+    // }, [])
     useEffect(() => {
         loadUser()
     }, [])
@@ -41,13 +41,13 @@ function CHome() {
             .catch(err => console.log(err));
     };
 
-    function loadRewards() {
-        API.getRewards()
-            .then(res =>
-                setRwdName(res.data)
-            )
-            .catch(err => console.log(err));
-    };
+    // function loadRewards() {
+    //     API.getRewards()
+    //         .then(res =>
+    //             setRwdName(res.data)
+    //         )
+    //         .catch(err => console.log(err));
+    // };
     // function componentDidMount() {
     //     this.calcProg();
     //     this.rwdAchieved();
@@ -289,8 +289,7 @@ function CHome() {
                                         </Col>
                                     </Row>
                                 </Col>
-                            )}
-                        
+                            {/* )} */}
                     </Row>
                 </Container>
             </Row>
