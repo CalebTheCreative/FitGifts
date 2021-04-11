@@ -14,8 +14,8 @@ module.exports = {
 			.catch((err) => res.status(422).json(err));
 	},
 	findOne: function (req, res) {
-		console.log('REQUEST: ******************\n', req.query);
-		db.User.findOne({ email: req.query.email })
+		console.log(req.query);
+		db.User.findOne(rew.params.email)
 			.then((dbModel) => res.json(dbModel.email))
 			.catch((err) => res.status(422) / json(err));
 	},
@@ -53,16 +53,15 @@ module.exports = {
 	},
 
 	login: (req, res) => {
-		console.log("Login res:");
+		console.log('Login res:');
 		console.log(req);
 		res.json({
-			// id: req.user._id,
 			email: req.user.email,
 			isTrainer: req.user.isTrainer,
 			firstName: req.user.firstName,
 			lastName: req.user.lastName,
 			rewardPts: req.user.rewardPts,
-			rewards: req.user.rewards
+			rewards: req.user.rewards,
 		});
 	},
 
