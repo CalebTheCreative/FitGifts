@@ -35,17 +35,4 @@ module.exports = {
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.status(422).json(err));
 	},
-	newReward: (req, res) => {
-		const { rwdName, rwdVal } = req.body;
-		console.log('New Reward: ', req.body);
-		db.Reward.create({
-			rwdName: rwdName,
-			rwdVal: rwdVal,
-		})
-			.then((result) => {
-				console.log('reward: ', result);
-				return res.json(result);
-			})
-			.catch((err) => res.status(422).json(err));
-	},
 };

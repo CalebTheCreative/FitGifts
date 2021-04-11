@@ -1,9 +1,8 @@
 import React from 'react';
-import Clients from "../components/Clients";
-import "./style.css";
+import Clients from '../Clients';
+import './style.css';
 
 function ClientList() {
-
 	// ===========================================================================
 	// Needs
 	// ===========================================================================
