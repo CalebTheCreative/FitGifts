@@ -3,7 +3,11 @@ import axios from 'axios';
 export default {
 	/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 
-	// REWARD ROUTES
+
+	// =========================================================
+	// Rewards Routes
+	// =========================================================
+
 	// findReward: function (rwdName) {
 	// 	return axios.get('/api/user/find-reward', {
 	// 		params: {
@@ -17,10 +21,6 @@ export default {
 	},
 
 	// Gets the REWARD post with the given values
-	// getReward: function (rwdName, rwdVal) {
-	// 	console.log('API getReward: ', rwdName, rwdVal);
-	// 	return axios.get('/api/reward/', { rwdName: rwdName, rwdVal: rwdVal });
-	// },
 
 	getReward: function (id) {
 		console.log('API getReward: ', id);
@@ -33,12 +33,42 @@ export default {
 	},
 
 	// adds a post to the database
-	create: function (rewardData) {
+	createRewards: function (rewardData) {
 		console.log('API createReward: ', rewardData);
 		return axios.post('/api/reward', rewardData);
 	},
 
-	//     USER ROUTES
+	// =========================================================
+	// Criteria Routes
+	// =========================================================
+
+	getCritList: function () {
+		console.log('API getCriterias list: ');
+		return axios.get('/api/criteria/');
+	},
+
+	// Gets the CRITERIA post with the given values
+
+	getCrit: function (id) {
+		console.log('API getCriteria: ', id);
+		return axios.get('/api/criteria/', id);
+	},
+
+	// Deletes the post with the given id
+	deleteCrit: function (id) {
+		console.log('API deleteCriteria: ', id);
+		return axios.delete('/api/criteria/' + id);
+	},
+
+	// adds a post to the database
+	createCrit: function (critData) {
+		console.log('API createCriteria: ', critData);
+		return axios.post('/api/criteria', critData);
+	},
+
+	// =========================================================
+	// User Routes
+	// =========================================================
 
 	// findUser: function (email) {
 	// 	return axios.get('/api/user/find', {
@@ -48,17 +78,23 @@ export default {
 	// 	});
 	// },
 
-	// getUsers: function () {
-	// 	return axios.get('/api/user');
-	// },
+	getUsers: function () {
+		console.log('API users: ');
+		return axios.get('/api/user');
+	},
+
 	// // Gets the post with the given id
-	// getUser: function (id) {
-	// 	return axios.get('/api/user/' + id);
-	// },
+	getUser: function (id) {
+		console.log('API getUser: ', id);
+		return axios.get('/api/user/' + id);
+	},
+
 	// // Deletes the post with the given id
-	// deleteUser: function (id) {
-	// 	return axios.delete('/api/user/' + id);
-	// },
+	deleteUser: function (id) {
+		console.log('API deleteUser: ', id);
+		return axios.delete('/api/user/' + id);
+	},
+
 	// Log the user in
 	login: function (email, password) {
 		console.log('API login ', email, password);

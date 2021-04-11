@@ -23,15 +23,12 @@ module.exports = {
 			.catch(err => res.status(422) / json(err));
 	},
 	create: function (req, res) {
-		// db.Reward.create(req.body)
-		// 	.then((dbModel) => res.json(dbModel))
-		// 	.catch((err) => res.status(422).json(err));
 		const { rwdName, rwdVal } = req.body;
 		console.log('New Reward B4: ', req.body);
 		db.Reward
 			.create({
 				rwdName: rwdName,
-				rwdVal: rwdVal,
+				rwdVal: rwdVal
 			})
 			.then(result => {
 				console.log('reward after: ', result);

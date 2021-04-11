@@ -1,8 +1,10 @@
-import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import TRewards from "../components/TRewards";
+import TCriteria from "../components/TCriteria";
+import API from "../utils/API";
 
-function TrainerHome(props) {
+function TrainerHome() {
     // state = {
     //     name: "Caleb",
     //     actNum: 12345,
@@ -14,10 +16,35 @@ function TrainerHome(props) {
     //     rwdProg: 0
     // }
 
-    // componentDidMount() {
-    //     this.calcProg();
-    // }
+    const [userName, setUserName] = useState([]);
+    useEffect(() => {
+        loadUser()
+    }, [])
 
+    // Modal Components
+    //      1 – Add Trainer Button
+    //      2 – Contact Trainer Button
+    //      3 – How to Earn Button
+    const [show1, setShow1] = useState(false);
+    // const [show2, setShow2] = useState(false);
+    // const [show3, setShow3] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    // const handleClose2 = () => setShow2(false);
+    // const handleClose3 = () => setShow3(false);
+
+    const handleShow1 = () => setShow1(true);
+    // const handleShow2 = () => setShow2(true);
+    // const handleShow3 = () => setShow3(true);
+
+
+    function loadUser() {
+        API.getUser()
+            .then(res =>
+                setUserName(res.data)
+            )
+            .catch(err => console.log(err));
+    };
     // function addPoint() {
     //     this.setState({ clientTot1: this.state.clientTot1 + 1 })
     //     this.calcProg();
@@ -41,8 +68,8 @@ function TrainerHome(props) {
 
                     <Row>
                         <Col>
-                            <h1>Hello, {props.firstName}!</h1>
-                            <h5 className="text-danger">Trainer Number: <Button size="sm" href="sms:&body=Enter code '12345' to add me as your trainer on FitGifts!">{props.actNum}</Button> </h5>
+                            <h1>Hello, {userName.firstName}!</h1>
+                            <h5 className="text-danger">Trainer Number: <Button size="sm" href="sms:&body=Enter code '12345' to add me as your trainer on FitGifts!">{userName.phoneNumber}</Button> </h5>
                         </Col>
                     </Row>
 
@@ -58,33 +85,11 @@ function TrainerHome(props) {
                         <Col sm="auto">
                             <Button variant="outline-secondary" className="my-1" block>Logout</Button>
                         </Col>
-                        {/* <Col sm="auto">
-                                <Button variant="danger" className="my-1" block href="/trainer-sessions"><i className="fas fa-calendar-check"></i><b> Sessions</b></Button>
-                            </Col> */}
+
                     </Row>
 
                 </Container>
             </Row>
-
-            {/* <Row className="my-3">
-                    <Container className="justify-content-center">
-                        <Row className="text-center justify-content-center text-white">
-
-                            <Col sm={4}>
-
-                                <Row className="text-center justify-content-center text-white">
-                                    <h5>You have {this.state.numSessions} sessions booked for today</h5>
-                                </Row>
-                                <Row className="text-center justify-content-center text-white">
-                                    <Button className="mx-1" size="sm" variant="outline-light" href="/client-sessions">View Sessions <i className="fas fa-chevron-right"></i></Button>
-                                    <Button className="mx-1" size="sm" variant="outline-light" href="/book-new-session">Book a Session <i className="fas fa-chevron-right"></i></Button>
-                                </Row>
-
-                            </Col>
-
-                        </Row>
-                    </Container>
-                </Row> */}
 
             <Row className="justify-content-center my-3">
                 <Container className="justify-content-center align-items-center bg-light px-4">
@@ -94,7 +99,7 @@ function TrainerHome(props) {
                                 <Col className="align-items-center">
                                     <h1>
                                         Your Clients
-                                        </h1>
+                                    </h1>
                                 </Col>
                             </Row>
                         </Col>
@@ -103,42 +108,40 @@ function TrainerHome(props) {
                             <Row className="text-center align-items-center justify-content-center my-2 p-3 border">
                                 <Col sm={4} className="text-center justify-content-center">
                                     <Row className="text-center justify-content-center">
-                                        <h2>{props.clientName1}</h2>
+                                        <h2>{userName.clientName1}</h2>
                                     </Row>
                                 </Col>
                                 <Col sm={2} className="text-center justify-content-center">
                                     <Row className="text-center justify-content-center">
-                                        <h2 className="text-center">{props.clientTot1}</h2>
+                                        <h2 className="text-center">{userName.clientTot1}</h2>
                                     </Row>
                                 </Col>
                                 <Col sm={6} className="text-center justify-content-center">
                                     <Row className="text-center justify-content-center">
                                         {/* <Button className="mx-1" variant="danger" onClick={this.addPoint}><i className="fas fa-plus"></i><b> Add Pt</b></Button> */}
-                                        <Button className="mx-1" variant="danger" data-toggle="modal" data-target="#exampleModalCenter"><i className="fas fa-comment"></i><b> Contact</b></Button>
+                                        <Button variant="danger" className="my-1 mx-1" onClick={handleShow1}>
+                                            <i className="fas fa-comment"></i><b> Contact</b>
+                                        </Button>
 
-                                        <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div className="modal-dialog modal-dialog-centered" role="document">
-                                                <div className="modal-content">
-                                                    <div className="modal-header">
-                                                        <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div className="modal-body">
-                                                        <Col sm="auto">
-                                                            <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="tel:123-456-7890"><i className="fas fa-phone"></i>&nbsp;Call</Button>
-                                                            <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="sms:123-456-7890"><i className="fas fa-comment-dots"></i>&nbsp;Text</Button>
-                                                            <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="mailto:sample@mail.com"><i className="fas fa-envelope"></i>&nbsp;Email</Button>
-                                                        </Col>
-                                                    </div>
-                                                    <div className="modal-footer">
-                                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Done</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <Button className="mx-1" variant="danger"><i className="fas fa-minus-circle"></i><b> Remove</b></Button>
+                                        <Modal show={show1} onHide={handleClose1}>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title>Contact</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <Col sm="auto">
+                                                    <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="tel:123-456-7890"><i className="fas fa-phone"></i>&nbsp;Call</Button>
+                                                    <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="sms:123-456-7890"><i className="fas fa-comment-dots"></i>&nbsp;Text</Button>
+                                                    <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="mailto:sample@mail.com"><i className="fas fa-envelope"></i>&nbsp;Email</Button>
+                                                </Col>
+                                            </Modal.Body>
+                                            <Modal.Footer>
+                                                <Button variant="secondary" onClick={handleClose1}>
+                                                    Close
+                                        </Button>
+                                            </Modal.Footer>
+                                        </Modal>
+
+                                        <Button className="mx-1 my-1" variant="danger"><i className="fas fa-minus-circle"></i><b> Remove</b></Button>
                                     </Row>
                                 </Col>
                             </Row>
@@ -151,6 +154,12 @@ function TrainerHome(props) {
             <Row className="justify-content-center my-3">
                 <Container>
                     <TRewards />
+                </Container>
+            </Row>
+
+            <Row className="justify-content-center my-3">
+                <Container>
+                    <TCriteria />
                 </Container>
             </Row>
 
