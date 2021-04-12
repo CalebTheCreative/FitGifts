@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import API from '../../utils/API';
 import './style.css';
@@ -9,6 +9,16 @@ function Login() {
 	// const [isTrainer, setTrainer] = useState();
 	const [user, setUser] = useState([]);
 
+	useEffect(() => {
+		loadUser();
+	}, []);
+
+	function loadUser() {
+		API.findUser()
+			.then((res) => setUser(res.data))
+			.catch((err) => console.log(err));
+	}
+
 	function handleLogin(e) {
 		e.preventDefault();
 		console.log('login-form, email: ');
@@ -18,12 +28,13 @@ function Login() {
 		API.login(email, password)
 			.then((response) => {
 				// setUser(response.data);
+
 				console.log('XavierTestData: ');
 				console.log('Login API', response.data);
-				setUser(response.data);
+				// setUser(response.data);
+				console.log('User Data: ', user);
 
 				if (response.status === 200) {
-					console.log(user);
 					// if (!response.isTrainer) {
 					// 	window.location.href = '/home-client';
 					// } else {
