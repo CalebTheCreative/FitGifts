@@ -9,24 +9,22 @@ const db = require('../models');
 passport.use(
 	new LocalStrategy(
 		{
-			usernameField: "email",
-			passwordField: "password",
+			usernameField: 'email',
+			passwordField: 'password',
 		},
 		function (email, password, done) {
-			db.User.findOne({ email: email })
-			.then((dbUser) => {
-				console.log("DB User is:");
+			db.User.findOne({ email: email }).then((dbUser) => {
+				console.log('DB User is:');
 				console.log(dbUser);
 				if (dbUser === null) {
 					return done(null, false, {
-						message: "Incorrect Username",
+						message: 'Incorrect Username',
 					});
 				} else if (bcrypt.compare(password, dbUser.password)) {
-					
 					return done(null, dbUser);
 				} else {
 					return done(null, false, {
-						message: "Password Incorrect",
+						message: 'Password Incorrect',
 					});
 				}
 			});

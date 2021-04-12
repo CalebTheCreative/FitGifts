@@ -83,7 +83,7 @@ export default {
 	// // Gets the post with the given id
 	getUser: function (email) {
 		console.log('API getUser: ', email);
-		return axios.get('/api/user/find', { email: email.email });
+		return axios.get('/api/user/find', { email: email });
 	},
 
 	// // Deletes the post with the given id
