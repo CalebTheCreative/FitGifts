@@ -15,7 +15,7 @@ module.exports = {
 	},
 	findOne: function (req, res) {
 		console.log(req.query);
-		db.User.findOne(rew.params.email)
+		db.User.findOne(req.params.email)
 			.then((dbModel) => res.json(dbModel.email))
 			.catch((err) => res.status(422) / json(err));
 	},
@@ -60,6 +60,7 @@ module.exports = {
 			isTrainer: req.user.isTrainer,
 			firstName: req.user.firstName,
 			lastName: req.user.lastName,
+			phoneNumber: req.user.phoneNumber,
 			rewardPts: req.user.rewardPts,
 			rewards: req.user.rewards,
 		});

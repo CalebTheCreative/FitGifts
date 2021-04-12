@@ -7,6 +7,7 @@ function Login() {
 	const [email, setEmail] = useState([]);
 	const [password, setPassword] = useState([]);
 	// const [isTrainer, setTrainer] = useState();
+	const [user, setUser] = useState([]);
 
 	function handleLogin(e) {
 		e.preventDefault();
@@ -16,13 +17,18 @@ function Login() {
 
 		API.login(email, password)
 			.then((response) => {
+				// setUser(response.data);
+				console.log('XavierTestData: ');
+				console.log('Login API', response.data);
+				setUser(response.data);
+
 				if (response.status === 200) {
-					console.log('Login API', response.data);
-					if (!response.isTrainer) {
-						window.location.href = '/home-client';
-					} else {
-						window.location.href = '/home-trainer';
-					}
+					console.log(user);
+					// if (!response.isTrainer) {
+					// 	window.location.href = '/home-client';
+					// } else {
+					// 	window.location.href = '/home-trainer';
+					// }
 				}
 			})
 			.catch((e) => {

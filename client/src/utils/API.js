@@ -3,7 +3,6 @@ import axios from 'axios';
 export default {
 	/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 
-
 	// =========================================================
 	// Rewards Routes
 	// =========================================================
@@ -70,13 +69,11 @@ export default {
 	// User Routes
 	// =========================================================
 
-	// findUser: function (email) {
-	// 	return axios.get('/api/user/find', {
-	// 		params: {
-	// 			email: email.email,
-	// 		},
-	// 	});
-	// },
+	findUser: function (email) {
+		return axios.get('/api/user/find', {
+			email: email.email,
+		});
+	},
 
 	getUsers: function () {
 		console.log('API users: ');
@@ -84,9 +81,9 @@ export default {
 	},
 
 	// // Gets the post with the given id
-	getUser: function (id) {
-		console.log('API getUser: ', id);
-		return axios.get('/api/user/' + id);
+	getUser: function (email) {
+		console.log('API getUser: ', email);
+		return axios.get('/api/user/find', { email: email });
 	},
 
 	// // Deletes the post with the given id
