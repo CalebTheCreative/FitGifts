@@ -5,11 +5,8 @@ import API from '../../utils/API';
 import './style.css';
 
 function Login() {
-	const { firstName, lastName } = useParams();
 	const [email, setEmail] = useState([]);
 	const [password, setPassword] = useState([]);
-	// const [isTrainer, setTrainer] = useState();
-	const [user, setUser] = useState([]);
 
 	function handleLogin(e) {
 		e.preventDefault();
