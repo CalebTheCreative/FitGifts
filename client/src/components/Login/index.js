@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
 import API from '../../utils/API';
 import './style.css';
 

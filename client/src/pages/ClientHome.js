@@ -5,12 +5,13 @@ import AddTrainer from '../components/AddTrainer';
 import API from '../utils/API';
 
 function ClientHome() {
+
 	const [userName, setUserName] = useState([]);
 	const [rewards, setRewards] = useState([]);
 
 	useEffect(() => {
-		loadUser();
-	}, []);
+		loadUser()
+	}, [])
 
 	useEffect(() => {
 		loadRewards();
@@ -34,15 +35,20 @@ function ClientHome() {
 
 	function loadUser() {
 		API.getUser()
-			.then((req) => setUserName(req.user))
-			.catch((err) => console.log(err));
+			.then(res =>
+				setUserName(res.data)
+			)
+			.catch(err => console.log(err));
 	}
 
 	function loadRewards() {
 		API.getRewards()
-			.then((res) => setRewards(res.data))
-			.catch((err) => console.log(err));
+			.then(res => 
+				setRewards(res.data)
+			)
+			.catch(err => console.log(err));
 	}
+
 	// function componentDidMount() {
 	//     this.calcProg();
 	//     this.rwdAchieved();
@@ -121,11 +127,7 @@ function ClientHome() {
 				<Container id="c-home-banner1" className="px-4 py-4">
 					<Row>
 						<Col>
-							{userName.length ? (
-								<h1>Hello, {userName.firstName}!</h1>
-							) : (
-								<h1>No username is set up here</h1>
-							)}
+							<h1>Hello, {userName.firstName}!</h1>
 
 							<h5>
 								Trainer Name: <span className="text-danger">NEEDS CHANGED</span>
@@ -208,6 +210,7 @@ function ClientHome() {
 				</Container>
 			</Row>
 			<br />
+			
 			<Row className="justify-content-center">
 				<Container className="justify-content-center align-items-center bg-light p-2">
 					<Row className="justify-content-center align-items-center mx-2">
@@ -320,6 +323,7 @@ function ClientHome() {
 					</Row>
 				</Container>
 			</Row>
+		
 		</Container>
 	);
 }

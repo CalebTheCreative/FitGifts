@@ -5,18 +5,9 @@ import TCriteria from "../components/TCriteria";
 import API from "../utils/API";
 
 function TrainerHome() {
-    // state = {
-    //     name: "Caleb",
-    //     actNum: 12345,
-    //     numSessions: 3,
-    //     rwdName1: "10% off cost of next session",
-    //     rwdGoal1: 5,
-    //     clientName1: "Test1",
-    //     clientTot1: 0,
-    //     rwdProg: 0
-    // }
 
     const [userName, setUserName] = useState([]);
+    
     useEffect(() => {
         loadUser()
     }, [])
@@ -69,7 +60,7 @@ function TrainerHome() {
                     <Row>
                         <Col>
                             <h1>Hello, {userName.firstName}!</h1>
-                            <h5 className="text-danger">Trainer Number: <Button size="sm" href="sms:&body=Enter code '12345' to add me as your trainer on FitGifts!">{userName.phoneNumber}</Button> </h5>
+                            <h5 className="text-danger">Trainer Number: <Button size="sm" href="sms:&body=Enter code '12345' to add me as your trainer on FitGifts!">{userName._id}</Button> </h5>
                         </Col>
                     </Row>
 
