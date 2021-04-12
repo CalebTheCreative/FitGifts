@@ -56,6 +56,7 @@ module.exports = {
 		console.log('Login res:');
 		console.log(req);
 		res.json({
+			// id: req.user._id,
 			email: req.user.email,
 			isTrainer: req.user.isTrainer,
 			firstName: req.user.firstName,

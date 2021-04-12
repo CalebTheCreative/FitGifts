@@ -15,6 +15,12 @@ const RewardSchema = new Schema({
 		type: Boolean,
 		default: false,
 	},
+	user: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'user',
+		},
+	],
 });
 
 const Reward = mongoose.model('Reward', RewardSchema);

@@ -4,9 +4,6 @@ const bcrypt = require('bcryptjs');
 
 //User Schema
 const UserSchema = new Schema({
-	// _id: {
-	// 	type: Schema.Types.ObjectId,
-	// },
 	firstName: {
 		type: String,
 		required: 'Please enter your first name.',
@@ -36,12 +33,7 @@ const UserSchema = new Schema({
 		type: Number,
 		default: 0,
 	},
-	rewards: [
-		{
-			type: Schema.Types.ObjectId,
-			ref: 'Reward',
-		},
-	],
+	rewards: [{ type: Schema.Types.ObjectId, ref: 'Reward' }],
 });
 
 UserSchema.pre('save', function (next) {
@@ -70,4 +62,5 @@ UserSchema.pre('save', function (next) {
 	}
 });
 
-module.exports = User = mongoose.model('User', UserSchema, 'users');
+const User = mongoose.model('User', UserSchema);
+module.exports = User;
