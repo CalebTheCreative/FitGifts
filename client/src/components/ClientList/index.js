@@ -162,6 +162,7 @@ function ClientList() {
 										<br />
 										Phone:{client.clientPhone} &nbsp; email:{client.clientEmail}
 									</Link>
+									<h1>{client.rwdPts}</h1>
 									<Button
 										onChange={(e) => handlePoints(e.target.value)}
 										onClick={() => dispatch('add')}
