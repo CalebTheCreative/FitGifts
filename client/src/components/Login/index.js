@@ -8,7 +8,7 @@ function Login() {
 	const [email, setEmail] = useState([]);
 	const [password, setPassword] = useState([]);
 
-	function handleSubmit(e) {
+	function handleLogin(e) {
 		e.preventDefault();
 		console.log('login-form, email: ');
 		console.log('email is ' + email);
@@ -45,7 +45,7 @@ function Login() {
 
 					<Row className="text-center justify-content-center">
 						<Col xs={8}>
-							<Form onChange={handleSubmit}>
+							<Form>
 								<Form.Group as={Row} controlId="formBasicEmail">
 									<Form.Label column sm="2">
 										<i className="fas fa-user"></i>
@@ -80,7 +80,7 @@ function Login() {
 									block
 									type="submit"
 									className="form-rounded"
-									// onClick={handleLogin}
+									onClick={handleLogin}
 								>
 									<b>Log In</b>
 								</Button>
