@@ -30,10 +30,8 @@ module.exports = {
 				rwdName: rwdName,
 				rwdVal: rwdVal
 			})
-			.then(result => {
-				console.log('reward after: ', result);
-				return res.json(result);
-			})
+			.then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { rewards: _id } }, { new: true })
+			)
 			.catch(err => res.status(422).json(err));
 	},
 	update: function (req, res) {
