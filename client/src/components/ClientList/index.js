@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
 function ClientList() {
@@ -66,7 +66,7 @@ function ClientList() {
 		console.log('Email: ', clientEmail);
 
 		if (clientFirstName && clientLastName && clientPhone && clientEmail) {
-			API.createRewards({
+			API.createClient({
 				clientFirstName: clientFirstName,
 				clientLastName: clientLastName,
 				clientPhone: clientPhone,
@@ -156,26 +156,26 @@ function ClientList() {
 					{clients.length ? (
 						<ListGroup>
 							{clients.map((client) => (
-								<ListGroupItem id={client._id}>
-									{/* <Link to={'/client/' + client._id}>
-										<b>
-											First: {client.clientFirstName} Last: {client.clientLastName}
-										</b>
-									</Link> */}
-									<Button onClick={handleDelete}>
-										f:{client.clientFirstName}
-										l:{client.clientLastName}
-										p:{client.clientPhone}
-										e:{client.clientEmail}
-									</Button>
+								<ListGroupItem key={client._id}>
+									<Link to={'/client/' + client._id}>
+										{client.clientFirstName} {client.clientLastName}
+										<br />
+										Phone:{client.clientPhone} &nbsp; email:{client.clientEmail}
+									</Link>
 									<Button
 										onChange={(e) => handlePoints(e.target.value)}
 										onClick={() => dispatch('add')}
-									></Button>
+									>
+										{' '}
+										Add Point{' '}
+									</Button>
 									<Button
 										onChange={(e) => handlePoints(e.target.value)}
 										onClick={() => dispatch('subtract')}
-									></Button>
+									>
+										{' '}
+										Subtract Point
+									</Button>
 								</ListGroupItem>
 							))}
 						</ListGroup>
