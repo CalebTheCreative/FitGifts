@@ -228,7 +228,9 @@ function ClientHome() {
 							<Row className="align-items-center justify-content-center">
 								<Col sm="auto" className="align-items-center justify-content-center">
 									<h1 id="rwdPtBanner" className="text-black">
-										{userName.rewardsPts}
+										{/* {userName.rewardsPts}
+										 */}
+										 rewardsPts
 									</h1>
 									<h5 className="text-black">Reward Points to Redeem</h5>
 									<Button variant="outline-danger" size="sm" onClick={handleShow3}>

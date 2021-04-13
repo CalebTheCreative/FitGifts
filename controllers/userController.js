@@ -42,15 +42,15 @@ module.exports = {
 	},
 
 	signup: (req, res) => {
-		const { email, password, firstName, lastName, phoneNumber, isTrainer } = req.body;
+		const { email, password, firstName, lastName, phoneNumber } = req.body;
 		console.log('signup', req.body);
 		db.User.create({
 			email: email,
 			password: password,
 			firstName: firstName,
 			lastName: lastName,
-			phoneNumber: phoneNumber,
-			isTrainer: isTrainer,
+			phoneNumber: phoneNumber
+			// isTrainer: isTrainer,
 		}).then((result) => {
 			console.log('signup', result);
 			return res.json(result);
@@ -63,11 +63,11 @@ module.exports = {
 		res.json({
 			// id: req.user._id,
 			email: req.user.email,
-			isTrainer: req.user.isTrainer,
+			// isTrainer: req.user.isTrainer,
 			firstName: req.user.firstName,
 			lastName: req.user.lastName,
 			phoneNumber: req.user.phoneNumber,
-			rewardPts: req.user.rewardPts,
+			// rewardPts: req.user.rewardPts,
 			rewards: req.user.rewards,
 		});
 	},

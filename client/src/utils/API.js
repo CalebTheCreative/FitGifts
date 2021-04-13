@@ -66,6 +66,34 @@ export default {
 	},
 
 	// =========================================================
+	// Client Routes
+	// =========================================================
+
+	getClients: function () {
+		console.log('API getClients: ');
+		return axios.get('/api/client/');
+	},
+
+	// Gets the CRITERIA post with the given values
+
+	getClient: function (id) {
+		console.log('API getClient: ', id);
+		return axios.get('/api/client/', id);
+	},
+
+	// Deletes the post with the given id
+	deleteClient: function (id) {
+		console.log('API deleteClient: ', id);
+		return axios.delete('/api/client/' + id);
+	},
+
+	// adds a post to the database
+	createClient: function (clientData) {
+		console.log('API createClient: ', clientData);
+		return axios.post('/api/client', clientData);
+	},
+
+	// =========================================================
 	// User Routes
 	// =========================================================
 

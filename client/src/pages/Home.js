@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Modal } from "react-bootstrap";
+import ClientList from "../components/ClientList";
 import TRewards from "../components/TRewards";
 import TCriteria from "../components/TCriteria";
 import API from "../utils/API";
@@ -7,7 +8,7 @@ import API from "../utils/API";
 function Home() {
 
     const [userName, setUserName] = useState([]);
-    
+
     useEffect(() => {
         loadUser()
     }, [])
@@ -104,6 +105,7 @@ function Home() {
                                 </Col>
                             </Row>
                         </Col>
+
                         <Col xs={9} className="text-center justify-content-center align-items-center">
 
                             <Row className="text-center align-items-center justify-content-center my-2 p-3 border">
@@ -151,7 +153,11 @@ function Home() {
                     </Row>
                 </Container>
             </Row>
-
+            <Row className="justify-content-center my-3">
+                <Container>
+                    <ClientList />
+                </Container>
+            </Row>
             <Row className="justify-content-center my-3">
                 <Container>
                     <TRewards />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import API from '../../utils/API';
 import { Col, Image, Container, Form, Row, Button } from 'react-bootstrap';
 import './style.css';
-import BootstrapSwitchButton from 'bootstrap-switch-button-react';
+// import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 
 function SignUp() {
 	const [email, setEmail] = useState([]);
@@ -10,7 +10,7 @@ function SignUp() {
 	const [firstName, setFirstName] = useState([]);
 	const [lastName, setLastName] = useState([]);
 	const [phoneNumber, setPhoneNumber] = useState([]);
-	const [isTrainer, setIsTrainer] = useState();
+	// const [isTrainer, setIsTrainer] = useState();
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -18,7 +18,7 @@ function SignUp() {
 		console.log('email is ' + email);
 		console.log('Name: ' + firstName + ' ' + lastName);
 		console.log('Phone Number: ' + phoneNumber);
-		console.log('Trainer ' + isTrainer);
+		// console.log('Trainer ' + isTrainer);
 
 		API.signup({
 			email: email,
@@ -26,7 +26,7 @@ function SignUp() {
 			lastName: lastName,
 			password: password,
 			phoneNumber: phoneNumber,
-			isTrainer: isTrainer,
+			// isTrainer: isTrainer,
 		})
 			.then((response) => {
 				console.log(response);
@@ -50,7 +50,7 @@ function SignUp() {
 					</Row>
 					<br />
 
-					<Row className="text-center justify-content-center">
+					{/* <Row className="text-center justify-content-center">
 						<Col xs={8} className="text-center justify-content-center">
 							<h6>Account type:&nbsp;</h6>
 							<span>
@@ -67,7 +67,7 @@ function SignUp() {
 								/>
 							</span>
 						</Col>
-					</Row>
+					</Row> */}
 
 					<Row className="text-center justify-content-center">
 						<Col xs={6}>

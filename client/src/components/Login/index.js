@@ -38,7 +38,6 @@ return (
 					<Image src="/images/logos/fg-logo-scd-w.png" id="credLogo" />
 				</Row>
 				<br />
-
 				<Row className="text-center justify-content-center">
 					<Col xs={8}>
 						<Form>
