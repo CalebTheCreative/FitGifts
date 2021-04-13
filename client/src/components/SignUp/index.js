@@ -173,7 +173,7 @@ function SignUp() {
 					<Row className="text-center justify-content-center">
 						<p>Already have an account? </p>
 						<span>
-							<a href="/login" className="text-white">
+							<a href="/" className="text-white">
 								&nbsp;<b>Log in here</b>
 							</a>
 						</span>

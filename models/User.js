@@ -25,14 +25,14 @@ const UserSchema = new Schema({
 		type: String,
 		required: 'Please enter a secure password.',
 	},
-	isTrainer: {
-		type: Boolean,
-		default: false,
-	},
-	rewardsPts: {
-		type: Number,
-		default: 0,
-	},
+	// isTrainer: {
+	// 	type: Boolean,
+	// 	default: false,
+	// },
+	// rewardsPts: {
+	// 	type: Number,
+	// 	default: 0,
+	// },
 	rewards: [
 		{ 
 			type: Schema.Types.ObjectId,
@@ -48,13 +48,13 @@ const UserSchema = new Schema({
 	clients: [
 		{
 			type: Schema.Types.ObjectId,
-			ref: 'User'
+			ref: 'Client'
 		}
 	],
-	trainer: {
-		type: Schema.Types.ObjectId,
-		ref: 'User'
-	}
+	// trainer: {
+	// 	type: Schema.Types.ObjectId,
+	// 	ref: 'User'
+	// }
 });
 
 UserSchema.pre('save', function (next) {

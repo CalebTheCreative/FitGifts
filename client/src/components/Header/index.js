@@ -3,12 +3,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import "./style.css";
 
 function Header() {
-    
-    // ===========================================================================
-    // Needs
-    // ===========================================================================
-    //  - Function to handle back arrow to go to previous page
-    //  - Function to handle home button to go to /home-trainer or /home-client
 
     return (
 
@@ -17,7 +11,7 @@ function Header() {
                 <Col sm={3}>
                 </Col>
                 <Col sm={6}>
-                    <a href="/home-trainer">
+                    <a href="/home">
                         <img src="/images/logos/fg-logo-text-whitered.png" className="text-center mt-2" id="fgLogoScd" alt="FitGifts secondary logo" />
                     </a>
                 </Col>
