@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import API from '../../utils/API';
+import PropTypes from 'prop-types';
 import './style.css';
 
 function Login() {
 	const [email, setEmail] = useState([]);
 	const [password, setPassword] = useState([]);
 
-	function handleLogin(e) {
+	function handleSubmit(e) {
 		e.preventDefault();
 		console.log('login-form, email: ');
 		console.log('email is ' + email);
@@ -19,7 +20,6 @@ function Login() {
 				console.log('XavierTestData: ');
 				console.log('Login API', response.data);
 				console.log('User Data: ', user);
-
 				if (response.status === 200) {
 					if (!user.isTrainer) {
 						window.location.href = '/home-client';
@@ -45,7 +45,7 @@ function Login() {
 
 					<Row className="text-center justify-content-center">
 						<Col xs={8}>
-							<Form>
+							<Form onChange={handleSubmit}>
 								<Form.Group as={Row} controlId="formBasicEmail">
 									<Form.Label column sm="2">
 										<i className="fas fa-user"></i>
@@ -80,7 +80,7 @@ function Login() {
 									block
 									type="submit"
 									className="form-rounded"
-									onClick={handleLogin}
+									// onClick={handleLogin}
 								>
 									<b>Log In</b>
 								</Button>
