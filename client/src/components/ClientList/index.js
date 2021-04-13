@@ -95,7 +95,7 @@ function ClientList() {
 						<Col sm={12} className="justify-content-center">
 							<form>
 								<Row className="justify-content-center">
-									<Col sm={4}>
+									<Col sm={3}>
 										<div className="form-group">
 											<input
 												className="form-input"
@@ -105,17 +105,17 @@ function ClientList() {
 											/>
 										</div>
 									</Col>
-									<Col sm={4}>
+									<Col sm={3}>
 										<div className="form-group">
 											<input
 												className="form-input"
-												name="clientLastNane"
+												name="clientLastName"
 												placeholder="Last Name"
 												onChange={(e) => setClientLastName(e.target.value)}
 											/>
 										</div>
 									</Col>
-									<Col sm={4}>
+									<Col sm={3}>
 										<div className="form-group">
 											<input
 												className="form-input"
@@ -125,12 +125,12 @@ function ClientList() {
 											/>
 										</div>
 									</Col>
-									<Col sm={4}>
+									<Col sm={3}>
 										<div className="form-group">
 											<input
 												className="form-input"
 												name="clientEmail"
-												placeholder="Phone Number"
+												placeholder="Email"
 												onChange={(e) => setClientEmail(e.target.value)}
 											/>
 										</div>
