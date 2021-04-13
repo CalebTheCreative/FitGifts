@@ -13,7 +13,7 @@ import TRewards from './components/TRewards';
 function App() {
 
 	function setToken(email) {
-		sessionStorage.setItem('token', email);
+		localStorage.setItem('token', email);
 	}
 
 	return (
