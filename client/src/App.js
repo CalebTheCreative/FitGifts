@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ClientHome from './pages/ClientHome';
 import ClientList from './components/ClientList';
@@ -7,14 +7,13 @@ import ClientProfile from './pages/ClientProfile';
 import Header from './components/Header';
 import Login from './components/Login';
 import Signup from './components/SignUp';
-import TrainerHome from './pages/TrainerHome';
+import Home from './pages/Home';
 import TRewards from './components/TRewards';
-import useToken from './components/Token/useToken';
 
 function App() {
-	const { token, setToken } = useToken();
-	if (!token) {
-		return <Login setToken={setToken} />;
+
+	function setToken(email) {
+		sessionStorage.setItem('token', email);
 	}
 
 	return (
@@ -22,25 +21,32 @@ function App() {
 			<div>
 				<Header />
 				<Switch>
+					<Route exact path={"/"}
+					render={(props) => (
+						<Login
+						{...props}
+						tokenStatus={setToken}
+						/>
+					)} />
 					<Route exact path="/home-client">
 						<ClientHome />
 					</Route>
 					<Route exact path="/client-list">
 						<ClientList />
 					</Route>
-					<Route exact path="/client-profile">
+					<Route path="/client-profile">
 						<ClientProfile />
 					</Route>
-					<Route exact path={['/', '/login']}>
+					{/* <Route exact path={['/', '/login']}>
 						<Login />
-					</Route>
+					</Route> */}
 					<Route exact path="/signup">
 						<Signup />
 					</Route>
-					<Route exact path="/home-trainer">
-						<TrainerHome />
+					<Route path="/home">
+						<Home />
 					</Route>
-					<Route exact path="/trewards">
+					<Route path="/trewards">
 						<TRewards />
 					</Route>
 				</Switch>
