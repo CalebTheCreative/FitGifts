@@ -9,7 +9,7 @@ This is react rewards app that let's fitness trainers and clients connect with o
 ```
 AS A trainer
 I WANT a way to incentivize my clients with rewards
-SO THAT I can motivate them to continue training and working toward their fitness goals.
+SO THAT I can motivate them to continue working toward their fitness goals.
 ```
 
 ## Instructions
