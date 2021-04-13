@@ -33,7 +33,11 @@ const UserSchema = new Schema({
 		type: Number,
 		default: 0,
 	},
-	rewards: [{ type: Schema.Types.ObjectId, ref: 'Reward' }],
+	rewards: [
+		{ type: Schema.Types.ObjectId,
+			ref: 'Reward'
+		}
+	]
 });
 
 UserSchema.pre('save', function (next) {

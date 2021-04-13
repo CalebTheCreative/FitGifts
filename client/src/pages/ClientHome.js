@@ -46,8 +46,18 @@ function ClientHome() {
 			.then(res => 
 				setRewards(res.data)
 			)
-			.catch(err => console.log(err));
+			.catch(err => console.log("Logout unsucessful"));
 	}
+
+	// function userLogout() {
+	// 	API.logout()
+	// 		.then(res => {
+	// 			console.log("You have logged out!");
+	// 			console.log(res.data);
+	// 		}			
+	// 		)
+	// 		.catch(err => console.log(err));
+	// }
 
 	// function componentDidMount() {
 	//     this.calcProg();
@@ -202,7 +212,7 @@ function ClientHome() {
 							</Modal>
 						</Col>
 						<Col sm="auto">
-							<Button variant="outline-secondary" className="my-1" block>
+							<Button variant="outline-secondary" className="my-1" block href="/logout">
 								Logout
 							</Button>
 						</Col>

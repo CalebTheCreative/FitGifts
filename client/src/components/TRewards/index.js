@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Container, Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
@@ -24,6 +24,13 @@ function TRewards() {
 			.catch(err => console.log(err));
 	};
 
+	function handleDelete(id) {
+		API.deleteReward(id)
+			.then(res => 
+				setRewards(res.data)
+			)
+			.catch(err => console.log(err));
+	}
 	// function handleInputChange(e) {
 	// 	const { rwdName, rwdVal, value } = e.target;
 
@@ -103,12 +110,15 @@ function TRewards() {
 					{rewards.length ? (
 						<ListGroup>
 							{rewards.map((reward) => (
-								<ListGroupItem key={reward._id}>
-									<Link to={'/reward/' + reward._id}>
+								<ListGroupItem id={reward._id}>
+									{/* <Link to={'/reward/' + reward._id}>
 										<b>
 											{reward.rwdName} worth {reward.rwdVal} points
 										</b>
-									</Link>
+									</Link> */}
+										<Button onClick={handleDelete}>
+											{reward.rwdName} worth {reward.rwdVal} points
+										</Button>
 								</ListGroupItem>
 							))}
 						</ListGroup>

@@ -36,6 +36,16 @@ function TrainerHome() {
             )
             .catch(err => console.log(err));
     };
+
+    // function userLogout() {
+	// 	API.logout()
+	// 		.then(res => {
+	// 			console.log("You have logged out!");
+	// 			console.log(res.data);
+	// 		}			
+	// 		)
+	// 		.catch(err => console.log(err));
+	// }
     // function addPoint() {
     //     this.setState({ clientTot1: this.state.clientTot1 + 1 })
     //     this.calcProg();
@@ -74,7 +84,7 @@ function TrainerHome() {
                             <Button variant="danger" className="my-1" block href="/trewards"><i className="fas fa-gift"></i><b> Rewards</b></Button>
                         </Col>
                         <Col sm="auto">
-                            <Button variant="outline-secondary" className="my-1" block>Logout</Button>
+                            <Button variant="outline-secondary" className="my-1" block href="/logout">Logout</Button>
                         </Col>
 
                     </Row>
