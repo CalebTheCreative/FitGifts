@@ -1,39 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
 function ClientList() {
 	const [clients, setClients] = useState([]);
-    const [clientFirstName, setClientFirstName] = useState([]);
-    const [clientLastName, setClientLastName] = useState([]);
-    const [clientPhone, setClientPhone] = useState([]);
-    const [clientEmail, setClientEmail] = useState([]);
-    // const [clientRwdEligible, setClientRwdEligible] = useState([]);
-	
+	const [clientFirstName, setClientFirstName] = useState([]);
+	const [clientLastName, setClientLastName] = useState([]);
+	const [clientPhone, setClientPhone] = useState([]);
+	const [clientEmail, setClientEmail] = useState([]);
+	const [rwdPts, setRwdPts] = useState('');
+	// const [clientRwdEligible, setClientRwdEligible] = useState([]);
 	// const [clientObject, setClientObject] = useState({});
 	// const [isRedeemed, setIsRedeemed] = useState(false);
 
+	const [count, dispatch] = useReducer((state, action) => {
+		if (action === 'add') {
+			return state + 1;
+		} else if (action === 'subtract') {
+			return state - 1;
+		} else {
+			return state;
+		}
+	}, 0);
+
 	// Load all clients and store them with setClients
 	useEffect(() => {
-		loadClients()
-	}, [])
+		loadClients();
+	}, []);
 
 	function loadClients() {
-
 		API.getClients()
-			.then(res =>
-				setClients(res.data)
-			)
-			.catch(err => console.log(err));
-	};
+			.then((res) => setClients(res.data))
+			.catch((err) => console.log(err));
+	}
+
+	function handlePoints(e) {
+		e.preventDefault();
+		API.updatePoints({
+			rwdPts: rwdPts,
+		})
+			.then((res) => {
+				setRwdPts(res.data);
+			})
+			.catch((err) => console.log(err));
+	}
 
 	function handleDelete(id) {
 		API.deleteClient(id)
-			.then(res => 
-				setClients(res.data)
-			)
-			.catch(err => console.log(err));
+			.then((res) => setClients(res.data))
+			.catch((err) => console.log(err));
 	}
 	// function handleInputChange(e) {
 	// 	const { clientFirstName, clientLastName, clientPhone, clientEmail, value } = e.target;
@@ -54,7 +70,7 @@ function ClientList() {
 				clientFirstName: clientFirstName,
 				clientLastName: clientLastName,
 				clientPhone: clientPhone,
-				clientEmail: clientEmail
+				clientEmail: clientEmail,
 			})
 				.then((res) => alert('Client Creation Successful!'), loadClients())
 				.catch((err) => console.log(err));
@@ -121,7 +137,9 @@ function ClientList() {
 									</Col>
 									<Col sm={4}>
 										<button
-											disabled={!(clientFirstName && clientLastName && clientPhone && clientEmail)}
+											disabled={
+												!(clientFirstName && clientLastName && clientPhone && clientEmail)
+											}
 											className="btn btn-primary"
 											onClick={handleSubmit}
 											type="submit"
@@ -144,12 +162,20 @@ function ClientList() {
 											First: {client.clientFirstName} Last: {client.clientLastName}
 										</b>
 									</Link> */}
-										<Button onClick={handleDelete}>
-											f:{client.clientFirstName}
-											l:{client.clientLastName}
-											p:{client.clientPhone}
-											e:{client.clientEmail}
-										</Button>
+									<Button onClick={handleDelete}>
+										f:{client.clientFirstName}
+										l:{client.clientLastName}
+										p:{client.clientPhone}
+										e:{client.clientEmail}
+									</Button>
+									<Button
+										onChange={(e) => handlePoints(e.target.value)}
+										onClick={() => dispatch('add')}
+									></Button>
+									<Button
+										onChange={(e) => handlePoints(e.target.value)}
+										onClick={() => dispatch('subtract')}
+									></Button>
 								</ListGroupItem>
 							))}
 						</ListGroup>
@@ -159,7 +185,7 @@ function ClientList() {
 				</Container>
 			</Row>
 			<br />
-		</div >
+		</div>
 	);
 }
 

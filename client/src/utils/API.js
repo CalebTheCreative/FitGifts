@@ -69,6 +69,11 @@ export default {
 	// Client Routes
 	// =========================================================
 
+	updatePoints: function (rwdPts) {
+		console.log('API updatePoints: ', rwdPts);
+		return axios.put('/api/client/', rwdPts);
+	},
+
 	getClients: function () {
 		console.log('API getClients: ');
 		return axios.get('/api/client/');
