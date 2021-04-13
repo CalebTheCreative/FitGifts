@@ -44,7 +44,17 @@ const UserSchema = new Schema({
 			type: Schema.Types.ObjectId,
 			ref: 'Criteria'
 		}
-	]
+	],
+	clients: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'User'
+		}
+	],
+	trainer: {
+		type: Schema.Types.ObjectId,
+		ref: 'User'
+	}
 });
 
 UserSchema.pre('save', function (next) {
