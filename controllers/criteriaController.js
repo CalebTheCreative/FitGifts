@@ -30,10 +30,8 @@ module.exports = {
 				critName: critName,
 				critVal: critVal
 			})
-			.then(result => {
-				console.log('New Criteria after: ', result);
-				return res.json(result);
-			})
+			.then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { criteria: _id } }, { new: true })
+			)
 			.catch(err => res.status(422).json(err));
 	},
 	update: function (req, res) {
