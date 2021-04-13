@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ClientHome from './pages/ClientHome';
 import ClientList from './components/ClientList';
@@ -9,8 +9,14 @@ import Login from './components/Login';
 import Signup from './components/SignUp';
 import TrainerHome from './pages/TrainerHome';
 import TRewards from './components/TRewards';
+import useToken from './components/Token/useToken';
 
 function App() {
+	const { token, setToken } = useToken();
+	if (!token) {
+		return <Login setToken={setToken} />;
+	}
+
 	return (
 		<Router>
 			<div>
