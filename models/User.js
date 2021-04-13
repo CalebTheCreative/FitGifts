@@ -34,8 +34,15 @@ const UserSchema = new Schema({
 		default: 0,
 	},
 	rewards: [
-		{ type: Schema.Types.ObjectId,
+		{ 
+			type: Schema.Types.ObjectId,
 			ref: 'Reward'
+		}
+	],
+	criteria: [
+		{ 
+			type: Schema.Types.ObjectId,
+			ref: 'Criteria'
 		}
 	]
 });
