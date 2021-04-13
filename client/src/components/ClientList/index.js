@@ -24,6 +24,7 @@ function ClientList() {
 		}
 	}, 0);
 
+	
 	// Load all clients and store them with setClients
 	useEffect(() => {
 		loadClients();
@@ -157,13 +158,14 @@ function ClientList() {
 						<ListGroup>
 							{clients.map((client) => (
 								<ListGroupItem key={client._id}>
-									<Link to={'/client/' + client._id}>
-										{client.clientFirstName} {client.clientLastName}
+										<h1>{client.clientFirstName} {client.clientLastName}</h1>
+										<h3>Rewards Points: {client.rwdPts}</h3>
+										<b>Phone: </b>{client.clientPhone}
 										<br />
-										Phone:{client.clientPhone} &nbsp; email:{client.clientEmail}
-									</Link>
-									<h1>{client.rwdPts}</h1>
+										<b>email:</b>{client.clientEmail}
+										<br />
 									<Button
+										className="mx-1"
 										onChange={(e) => handlePoints(e.target.value)}
 										onClick={() => dispatch('add')}
 									>
@@ -171,6 +173,7 @@ function ClientList() {
 										Add Point{' '}
 									</Button>
 									<Button
+										className="mx-1"
 										onChange={(e) => handlePoints(e.target.value)}
 										onClick={() => dispatch('subtract')}
 									>
