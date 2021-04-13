@@ -29,7 +29,7 @@ function TCriteria() {
 	// 	setCritObject({ ...critObject, [critName]: value, [critVal]: value });
 	// }
 
-	function handleSubmit(e) {
+	function handleCritSubmit(e) {
 		e.preventDefault();
 		console.log('Criteria Desc. : ');
 		console.log('Criteria name: ', critName);
@@ -87,7 +87,7 @@ function TCriteria() {
 										<button
 											disabled={!(critName && critVal)}
 											className="btn btn-primary"
-											onClick={handleSubmit}
+											onClick={handleCritSubmit}
 											type="submit"
 										>
 											Submit

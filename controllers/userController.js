@@ -3,19 +3,22 @@ const db = require('../models');
 // Defining methods for the userController
 module.exports = {
 	findAll: function (req, res) {
-		db.User.find(req.query)
+		db.User
+			.find(req.query)
 			.sort({ date: -1 })
 			.then((dbUser) => res.json(dbUser))
 			.catch((err) => res.status(422).json(err));
 	},
 	findById: function (req, res) {
-		db.User.findById(req.params.id)
+		db.User
+			.findById(req.params.id)
 			.then((dbUser) => res.json(dbUser))
 			.catch((err) => res.status(422).json(err));
 	},
 	findOne: function (req, res) {
 		console.log(req.query);
-		db.User.findOne({ _id: req.params.id })
+		db.User
+			.findOne({ _id: req.params.id })
 			.populate('rewards')
 			.then((dbUser) => {
 				res.json(dbUser);
@@ -25,17 +28,20 @@ module.exports = {
 			});
 	},
 	create: function (req, res) {
-		db.User.create(req.body)
+		db.User
+			.create(req.body)
 			.then((dbUser) => res.json(dbUser))
 			.catch((err) => res.status(422).json(err));
 	},
 	update: function (req, res) {
-		db.User.findOneAndUpdate({ _id: req.params.id }, req.body)
+		db.User
+			.findOneAndUpdate({ _id: req.params.id }, req.body)
 			.then((dbUser) => res.json(dbUser))
 			.catch((err) => res.status(422).json(err));
 	},
 	remove: function (req, res) {
-		db.User.findById({ _id: req.params.id })
+		db.User
+			.findById({ _id: req.params.id })
 			.then((dbUser) => dbUser.remove())
 			.then((dbUser) => res.json(dbUser))
 			.catch((err) => res.status(422).json(err));
@@ -44,17 +50,18 @@ module.exports = {
 	signup: (req, res) => {
 		const { email, password, firstName, lastName, phoneNumber } = req.body;
 		console.log('signup', req.body);
-		db.User.create({
-			email: email,
-			password: password,
-			firstName: firstName,
-			lastName: lastName,
-			phoneNumber: phoneNumber
+		db.User
+			.create({
+				email: email,
+				password: password,
+				firstName: firstName,
+				lastName: lastName,
+				phoneNumber: phoneNumber
 			// isTrainer: isTrainer,
-		}).then((result) => {
-			console.log('signup', result);
-			return res.json(result);
-		});
+			}).then((result) => {
+				console.log('signup', result);
+				return res.json(result);
+			});
 	},
 
 	login: (req, res) => {

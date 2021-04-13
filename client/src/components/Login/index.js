@@ -18,6 +18,7 @@ function Login(props) {
 				const user = response.data;
 				console.log('Login API', response.data);
 				console.log('User Data: ', user);
+				console.log('Email: ', email);
 				if (response.status === 200) {
 					// window.location.href = '/home-client';
 					window.location.href = '/home';

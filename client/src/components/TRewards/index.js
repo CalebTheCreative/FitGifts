@@ -24,20 +24,20 @@ function TRewards() {
 			.catch(err => console.log(err));
 	};
 
-	function handleDelete(id) {
-		API.deleteReward(id)
-			.then(res => 
-				setRewards(res.data)
-			)
-			.catch(err => console.log(err));
-	}
+	// function handleDelete(id) {
+	// 	API.deleteReward(id)
+	// 		.then(res => 
+	// 			setRewards(res.data)
+	// 		)
+	// 		.catch(err => console.log(err));
+	// }
 	// function handleInputChange(e) {
 	// 	const { rwdName, rwdVal, value } = e.target;
 
 	// 	setRewardObject({ ...rewardObject, [rwdName]: value, [rwdVal]: value });
 	// }
 
-	function handleSubmit(e) {
+	function handleRewardSubmit(e) {
 		e.preventDefault();
 		console.log('Reward Desc. : ');
 		console.log('reward name: ', rwdName);
@@ -95,7 +95,7 @@ function TRewards() {
 										<button
 											disabled={!(rwdName && rwdVal)}
 											className="btn btn-primary"
-											onClick={handleSubmit}
+											onClick={handleRewardSubmit}
 											type="submit"
 										>
 											Submit
@@ -116,7 +116,7 @@ function TRewards() {
 											{reward.rwdName} worth {reward.rwdVal} points
 										</b>
 									</Link> */}
-										<Button onClick={handleDelete}>
+										<Button>
 											{reward.rwdName} worth {reward.rwdVal} points
 										</Button>
 								</ListGroupItem>

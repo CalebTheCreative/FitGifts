@@ -40,7 +40,7 @@ const UserSchema = new Schema({
 		}
 	],
 	criteria: [
-		{ 
+		{
 			type: Schema.Types.ObjectId,
 			ref: 'Criteria'
 		}
