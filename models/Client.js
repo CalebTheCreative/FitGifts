@@ -2,28 +2,22 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ClientSchema = new Schema({
-	firstName: {
+	clientFirstName: {
 		type: String,
-		required: 'Please enter your first name.',
 	},
-	lastName: {
+	clientLastName: {
 		type: String,
-		required: 'Please enter your last name.',
 	},
-	phoneNumber: {
+	clientPhone: {
 		type: String,
-		required: [true, 'Please enter a phone number.'],
 	},
-	email: {
+	clientEmail: {
 		type: String,
-		required: 'Please enter a valid email.',
 	},
-
 	rwdPts: {
 		type: Number,
 		default: 0,
 	},
-
 	rwdEligible: [
 		{
 			eRwdName: {
