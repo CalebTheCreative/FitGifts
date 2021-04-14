@@ -92,67 +92,6 @@ function Home() {
 
                 </Container>
             </Row>
-
-            <Row className="justify-content-center my-3">
-                <Container className="justify-content-center align-items-center bg-light px-4">
-                    <Row className="justify-content-center align-items-center m-2">
-                        <Col xs={3} id="rwdTitleBox" className="align-items-center justify-content-center">
-                            <Row className="align-items-center">
-                                <Col className="align-items-center">
-                                    <h1>
-                                        Your Clients
-                                    </h1>
-                                </Col>
-                            </Row>
-                        </Col>
-
-                        <Col xs={9} className="text-center justify-content-center align-items-center">
-
-                            <Row className="text-center align-items-center justify-content-center my-2 p-3 border">
-                                <Col sm={4} className="text-center justify-content-center">
-                                    <Row className="text-center justify-content-center">
-                                        <h2>{userName.clientName1}</h2>
-                                    </Row>
-                                </Col>
-                                <Col sm={2} className="text-center justify-content-center">
-                                    <Row className="text-center justify-content-center">
-                                        <h2 className="text-center">{userName.clientTot1}</h2>
-                                    </Row>
-                                </Col>
-                                <Col sm={6} className="text-center justify-content-center">
-                                    <Row className="text-center justify-content-center">
-                                        {/* <Button className="mx-1" variant="danger" onClick={this.addPoint}><i className="fas fa-plus"></i><b> Add Pt</b></Button> */}
-                                        <Button variant="danger" className="my-1 mx-1" onClick={handleShow1}>
-                                            <i className="fas fa-comment"></i><b> Contact</b>
-                                        </Button>
-
-                                        <Modal show={show1} onHide={handleClose1}>
-                                            <Modal.Header closeButton>
-                                                <Modal.Title>Contact</Modal.Title>
-                                            </Modal.Header>
-                                            <Modal.Body>
-                                                <Col sm="auto">
-                                                    <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="tel:123-456-7890"><i className="fas fa-phone"></i>&nbsp;Call</Button>
-                                                    <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="sms:123-456-7890"><i className="fas fa-comment-dots"></i>&nbsp;Text</Button>
-                                                    <Button className="my-1 btn-block btn-lg" variant="outline-secondary" href="mailto:sample@mail.com"><i className="fas fa-envelope"></i>&nbsp;Email</Button>
-                                                </Col>
-                                            </Modal.Body>
-                                            <Modal.Footer>
-                                                <Button variant="secondary" onClick={handleClose1}>
-                                                    Close
-                                        </Button>
-                                            </Modal.Footer>
-                                        </Modal>
-
-                                        <Button className="mx-1 my-1" variant="danger"><i className="fas fa-minus-circle"></i><b> Remove</b></Button>
-                                    </Row>
-                                </Col>
-                            </Row>
-
-                        </Col>
-                    </Row>
-                </Container>
-            </Row>
             <Row className="justify-content-center my-3">
                 <Container>
                     <ClientList />

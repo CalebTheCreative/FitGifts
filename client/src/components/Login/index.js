@@ -3,7 +3,7 @@ import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import API from '../../utils/API';
 import './style.css';
 
-function Login(props) {
+function Login() {
 	const [email, setEmail] = useState([]);
 	const [password, setPassword] = useState([]);
 
@@ -27,7 +27,6 @@ function Login(props) {
 			.catch ((e) => {
 		console.log('Error: ', e);
 	});
-	props.tokenStatus(email)
 }
 
 return (
