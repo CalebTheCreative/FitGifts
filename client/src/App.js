@@ -10,20 +10,18 @@ function App() {
 
 	return (
 		<Router>
-			<div>
-				<Header />
-				<Switch>
-					<Route exact path={[["/", "/login"]]}>
-						<Login />
-					</Route>
-					<Route exact path="/signup">
-						<Signup />
-					</Route>
-					<Route path="/home">
-						<Home />
-					</Route>
-				</Switch>
-			</div>
+			<Header />
+			<Switch>
+				<Route exact path={[["/", "/login"]]}>
+					<Login />
+				</Route>
+				<Route exact path="/signup">
+					<Signup />
+				</Route>
+				<Route exact path="/home">
+					<Home />
+				</Route>
+			</Switch>
 		</Router>
 	);
 }

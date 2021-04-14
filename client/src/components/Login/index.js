@@ -23,6 +23,7 @@ function Login() {
 					// window.location.href = '/home-client';
 					window.location.href = '/home';
 				}
+				window.location.href = '/'
 			})
 			.catch ((e) => {
 		console.log('Error: ', e);
