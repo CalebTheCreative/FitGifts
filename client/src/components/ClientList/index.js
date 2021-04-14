@@ -1,6 +1,7 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import ProgressBar from "@ramonak/react-progress-bar";
 import API from '../../utils/API';
 
 function ClientList() {
@@ -14,17 +15,17 @@ function ClientList() {
 	// const [clientObject, setClientObject] = useState({});
 	// const [isRedeemed, setIsRedeemed] = useState(false);
 
-	const [count, dispatch] = useReducer((state, action) => {
-		if (action === 'add') {
-			return state + 1;
-		} else if (action === 'subtract') {
-			return state - 1;
-		} else {
-			return state;
-		}
-	}, 0);
+	// const [count, dispatch] = useReducer((state, action) => {
+	// 	if (action === 'add') {
+	// 		return state + 1;
+	// 	} else if (action === 'subtract') {
+	// 		return state - 1;
+	// 	} else {
+	// 		return state;
+	// 	}
+	// }, 0);
 
-	
+
 	// Load all clients and store them with setClients
 	useEffect(() => {
 		loadClients();
@@ -47,11 +48,11 @@ function ClientList() {
 			.catch((err) => console.log(err));
 	}
 
-	function handleDelete(id) {
-		API.deleteClient(id)
-			.then((res) => setClients(res.data))
-			.catch((err) => console.log(err));
-	}
+	// function handleDelete(id) {
+	// 	API.deleteClient(id)
+	// 		.then((res) => setClients(res.data))
+	// 		.catch((err) => console.log(err));
+	// }
 	// function handleInputChange(e) {
 	// 	const { clientFirstName, clientLastName, clientPhone, clientEmail, value } = e.target;
 
@@ -158,16 +159,24 @@ function ClientList() {
 						<ListGroup>
 							{clients.map((client) => (
 								<ListGroupItem key={client._id}>
-										<h1>{client.clientFirstName} {client.clientLastName}</h1>
-										<h3>Rewards Points: {client.rwdPts}</h3>
-										<b>Phone: </b>{client.clientPhone}
-										<br />
-										<b>email:</b>{client.clientEmail}
-										<br />
+									<h1>{client.clientFirstName} {client.clientLastName}</h1>
+									<h3>Rewards Points: {client.rwdPts}</h3>
+									<Row className="text-center justify-content-center">
+										<Col sm={6}>
+											<ProgressBar
+												completed={4}
+												bgColor="#FF0000"
+											/>
+										</Col>
+									</Row>
+									<b>Phone: </b>{client.clientPhone}
+									<br />
+									<b>email:</b>{client.clientEmail}
+									<br />
 									<Button
 										className="mx-1"
 										onChange={(e) => handlePoints(e.target.value)}
-										onClick={() => dispatch('add')}
+										// onClick={() => dispatch('add')}
 									>
 										{' '}
 										Add Point{' '}
@@ -175,7 +184,7 @@ function ClientList() {
 									<Button
 										className="mx-1"
 										onChange={(e) => handlePoints(e.target.value)}
-										onClick={() => dispatch('subtract')}
+										// onClick={() => dispatch('subtract')}
 									>
 										{' '}
 										Subtract Point
@@ -184,7 +193,7 @@ function ClientList() {
 							))}
 						</ListGroup>
 					) : (
-						<h3>No Rewards to display</h3>
+						<h3>No clients to display</h3>
 					)}
 				</Container>
 			</Row>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Button, Modal } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import ClientList from "../components/ClientList";
 import TRewards from "../components/TRewards";
 import TCriteria from "../components/TCriteria";
@@ -12,23 +12,6 @@ function Home() {
     useEffect(() => {
         loadUser()
     }, [])
-
-    // Modal Components
-    //      1 – Add Trainer Button
-    //      2 – Contact Trainer Button
-    //      3 – How to Earn Button
-    const [show1, setShow1] = useState(false);
-    // const [show2, setShow2] = useState(false);
-    // const [show3, setShow3] = useState(false);
-
-    const handleClose1 = () => setShow1(false);
-    // const handleClose2 = () => setShow2(false);
-    // const handleClose3 = () => setShow3(false);
-
-    const handleShow1 = () => setShow1(true);
-    // const handleShow2 = () => setShow2(true);
-    // const handleShow3 = () => setShow3(true);
-
 
     function loadUser() {
         API.getUser()
@@ -71,7 +54,8 @@ function Home() {
                     <Row>
                         <Col>
                             <h1>Hello, {userName.firstName}!</h1>
-                            <h5 className="text-danger">Trainer Number: <Button size="sm" href="sms:&body=Enter code '12345' to add me as your trainer on FitGifts!">{userName._id}</Button> </h5>
+                            
+                            {/* <h5 className="text-danger">Trainer Number: <Button size="sm" href="sms:&body=Enter code '12345' to add me as your trainer on FitGifts!">{userName._id}</Button> </h5> */}
                         </Col>
                     </Row>
 
