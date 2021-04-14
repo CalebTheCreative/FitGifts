@@ -6,19 +6,17 @@ import Login from './components/Login';
 import Signup from './components/SignUp';
 import Home from './pages/Home';
 
-function App() {
+function App(path) {
 
 	return (
 		<Router>
 			<Header />
 			<Switch>
-				<Route exact path={[["/", "/login"]]}>
-					<Login />
-				</Route>
-				<Route exact path="/signup">
+				<Route exact path="/" component={Login}/>
+				<Route path="/signup">
 					<Signup />
 				</Route>
-				<Route exact path="/home">
+				<Route path="/home">
 					<Home />
 				</Route>
 			</Switch>

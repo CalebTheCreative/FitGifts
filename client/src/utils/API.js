@@ -109,13 +109,13 @@ export default {
 	},
 
 	getUsers: function () {
-		console.log('API users: ');
+		console.log('API users running... ');
 		return axios.get('/api/user');
 	},
 
 	// // Gets the post with the given id
 	getUser: function (email) {
-		console.log('API getUser: ', email);
+		console.log('API getUser running...');
 		return axios.get('/api/user/find', { email: email });
 	},
 
