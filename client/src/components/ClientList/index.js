@@ -25,7 +25,6 @@ function ClientList() {
 	// 	}
 	// }, 0);
 
-
 	// Load all clients and store them with setClients
 	useEffect(() => {
 		loadClients();
