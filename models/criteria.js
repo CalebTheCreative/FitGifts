@@ -12,3 +12,5 @@ const CriteriaSchema = new Schema({
 
 const Criteria = mongoose.model('Criteria', CriteriaSchema);
 module.exports = Criteria;
+
+
