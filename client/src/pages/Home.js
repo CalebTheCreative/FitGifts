@@ -62,12 +62,12 @@ function Home() {
                     <hr />
 
                     <Row className="justify-content-center">
-                        <Col sm="auto">
+                        {/* <Col sm="auto">
                             <Button variant="danger" className="my-1" block href="/client-list"><i className="fas fa-users"></i><b> Clients</b></Button>
                         </Col>
                         <Col sm="auto">
                             <Button variant="danger" className="my-1" block href="/trewards"><i className="fas fa-gift"></i><b> Rewards</b></Button>
-                        </Col>
+                        </Col> */}
                         <Col sm="auto">
                             <Button variant="outline-secondary" className="my-1" block href="/logout">Logout</Button>
                         </Col>
