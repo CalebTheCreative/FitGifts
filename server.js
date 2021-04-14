@@ -3,7 +3,6 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('./config/passport');
 const cors = require('cors');
-const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -12,10 +11,6 @@ const PORT = process.env.PORT || 3001;
 const routes = require('./routes');
 // Database
 const db = require('./models');
-
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
 
 // Middleware
 app.use(cors());
