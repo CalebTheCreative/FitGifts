@@ -22,14 +22,18 @@ function Home() {
     };
 
     // function userLogout() {
-	// 	API.logout()
-	// 		.then(res => {
-	// 			console.log("You have logged out!");
-	// 			console.log(res.data);
+    // 	API.logout()
+    // 		.then(res => {
+    // 			console.log("You have logged out!");
+    // 			console.log(res.data);
+    // 		}			
 	// 		}			
-	// 		)
-	// 		.catch(err => console.log(err));
-	// }
+    // 		}			
+	// 		}			
+    // 		}			
+    // 		)
+    // 		.catch(err => console.log(err));
+    // }
     // function addPoint() {
     //     this.setState({ clientTot1: this.state.clientTot1 + 1 })
     //     this.calcProg();
@@ -54,7 +58,7 @@ function Home() {
                     <Row>
                         <Col>
                             <h1>Hello, {userName.firstName}!</h1>
-                            
+
                             {/* <h5 className="text-danger">Trainer Number: <Button size="sm" href="sms:&body=Enter code '12345' to add me as your trainer on FitGifts!">{userName._id}</Button> </h5> */}
                         </Col>
                     </Row>

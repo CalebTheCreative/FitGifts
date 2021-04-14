@@ -170,7 +170,7 @@ function ClientList() {
 									</Row>
 									<b>Phone: </b>{client.clientPhone}
 									<br />
-									<b>email:</b>{client.clientEmail}
+									<b>Email:</b>{client.clientEmail}
 									<br />
 									<Button
 										className="mx-1"

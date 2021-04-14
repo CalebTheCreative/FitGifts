@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 
 function TRewards() {
@@ -110,7 +110,7 @@ function TRewards() {
 					{rewards.length ? (
 						<ListGroup>
 							{rewards.map((reward) => (
-								<ListGroupItem id={reward._id}>
+								<ListGroupItem key={reward._id}>
 									{/* <Link to={'/reward/' + reward._id}>
 										<b>
 											{reward.rwdName} worth {reward.rwdVal} points
