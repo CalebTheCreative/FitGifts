@@ -2,7 +2,6 @@ const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('./config/passport');
-const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -13,7 +12,6 @@ const routes = require('./routes');
 const db = require('./models');
 
 // Middleware
-app.use(cors());
 app.use('/login', (req, res) => {
 	res.send({
 		token: 'test123',
