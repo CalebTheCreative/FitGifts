@@ -3,6 +3,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('./config/passport');
 const routes = require('./routes/index');
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -31,6 +32,10 @@ app.use(passport.session()); // calls the deserializeUser
 // Routes
 app.use(routes);
 
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
+
 // Connect to the Mongo DB
 mongoose
 	.connect(process.env.MONGODB_URI || 'mongodb://localhost/fitgifts', {
@@ -41,6 +46,7 @@ mongoose
 	})
 	.then(() => console.log('MongoDB Connected...'))
 	.catch((err) => console.log(err));
+
 // Starting Server
 app.listen(PORT, () => {
 	console.log(`🌎  ==> API Server now listening on PORT: ${PORT}`);
